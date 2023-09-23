@@ -43,6 +43,9 @@
                 <div class="masthead-subheading">Compania Barcos</div>
                 <div class="masthead-heading text-uppercase">Bienvenidos</div>
                 <a class="btn btn-primary btn-xl text-uppercase" href="#services">Tell Me More</a>
+                <a class="btn btn-primary btn-xl text-uppercase" href="#services">Tell Me More</a>
+                <a class="btn btn-primary btn-xl text-uppercase" href="#services">Tell Me More</a>
+                <a class="btn btn-primary btn-xl text-uppercase" href="#services">Tell Me More</a>
             </div>
         </header>
         <!-- Services-->
