@@ -32,6 +32,7 @@
                         <li class="nav-item"><a class="nav-link" href="#about">Sobre nosotros</a></li>
                         <li class="nav-item"><a class="nav-link" href="#team">Equipo</a></li>
                         <li class="nav-item"><a class="nav-link" href="#contact">Contactos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="">Contactenos</a></li>
                     </ul>
                 </div>
             </div>
