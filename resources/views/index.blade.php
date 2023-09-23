@@ -33,6 +33,7 @@
                         <li class="nav-item"><a class="nav-link" href="#team">Equipo</a></li>
                         <li class="nav-item"><a class="nav-link" href="#contact">Contactos</a></li>
                         <li class="nav-item"><a class="nav-link" href="">Contactenos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="">Contactenos2</a></li>
                     </ul>
                 </div>
             </div>
