@@ -28,9 +28,9 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
                         <li class="nav-item"><a class="nav-link" href="#services">Servicios</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#about">Sobre nosotros</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#team">Equipo</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#portfolio">Agrupaciones 2</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#about">Historia</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#team">Equipo \Tal vez\</a></li>
                         <li class="nav-item"><a class="nav-link" href="#contact">Contactos</a></li>
                         <li class="nav-item"><a class="nav-link" href="">Contactenos</a></li>
                         <li class="nav-item"><a class="nav-link" href="">Contactenos2</a></li>
@@ -47,46 +47,12 @@
                 <a class="btn btn-primary btn-xl text-uppercase" href="#services">Tell Me More</a>
             </div>
         </header>
-        <!-- Services-->
-        <section class="page-section" id="services">
-            <div class="container">
-                <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Services</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-                </div>
-                <div class="row text-center">
-                    <div class="col-md-4">
-                        <span class="fa-stack fa-4x">
-                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                            <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
-                        </span>
-                        <h4 class="my-3">E-Commerce</h4>
-                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-                    </div>
-                    <div class="col-md-4">
-                        <span class="fa-stack fa-4x">
-                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                            <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
-                        </span>
-                        <h4 class="my-3">Responsive Design</h4>
-                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-                    </div>
-                    <div class="col-md-4">
-                        <span class="fa-stack fa-4x">
-                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                            <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
-                        </span>
-                        <h4 class="my-3">Web Security</h4>
-                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Portfolio Grid-->
+
+        <!-- Agrupaciones---------------------------------------------------------------------->
         <section class="page-section bg-light" id="portfolio">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Portfolio</h2>
+                    <h2 class="section-heading text-uppercase">Agrupaciones 2</h2>
                     <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
                 </div>
                 <div class="row">
@@ -183,11 +149,51 @@
                 </div>
             </div>
         </section>
-        <!-- About-->
+        <!-- FIN Agrupaciones---------------------------------------------------------------------->
+
+                <!-- Servicios---------------------------------------------------------------------->
+                <section class="page-section" id="services">
+                    <div class="container">
+                        <div class="text-center">
+                            <h2 class="section-heading text-uppercase">Services</h2>
+                            <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                        </div>
+                        <div class="row text-center">
+                            <div class="col-md-4">
+                                <span class="fa-stack fa-4x">
+                                    <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                                    <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
+                                </span>
+                                <h4 class="my-3">E-Commerce</h4>
+                                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                            </div>
+                            <div class="col-md-4">
+                                <span class="fa-stack fa-4x">
+                                    <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                                    <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
+                                </span>
+                                <h4 class="my-3">Responsive Design</h4>
+                                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                            </div>
+                            <div class="col-md-4">
+                                <span class="fa-stack fa-4x">
+                                    <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                                    <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
+                                </span>
+                                <h4 class="my-3">Web Security</h4>
+                                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- FIN Servicios---------------------------------------------------------------------->
+
+
+        <!-- Historia---------------------------------------------------------------------->
         <section class="page-section" id="about">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase">About</h2>
+                    <h2 class="section-heading text-uppercase">Historia</h2>
                     <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
                 </div>
                 <ul class="timeline">
@@ -245,6 +251,8 @@
                 </ul>
             </div>
         </section>
+        <!-- FIN Historia---------------------------------------------------------------------->
+
         <!-- Team-->
         <section class="page-section bg-light" id="team">
             <div class="container">
@@ -416,7 +424,7 @@
                                     </ul>
                                     <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
                                         <i class="fas fa-xmark me-1"></i>
-                                        Close Project
+                                        Ver mas ->
                                     </button>
                                 </div>
                             </div>
@@ -451,7 +459,7 @@
                                     </ul>
                                     <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
                                         <i class="fas fa-xmark me-1"></i>
-                                        Close Project
+                                        Ver mas ->
                                     </button>
                                 </div>
                             </div>
@@ -486,7 +494,7 @@
                                     </ul>
                                     <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
                                         <i class="fas fa-xmark me-1"></i>
-                                        Close Project
+                                        Ver mas ->
                                     </button>
                                 </div>
                             </div>
@@ -521,7 +529,7 @@
                                     </ul>
                                     <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
                                         <i class="fas fa-xmark me-1"></i>
-                                        Close Project
+                                        Ver mas ->
                                     </button>
                                 </div>
                             </div>
@@ -556,7 +564,7 @@
                                     </ul>
                                     <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
                                         <i class="fas fa-xmark me-1"></i>
-                                        Close Project
+                                        Ver mas ->
                                     </button>
                                 </div>
                             </div>
@@ -591,7 +599,7 @@
                                     </ul>
                                     <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
                                         <i class="fas fa-xmark me-1"></i>
-                                        Close Project
+                                        Ver mas ->
                                     </button>
                                 </div>
                             </div>

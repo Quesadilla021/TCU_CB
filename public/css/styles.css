@@ -601,6 +601,7 @@ progress {
 .img-fluid {
   max-width: 100%;
   height: auto;
+  border-radius: 20px;
 }
 
 .img-thumbnail {
@@ -11014,6 +11015,9 @@ header.masthead .masthead-heading {
 #portfolio .portfolio-item .portfolio-link:hover .portfolio-hover {
   opacity: 1;
 }
+.portfolio-hover{
+  border-radius: 20px;
+}
 #portfolio .portfolio-item .portfolio-caption {
   padding: 1.5rem;
   text-align: center;
@@ -11025,11 +11029,14 @@ header.masthead .masthead-heading {
   font-weight: 700;
   margin-bottom: 0;
 }
+
 #portfolio .portfolio-item .portfolio-caption .portfolio-caption-subheading {
   font-style: italic;
   font-family: "Roboto Slab", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
-
+.portafolio-item{
+  border-radius: 20px;
+}
 .portfolio-modal .modal-dialog {
   margin: 1rem;
   max-width: 100vw;
