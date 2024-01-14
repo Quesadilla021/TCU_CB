@@ -27933,4 +27933,26 @@ pre[class*="language-"] {
   }
 }
 
+#formulario {
+  flex: 1;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+#formulario label,
+#formulario input,
+#formulario button {
+    display: block;
+    margin-bottom: 10px;
+}
+
+        #preview-container {
+            text-align: center;
+        }
+        #preview-image {
+            max-width: 100%;
+            max-height: 200px;
+            margin-top: 20px;
+        }
+
 /*# sourceMappingURL=dashboard-free.css.map */
