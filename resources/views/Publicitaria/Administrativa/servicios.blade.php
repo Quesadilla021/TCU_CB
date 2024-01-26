@@ -12,7 +12,7 @@
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="d-flex flex-column h-100">
-                                    <h2 class="font-weight-bolder mb-0">Agrupaciones</h2>
+                                    <h2 class="font-weight-bolder mb-0">Servicios</h2>
                                 </div>
                             </div>
                         </div>
@@ -42,23 +42,15 @@
                                 <input class="form-control" type="text" name="apellido"
                                     placeholder="Ingrese una descripcion">
 
-                                <label for="email">Imagen -Logo-</label>
+                                <label for="email">Imagen</label>
                                 <input class="form-control" type="file" id="imageInput"
-                                accept="image/*" onchange="previewImage(event, 'image-Logo', 'conateiner-Logo')">
+                                accept="image/*" onchange="previewImage(event, 'image', 'conateiner')">
 
-                                <div id="conateiner-Logo">
-                                    <img id="image-Logo" src="#"
+                                <div id="conateiner">
+                                    <img id="image" src="#"
                                         alt="Vista previa de la imagen">
                                 </div>
 
-                                <label for="email">Imagen -Fondo-</label>
-                                <input class="form-control" type="file" id="imageInput"
-                                accept="image/*" onchange="previewImage(event, 'image-Logo', 'conateiner-Logo')">
-
-                                <div id="conateiner-Fondo">
-                                    <img id="image-Fondo" src="#"
-                                        alt="Vista previa de la imagen">
-                                </div>
 
                                 <button type="button" class="btn btn-success">Agregar</button>
                             </form>
@@ -82,7 +74,7 @@
                             <div class="card">
                                 <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
                                     <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
-                                        <h6 class="text-white text-capitalize ps-3">Agrupaciones creadas</h6>
+                                        <h6 class="text-white text-capitalize ps-3">Servicios creados</h6>
                                     </div>
                                 </div>
 
@@ -107,11 +99,6 @@
                                                 <tr>
                                                     <td>
                                                         <div class="d-flex px-2 py-1">
-                                                            <div>
-                                                                <img src="../assets/img/team-2.jpg"
-                                                                    class="avatar avatar-sm me-3 border-radius-lg"
-                                                                    alt="user1">
-                                                            </div>
                                                             <div class="d-flex flex-column justify-content-center">
                                                                 <h6 class="mb-0 text-sm">John Michael</h6>
                                                                 <p class="text-xs text-secondary mb-0">john@creative-tim.com

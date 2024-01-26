@@ -20,3 +20,11 @@ Route::get('/', function () {
 Route::get('/admin', function () {
     return view('/Publicitaria/Administrativa/index');
 })->name('inicioAdmin');
+
+Route::get('/admin_teatroBarcos', function () {
+    return view('/Publicitaria/Administrativa/teatroBarcos');
+})->name('vistaTeatroBarcos');
+
+Route::get('/admin_servicios', function () {
+    return view('/Publicitaria/Administrativa/servicios');
+})->name('vistaServicios');

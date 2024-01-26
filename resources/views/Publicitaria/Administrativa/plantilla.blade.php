@@ -46,7 +46,8 @@
 
     <!-- CSS Files -->
     <link id="pagestyle" href="./assets/css/material-dashboard.css?v=3.1.0" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
 
 
@@ -83,7 +84,7 @@
             <ul class="navbar-nav">
 
                 <li class="nav-item">
-                    <a class="nav-link text-white " href="{{route('inicioAdmin')}}">
+                    <a class="nav-link text-white " href="{{ route('inicioAdmin') }}">
 
                         <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="material-icons opacity-10">dashboard</i>
@@ -94,7 +95,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link text-white " href="{{route('inicioAdmin')}}">
+                    <a class="nav-link text-white " href="{{ route('vistaTeatroBarcos') }}">
 
                         <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="material-icons opacity-10">dashboard</i>
@@ -105,7 +106,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link text-white " href="{{route('inicioAdmin')}}">
+                    <a class="nav-link text-white " href="{{ route('inicioAdmin') }}">
 
                         <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="material-icons opacity-10">dashboard</i>
@@ -116,7 +117,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link text-white " href="{{route('inicioAdmin')}}">
+                    <a class="nav-link text-white " href="{{ route('vistaServicios') }}">
 
                         <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="material-icons opacity-10">dashboard</i>
@@ -126,11 +127,11 @@
                     </a>
                 </li>
 
-            <li class="nav-item mt-3">
+                <li class="nav-item mt-3">
                     <h6 class="ps-4 ms-2 text-uppercase text-xs text-white font-weight-bolder opacity-8">Account pages
                     </h6>
                 </li>
-{{--     
+                {{--     
                 <li class="nav-item">
                     <a class="nav-link text-white " href="./profile.html">
 
@@ -207,57 +208,108 @@
                                 </div>
                             </a>
                         </li>
-                        <li class="nav-item px-3 d-flex align-items-center">
-                            <a href="javascript:;" class="nav-link text-body p-0">
-                                <i class="fa fa-cog fixed-plugin-button-nav cursor-pointer"></i>
-                            </a>
+                        <li class="nav-item px-3 mt-3 d-flex align-items-center">
+                            <button type="button" class="btn btn-success" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal">
+                                Editar inicio
+                            </button>
                         </li>
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="card-header p-3 pt-2">
+
+                                            <div id="formulario">
+                                                <form>
+                                                    <label for="nombre">Titulo:</label>
+                                                    <input class="form-control" type="text" name="nombre"
+                                                        placeholder="Ingrese su nombre">
+
+                                                    <label for="email">Imagen -Logo-</label>
+                                                    <input class="form-control" type="file" id="imageInput"
+                                                        accept="image/*" onchange="previewImage(event, 'preview-containerLogo', 'preview-imageLogo')">
+
+                                                    <div id="preview-containerLogo">
+                                                        <img id="preview-imageLogo" src="#"
+                                                            alt="Vista previa de la imagen">
+                                                    </div>
+
+                                                    <label for="email">Imagen -Fondo-</label>
+                                                    <input class="form-control" type="file" id="imageInput"
+                                                        accept="image/*" onchange="previewImage(event, 'preview-containerFondo', 'preview-imageFondo')">
+
+                                                    <div id="preview-containerFondo">
+                                                        <img id="preview-imageFondo" src="#"
+                                                            alt="Vista previa de la imagen">
+                                                    </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Close</button>
+                                        <button ype="submit" class="btn btn-success">Guardar cambios</button>
+                                            </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </ul>
                 </div>
             </div>
         </nav>
-        
 
-@yield('contenido')
 
-                
+        @yield('contenido')
+
+
         <footer class="footer py-4  ">
-                <div class="container-fluid">
-                    <div class="row align-items-center justify-content-lg-between">
-                        <div class="col-lg-6 mb-lg-0 mb-4">
-                            <div class="copyright text-center text-sm text-muted text-lg-start">
-                                ©
-                                <script>
-                                    document.write(new Date().getFullYear())
-                                </script>,
-                                made with <i class="fa fa-heart"></i> by
-                                <a href="https://www.creative-tim.com" class="font-weight-bold"
-                                    target="_blank">Creative Tim</a>
-                                for a better web.
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <ul class="nav nav-footer justify-content-center justify-content-lg-end">
-                                <li class="nav-item">
-                                    <a href="https://www.creative-tim.com" class="nav-link text-muted"
-                                        target="_blank">Creative Tim</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="https://www.creative-tim.com/presentation" class="nav-link text-muted"
-                                        target="_blank">About Us</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="https://www.creative-tim.com/blog" class="nav-link text-muted"
-                                        target="_blank">Blog</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="https://www.creative-tim.com/license" class="nav-link pe-0 text-muted"
-                                        target="_blank">License</a>
-                                </li>
-                            </ul>
+            <div class="container-fluid">
+                <div class="row align-items-center justify-content-lg-between">
+                    <div class="col-lg-6 mb-lg-0 mb-4">
+                        <div class="copyright text-center text-sm text-muted text-lg-start">
+                            ©
+                            <script>
+                                document.write(new Date().getFullYear())
+                            </script>,
+                            made with <i class="fa fa-heart"></i> by
+                            <a href="https://www.creative-tim.com" class="font-weight-bold" target="_blank">Creative
+                                Tim</a>
+                            for a better web.
                         </div>
                     </div>
+                    <div class="col-lg-6">
+                        <ul class="nav nav-footer justify-content-center justify-content-lg-end">
+                            <li class="nav-item">
+                                <a href="https://www.creative-tim.com" class="nav-link text-muted"
+                                    target="_blank">Creative Tim</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://www.creative-tim.com/presentation" class="nav-link text-muted"
+                                    target="_blank">About Us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://www.creative-tim.com/blog" class="nav-link text-muted"
+                                    target="_blank">Blog</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://www.creative-tim.com/license" class="nav-link pe-0 text-muted"
+                                    target="_blank">License</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-            </footer>
+            </div>
+        </footer>
 
         </div>
 
@@ -376,17 +428,19 @@
     </div>
 
     <script>
-        function previewImage(event) {
+        function previewImage(event, pImage, pContainer) {
+            console.log(pImage);
+            console.log(pContainer);
             var input = event.target;
-            var previewImage = document.getElementById('preview-image');
-            var previewContainer = document.getElementById('preview-container');
+            var previewImage = document.getElementById(pImage);
+            var previewContainer = document.getElementById(pContainer);
 
             var file = input.files[0];
 
             if (file) {
                 var reader = new FileReader();
 
-                reader.onload = function (e) {
+                reader.onload = function(e) {
                     previewImage.src = e.target.result;
                     previewContainer.style.display = 'block';
                 };
