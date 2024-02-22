@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('/Publicitaria/Landing/index');
+    return view('/Publicitaria/Landing/agrupaciones');
 });
 
 Route::get('/admin', function () {
