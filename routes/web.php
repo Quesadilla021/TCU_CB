@@ -17,6 +17,8 @@ Route::get('/', function () {
     return view('/Publicitaria/Landing/index');
 });
 
+
+
 Route::get('/admin', function () {
     return view('/Publicitaria/Administrativa/index');
 })->name('inicioAdmin');
