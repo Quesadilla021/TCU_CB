@@ -54,7 +54,7 @@
                 </div>
                 <div class="row">
 
-                        <!-- Agrupacion Teatro-->
+                        <!-- Agrupacion Roreach-->
                     <div class="col-lg-4 col-sm-6 mb-4">
                         <div class="portfolio-item">
                             <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
@@ -64,26 +64,12 @@
                                 <img class="img-fluid" src="assets/img/portfolio/1.jpg" alt="..." />
                             </a>
                             <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading"><a href="">Teatro Barcos</a></div>
+                                <div class="portfolio-caption-heading"><a href="{{route('agrupaciones')}}">Teatro Barcos</a></div>
                             </div>
                         </div>
                     </div>
-                        <!-- Fin Agrupacion Teatro-->
-                        <!-- Agrupacion Danza-->
-                    <div class="col-lg-4 col-sm-6 mb-4">
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content">Logo</div>
-                                </div>
-                                <img class="img-fluid" src="assets/img/portfolio/2.jpg" alt="..." />
-                            </a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading"><a href="">Danza Contemporanea</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Fin Agrupacion Danza-->
+                        <!-- Fin Agrupacion Foreach-->
+                    
                     
                 </div>
             </div>
@@ -125,10 +111,10 @@
                         </div>
                     </div>
                 </section>
-                <!-- FIN Servicios---------------------------------------------------------------------->
+                <!-- FIN Servicios-->
 
 
-        <!-- Historia---------------------------------------------------------------------->
+        <!-- Historia-->
         <section class="page-section" id="about">
             <div class="container">
                 <div class="text-center">
@@ -192,7 +178,7 @@
         </section>
         <!-- FIN Historia---------------------------------------------------------------------->
 
-        <!-- Team-->
+        <!-- Team TalVez-->
         <section class="page-section bg-light" id="team">
             <div class="container">
                 <div class="text-center">
@@ -236,6 +222,7 @@
                 </div>
             </div>
         </section>
+
         <!-- Contact-->
         <section class="page-section" id="contact">
             <div class="container">
@@ -331,9 +318,9 @@
                                             <strong>¿Quieres saber mas sobre nosotros?</strong>
                                         </li>
                                     </ul>
-                                    <button class="btn btn-primary btn-xl" data-bs-dismiss="modal" type="button">
-                                       Ver mas
-                                    </button>
+                                    <a href="{{route('agrupaciones')}}" class="btn btn-primary btn-xl">
+                                       Saber mas
+                                    </a>
                                 </div>
                             </div>
                         </div>
