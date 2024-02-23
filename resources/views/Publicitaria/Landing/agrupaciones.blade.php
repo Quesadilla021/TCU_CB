@@ -71,15 +71,6 @@
                 <div class="col-7">
 
                     {{-- Foreach imagenes de esa publicacion --}}
-
-                    {{-- <a href="/imgPruebas/H1.png" class="lightboxed">
-                        <img src="/imgPruebas/H1.png" alt="image" data-caption="Caption 1">
-                    </a>
-
-                    <a href="/imgPruebas/iconoTB.jpg" class="lightboxed">
-                        <img src="/imgPruebas/iconoTB.jpg" alt="image" data-caption="Caption 2">
-                    </a> --}}
-
                     <img class="lightboxed" rel="group1" src="/imgPruebas/H1.png" data-link="/imgPruebas/H1.png"
                         alt="Image Alt 1" />
                     <img class="lightboxed" rel="group1" src="/imgPruebas/iconoTB.jpg"
