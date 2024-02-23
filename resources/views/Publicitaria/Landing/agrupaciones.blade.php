@@ -63,38 +63,59 @@
         </div>
     </section>
 
-    <section class="bg-light">
 
+
+    <section class="bg-light">
         {{-- Foreach por cada publicacion --}}
         <div class="container">
             <div class="row">
-                <div class="col-7">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header text-center">
+                            <h3 class="mt-1">Titulo y fecha</h3>
+                        </div>
+                        <div class="card-body">
+                            <blockquote class="blockquote mb-0">
+                                <p class="card-text">Descripcion: Lorem ipsum dolor, sit amet consectetur adipisicing
+                                    elit.
+                                    Corporis voluptate explicabo enim, velit rerum repellat corrupti distinctio
+                                    iste harum natus facere necessitatibus molestias similique et voluptas tempore!
+                                    Consectetur, neque magnam!</p>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-12">
+                                        {{-- Foreach imagenes de esa publicacion --}}
+                                        <img class="lightboxed imagenes" rel="group1" src="/imgPruebas/H1.png"
+                                            data-link="/imgPruebas/H1.png" alt="Image Alt 2" />
+                                        <img class="lightboxed imagenes" rel="group1" src="/imgPruebas/iconoTB.jpg"
+                                            data-link="/imgPruebas/iconoTB.jpg" alt="Image Alt 2" />
+                                        <img class="lightboxed imagenes" rel="group1" src="/imgPruebas/2.png"
+                                            data-link="/imgPruebas/2.png" alt="Image Alt 2" />
+                                        <img class="lightboxed imagenes" rel="group1" src="/imgPruebas/H1.png"
+                                            data-link="/imgPruebas/H1.png" alt="Image Alt 2" />
+                                        <img class="lightboxed imagenes" rel="group1" src="/imgPruebas/iconoTB.jpg"
+                                            data-link="/imgPruebas/iconoTB.jpg" alt="Image Alt 2" />
+                                        <img class="lightboxed imagenes" rel="group1" src="/imgPruebas/2.png"
+                                            data-link="/imgPruebas/2.png" alt="Image Alt 2" />
+                                        {{-- Colcoar video --}}
+                                        {{-- <video class="lightboxed" src="/imgPruebas/Historia de instagram.mp4"
+                                            data-link="/imgPruebas/Historia de instagram.mp4" data-width="560" data-height="315"></video> --}}
+                                        {{-- Fin del foreach imagenes de esa publicacion --}}
 
-                    {{-- Foreach imagenes de esa publicacion --}}
-                    <img class="lightboxed" rel="group1" src="/imgPruebas/H1.png" data-link="/imgPruebas/H1.png"
-                        alt="Image Alt 1" />
-                    <img class="lightboxed" rel="group1" src="/imgPruebas/iconoTB.jpg"
-                        data-link="/imgPruebas/iconoTB.jpg" alt="Image Alt 2" />
-                        {{-- Colcoar video --}}
-                    <img class="lightboxed" rel="group3" src="/imgPruebas/iconoTB.jpg"
-                        data-link="http://www.youtube.com/embed/Rix_3b9ThLI?list=PL8zglt-LDl-iwBHEl3Pw1IhWGp9cfgMrc"
-                        data-width="560" data-height="315" />
+                                    </div>
+                                </div>
+                            </blockquote>
+                        </div>
+                    </div>
 
-                    {{-- Fin del foreach imagenes de esa publicacion --}}
-
-                </div>
-                <div class="col-5">
-                    <h1>titulo y fecha</h1>
-                    <h5>Descripcion: Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                        Corporis voluptate explicabo enim, velit rerum repellat corrupti distinctio
-                        iste harum natus facere necessitatibus molestias similique et voluptas tempore!
-                        Consectetur, neque magnam!</h5>
+                    <h5></h5>
                 </div>
             </div>
+
         </div>
         {{-- Final de foreach por cada publicacion --}}
-    </section>
 
+    </section>
     <!-- Footer-->
     <footer class="footer py-4">
         <div class="container">
