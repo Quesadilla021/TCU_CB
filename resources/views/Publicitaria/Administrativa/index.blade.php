@@ -5,8 +5,8 @@
 
     <div class="container-fluid py-4">
 
-        <div class="row">
-            <div class="col-lg-7 position-relative z-index-2">
+        <div class="row mb-4">
+            <div class="col-lg-12 position-relative z-index-2">
                 <div class="card card-plain mb-4">
                     <div class="card-body p-3">
                         <div class="row">
@@ -38,42 +38,43 @@
                                 <label for="nombre">Nombre:</label>
                                 <input class="form-control" type="text" name="nombre" placeholder="Ingrese su nombre">
 
-                                <label for="apellido">Descripcion:</label>
-                                <input class="form-control" type="text" name="apellido"
-                                    placeholder="Ingrese una descripcion">
+                                <div class="mt-3">
+                                    <label for="apellido">Descripcion:</label>
+                                    <input class="form-control" type="text" name="apellido"
+                                        placeholder="Ingrese una descripcion">
+                                </div>
 
-                                <label for="email">Imagen -Logo-</label>
-                                <input class="form-control" type="file" id="imageInput"
-                                accept="image/*" onchange="previewImage(event, 'image-Logo', 'conateiner-Logo')">
+                                <div class="mt-3">
+                                    <label for="email">Imagen -Logo-</label>
+                                    <input class="form-control" type="file" id="imageInput" accept="image/*"
+                                        onchange="previewImage(event, 'image-Logo', 'conateiner-Logo')">
+                                </div>
 
                                 <div id="conateiner-Logo">
-                                    <img id="image-Logo" src="#"
-                                        alt="Vista previa de la imagen">
+                                    <img id="image-Logo" src="#" alt="Vista previa de la imagen">
                                 </div>
 
-                                <label for="email">Imagen -Fondo-</label>
-                                <input class="form-control" type="file" id="imageInput"
-                                accept="image/*" onchange="previewImage(event, 'image-Logo', 'conateiner-Logo')">
+                                <div class="mt-3">
+                                    <label for="email">Imagen -Fondo-</label>
+                                    <input class="form-control" type="file" id="imageInput" accept="image/*"
+                                        onchange="previewImage(event, 'image-Logo', 'conateiner-Logo')">
+                                </div>
 
                                 <div id="conateiner-Fondo">
-                                    <img id="image-Fondo" src="#"
-                                        alt="Vista previa de la imagen">
+                                    <img id="image-Fondo" src="#" alt="Vista previa de la imagen">
                                 </div>
 
-                                <button type="button" class="btn btn-success">Agregar</button>
+                                <div class="d-flex justify-content-center mt-4">
+                                    <button type="button" class="btn btn-success">Agregar</button>
+                                </div>
                             </form>
                         </div>
-
-                    </div>
-                    <hr class="dark horizontal my-0">
-                    <div class="card-footer p-3">
-                        <p class="mb-0"><span class="text-success text-sm font-weight-bolder">+55% </span>than last week
-                        </p>
                     </div>
                 </div>
             </div>
 
 
+            {{-- Tabla --}}
             <div class="col-6">
 
                 <div class="container-fluid">
@@ -92,37 +93,30 @@
                                             <thead>
                                                 <tr>
                                                     <th
-                                                        class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                                        Nombre</th>
+                                                        class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                                        ID</th>
                                                     <th
-                                                        class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                                        Descripcion</th>
+                                                        class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                                        Nombre</th>
                                                     <th
                                                         class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                                         Acciones</th>
-                                                    <th class="text-secondary opacity-7"></th>
+
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <tr>
                                                     <td>
-                                                        <div class="d-flex px-2 py-1">
-                                                            <div>
-                                                                <img src="../assets/img/team-2.jpg"
-                                                                    class="avatar avatar-sm me-3 border-radius-lg"
-                                                                    alt="user1">
-                                                            </div>
-                                                            <div class="d-flex flex-column justify-content-center">
-                                                                <h6 class="mb-0 text-sm">John Michael</h6>
-                                                                <p class="text-xs text-secondary mb-0">john@creative-tim.com
-                                                                </p>
-                                                            </div>
+                                                        <div class="align-middle text-center text-sm">
+                                                            <h6 class="mb-0 text-sm">#</h6>
                                                         </div>
                                                     </td>
                                                     <td>
-                                                        <p class="text-xs font-weight-bold mb-0">Manager</p>
-                                                        <p class="text-xs text-secondary mb-0">Organization</p>
+                                                        <div class="align-middle text-center text-sm">
+                                                            <h6 class="mb-0 text-sm">Teatro Barcos</h6>
+                                                        </div>
                                                     </td>
+
                                                     <td class="align-middle text-center text-sm">
                                                         <span class="badge badge-sm bg-gradient-success">Online</span>
                                                     </td>
