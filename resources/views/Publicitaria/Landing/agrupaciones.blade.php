@@ -18,7 +18,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet" />
     <link href="css/styleK.css" rel="stylesheet" />
-    <link href="dist/css/glightbox.css" rel="stylesheet">
+
+    {{-- Lightbox --}}
+    <link rel="stylesheet" href="lightboxed/lightboxed.css">
+
 </head>
 
 <body id="page-top">
@@ -69,13 +72,23 @@
 
                     {{-- Foreach imagenes de esa publicacion --}}
 
-                    <a href="/imgPruebas/H1.png" class="glightbox">
-                        <img src="/imgPruebas/H1.png" alt="image">
+                    {{-- <a href="/imgPruebas/H1.png" class="lightboxed">
+                        <img src="/imgPruebas/H1.png" alt="image" data-caption="Caption 1">
                     </a>
-                    
-                    <a href="/imgPruebas/iconoTB.jpg" class="glightbox">
-                        <img src="/imgPruebas/iconoTB.jpg" alt="image">
-                    </a>
+
+                    <a href="/imgPruebas/iconoTB.jpg" class="lightboxed">
+                        <img src="/imgPruebas/iconoTB.jpg" alt="image" data-caption="Caption 2">
+                    </a> --}}
+
+                    <img class="lightboxed" rel="group1" src="/imgPruebas/H1.png" data-link="/imgPruebas/H1.png"
+                        alt="Image Alt 1" />
+                    <img class="lightboxed" rel="group1" src="/imgPruebas/iconoTB.jpg"
+                        data-link="/imgPruebas/iconoTB.jpg" alt="Image Alt 2" />
+                        {{-- Colcoar video --}}
+                    <img class="lightboxed" rel="group3" src="/imgPruebas/iconoTB.jpg"
+                        data-link="http://www.youtube.com/embed/Rix_3b9ThLI?list=PL8zglt-LDl-iwBHEl3Pw1IhWGp9cfgMrc"
+                        data-width="560" data-height="315" />
+
                     {{-- Fin del foreach imagenes de esa publicacion --}}
 
                 </div>
@@ -115,13 +128,10 @@
     <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
     <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
     <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
-    <script src="dist/js/glightbox.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
-    <script>
-        var myLightbox = GLightbox({
-            'selector': 'glightbox'
-        });
-    </script>
+    {{-- Lightbox --}}
+    <script src="lightboxed/lightboxed.js"></script>
 
 </body>
 
