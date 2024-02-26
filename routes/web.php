@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\InicioController;
+use App\Models\Inicio;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,10 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('/Publicitaria/Landing/index');
-});
+Route::get('/', [InicioController::class, 'get_inicio'])->name('inicio');
 
+Route::put('/updateInicio', [InicioController::class, 'updateInicio'])->name('actualizarInicio');
 
 
 Route::get('/admin', function () {

@@ -226,14 +226,16 @@
                                         <div class="card-header p-3 pt-2">
 
                                             <div id="formulario">
-                                                <form>
+                                                <form action="{{route('actualizarInicio')}}" method="POST" enctype="multipart/form-data">
+                                                    @csrf
+                                                    @method('PUT')
                                                     <label for="nombre">Titulo:</label>
-                                                    <input class="form-control" type="text" name="nombre"
+                                                    <input class="form-control" type="text" name="titulo"
                                                         placeholder="Ingrese su nombre">
 
                                                     <label for="email">Imagen -Logo-</label>
-                                                    <input class="form-control" type="file" id="imageInput"
-                                                        accept="image/*" onchange="previewImage(event, 'preview-containerLogo', 'preview-imageLogo')">
+                                                    <input class="form-control" type="file" name="imagenLogo"
+                                                       {{--  accept="image/*" --}} {{-- onchange="previewImage(event, 'preview-containerLogo', 'preview-imageLogo')"--}}>
 
                                                     <div id="preview-containerLogo">
                                                         <img id="preview-imageLogo" src="#"
@@ -241,8 +243,8 @@
                                                     </div>
 
                                                     <label for="email">Imagen -Fondo-</label>
-                                                    <input class="form-control" type="file" id="imageInput"
-                                                        accept="image/*" onchange="previewImage(event, 'preview-containerFondo', 'preview-imageFondo')">
+                                                    <input class="form-control" type="file" name="imagenFondo"
+                                                       {{--  accept="image/*" --}} {{-- onchange="previewImage(event, 'preview-containerFondo', 'preview-imageFondo')"--}}>
 
                                                     <div id="preview-containerFondo">
                                                         <img id="preview-imageFondo" src="#"
@@ -255,7 +257,7 @@
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
                                             data-bs-dismiss="modal">Close</button>
-                                        <button ype="submit" class="btn btn-success">Guardar cambios</button>
+                                        <button type="submit" class="btn btn-success">Guardar cambios</button>
                                             </form>
                                     </div>
                                 </div>
