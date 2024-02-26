@@ -21,7 +21,7 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
             <div class="container">
-                <a class="navbar-brand" href="#page-top"><img src="assets/img/navbar-logo.svg" alt="..." /></a>
+                <a class="navbar-brand" href="#page-top"><img src="{{$inicio->logo}}" style="height: 4rem; width: 8rem;" alt="..." /></a> {{-- Logo Inicio --}}
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars ms-1"></i>
@@ -38,9 +38,9 @@
             </div>
         </nav>
         <!-- Masthead-->
-        <header class="masthead">
+        <header class="masthead" style="background-image: url('{{$inicio->fondo}}');"> {{-- Fondo Inicio --}}
             <div class="container">
-                <div class="masthead-heading text-uppercase">Compañia Barcos</div>
+                <div class="masthead-heading text-uppercase">{{$inicio->titulo}}</div> {{-- Titulo Inicio --}}
                 <a class="btn btn-primary btn-xl text-uppercase" href="#services">Sobre Nosotros</a>
             </div>
         </header>

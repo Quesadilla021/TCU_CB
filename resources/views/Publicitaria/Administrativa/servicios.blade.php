@@ -12,7 +12,7 @@
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="d-flex flex-column h-100">
-                                    <h2 class="font-weight-bolder mb-0">Agrupaciones</h2>
+                                    <h2 class="font-weight-bolder mb-0">Servicios</h2>
                                 </div>
                             </div>
                         </div>
@@ -35,6 +35,7 @@
 
                         <div id="formulario">
                             <form>
+
                                 <label for="nombre">Nombre:</label>
                                 <input class="form-control" type="text" name="nombre" placeholder="Ingrese su nombre">
 
@@ -44,31 +45,23 @@
                                         placeholder="Ingrese una descripcion">
                                 </div>
 
-                                <div class="mt-3">
-                                    <label for="email">Imagen -Logo-</label>
-                                    <input class="form-control" type="file" id="imageInput" accept="image/*"
-                                        onchange="previewImage(event, 'image-Logo', 'conateiner-Logo')">
+                                <div class="mt-3 mb-2">
+                                <label for="email">Imagen</label>
+                                <input class="form-control" type="file" id="imageInput" accept="image/*"
+                                    onchange="previewImage(event, 'image', 'conateiner')">
                                 </div>
 
-                                <div id="conateiner-Logo">
-                                    <img id="image-Logo" src="#" alt="Vista previa de la imagen">
+                                <div id="conateiner">
+                                    <img id="image" src="#" alt="Vista previa de la imagen">
                                 </div>
 
-                                <div class="mt-3">
-                                    <label for="email">Imagen -Fondo-</label>
-                                    <input class="form-control" type="file" id="imageInput" accept="image/*"
-                                        onchange="previewImage(event, 'image-Logo', 'conateiner-Logo')">
-                                </div>
-
-                                <div id="conateiner-Fondo">
-                                    <img id="image-Fondo" src="#" alt="Vista previa de la imagen">
-                                </div>
 
                                 <div class="d-flex justify-content-center mt-4">
                                     <button type="button" class="btn btn-success">Agregar</button>
                                 </div>
                             </form>
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -83,7 +76,7 @@
                             <div class="card">
                                 <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
                                     <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
-                                        <h6 class="text-white text-capitalize ps-3">Agrupaciones creadas</h6>
+                                        <h6 class="text-white text-capitalize ps-3">Servicios creados</h6>
                                     </div>
                                 </div>
 
@@ -101,7 +94,7 @@
                                                     <th
                                                         class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                                         Acciones</th>
-
+                                                    
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -112,11 +105,11 @@
                                                         </div>
                                                     </td>
                                                     <td>
-                                                        <div class="align-middle text-center text-sm">
-                                                            <h6 class="mb-0 text-sm">Teatro Barcos</h6>
-                                                        </div>
+                                                            <div class="align-middle text-center text-sm">
+                                                                <h6 class="mb-0 text-sm">Animaciones</h6>
+                                                            </div>
                                                     </td>
-
+                                                    
                                                     <td class="align-middle text-center text-sm">
                                                         <span class="badge badge-sm bg-gradient-success">Online</span>
                                                     </td>
@@ -134,3 +127,6 @@
             </div>
         </div>
     @endsection
+
+
+    s

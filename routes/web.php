@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\InicioController;
+use App\Models\Inicio;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,3 +22,19 @@ Route::get('/', function () {
 Route::get('/teatrobarcos', function () {
     return view('/Publicitaria/Landing/agrupaciones');
 })->name('agrupaciones');
+Route::get('/', [InicioController::class, 'get_inicio'])->name('inicio');
+
+Route::put('/updateInicio', [InicioController::class, 'updateInicio'])->name('actualizarInicio');
+
+
+Route::get('/admin', function () {
+    return view('/Publicitaria/Administrativa/index');
+})->name('inicioAdmin');
+
+Route::get('/admin_teatroBarcos', function () {
+    return view('/Publicitaria/Administrativa/teatroBarcos');
+})->name('vistaTeatroBarcos');
+
+Route::get('/admin_servicios', function () {
+    return view('/Publicitaria/Administrativa/servicios');
+})->name('vistaServicios');
