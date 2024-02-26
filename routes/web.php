@@ -15,13 +15,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('/Publicitaria/Landing/index');
-})->name('index');
+// Route::get('/', function () {
+//     return view('/Publicitaria/Landing/index');
+// })->name('index');
 
 Route::get('/teatrobarcos', function () {
     return view('/Publicitaria/Landing/agrupaciones');
 })->name('agrupaciones');
+
 Route::get('/', [InicioController::class, 'get_inicio'])->name('inicio');
 
 Route::put('/updateInicio', [InicioController::class, 'updateInicio'])->name('actualizarInicio');
