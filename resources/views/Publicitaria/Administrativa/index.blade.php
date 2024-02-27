@@ -37,7 +37,7 @@
 
                         <div id="formulario">
                             {{-- Agregar Agrupacion --}}
-                            <form action="{{route('admin.store')}}" method="POST">
+                            <form action="{{ route('admin.store') }}" method="POST">
                                 @csrf
                                 <label for="nombre">Nombre:</label>
                                 <input class="form-control" type="text" name="nombre" placeholder="Ingrese su nombre">
@@ -50,8 +50,8 @@
 
                                 <div class="mt-3">
                                     <label for="email">Imagen -Logo-</label>
-                                    <input class="form-control" type="file" id="imageInput" accept="image/*"
-                                        onchange="previewImage(event, 'image-Logo', 'conateiner-Logo')">
+                                    <input class="form-control" name="logo" type="file" id="imageInput"
+                                        accept="image/*" onchange="previewImage(event, 'image-Logo', 'conateiner-Logo')">
                                 </div>
 
                                 <div id="conateiner-Logo">
@@ -60,8 +60,8 @@
 
                                 <div class="mt-3">
                                     <label for="email">Imagen -Fondo-</label>
-                                    <input class="form-control" type="file" id="imageInput" accept="image/*"
-                                        onchange="previewImage(event, 'image-Logo', 'conateiner-Logo')">
+                                    <input class="form-control" name="fondo" type="file" id="imageInput"
+                                        accept="image/*" onchange="previewImage(event, 'image-Logo', 'conateiner-Logo')">
                                 </div>
 
                                 <div id="conateiner-Fondo">
@@ -79,7 +79,7 @@
             </div>
 
 
-            {{-- Tabla Cargar Datos--}}
+            {{-- Tabla Cargar Datos --}}
             <div class="col-6">
 
                 <div class="container-fluid">
@@ -110,22 +110,30 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
-                                                    <td>
-                                                        <div class="align-middle text-center text-sm">
-                                                            <h6 class="mb-0 text-sm">#</h6>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="align-middle text-center text-sm">
-                                                            <h6 class="mb-0 text-sm">Teatro Barcos</h6>
-                                                        </div>
-                                                    </td>
+                                                @foreach ($agrupaciones as $item)
+                                                    <tr>
+                                                        <td>
+                                                            <div class="align-middle text-center text-sm">
+                                                                <h6 class="mb-0 text-sm">{{$item->id_agrupacion}}</h6>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="align-middle text-center text-sm">
+                                                                <h6 class="mb-0 text-sm">{{$item->nombre}}</h6>
+                                                            </div>
+                                                        </td>
 
-                                                    <td class="align-middle text-center text-sm">
-                                                        <span class="badge badge-sm bg-gradient-success">Online</span>
-                                                    </td>
-                                                </tr>
+                                                        <td class="align-middle text-center text-sm">
+
+                                                            <button class="btn btn-outline-warning"><i class="fa-regular fa-pen-to-square"></i></button>
+
+                                                            <button class="btn btn-outline-primary"><i class="fa-regular fa-eye"></i></button>
+
+                                                            <button class="btn btn-outline-danger"><i class="fa-regular fa-trash-can"></i></button>
+                                                            
+                                                        </td>
+                                                    </tr>
+                                                @endforeach
 
                                             </tbody>
                                         </table>
