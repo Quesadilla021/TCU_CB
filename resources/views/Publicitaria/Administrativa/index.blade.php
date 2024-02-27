@@ -25,16 +25,19 @@
 
             <div class="col-6">
 
+
+                @csrf
                 <div class="card">
                     <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
                         <div class="bg-gradient-success shadow-primary border-radius-lg pt-4 pb-3">
-                            <h6 class="text-white text-capitalize ps-3">Agregar nueva</h6>
+                            <h6 class="text-white text-capitalize ps-3">Agregar nueva agrupación</h6>
                         </div>
                     </div>
                     <div class="card-header p-3 pt-2">
 
                         <div id="formulario">
-                            <form>
+                            {{-- Agregar Agrupacion --}}
+                            <form action="" method="POST">
                                 <label for="nombre">Nombre:</label>
                                 <input class="form-control" type="text" name="nombre" placeholder="Ingrese su nombre">
 
@@ -71,10 +74,11 @@
                         </div>
                     </div>
                 </div>
+
             </div>
 
 
-            {{-- Tabla --}}
+            {{-- Tabla Cargar Datos--}}
             <div class="col-6">
 
                 <div class="container-fluid">

@@ -19,14 +19,24 @@ use Illuminate\Support\Facades\Route;
 //     return view('/Publicitaria/Landing/index');
 // })->name('index');
 
+// Pagina Web
 Route::get('/teatrobarcos', function () {
     return view('/Publicitaria/Landing/agrupaciones');
 })->name('agrupaciones');
 
 Route::get('/', [InicioController::class, 'get_inicio'])->name('inicio');
 
-Route::put('/updateInicio', [InicioController::class, 'updateInicio'])->name('actualizarInicio');
 
+
+// Admin
+
+// Iniciar Sesion
+// Route::get('/iniciarsesion', function () {
+//     return view('/Publicitaria/Administrativa/inicioSesion');
+// })->name('iniciarsesion');
+Route::get('/iniciarsesion', [InicioController::class])->name('iniciarsesion');
+
+Route::put('/updateInicio', [InicioController::class, 'updateInicio'])->name('actualizarInicio');
 
 Route::get('/admin', function () {
     return view('/Publicitaria/Administrativa/index');
