@@ -85,7 +85,7 @@
             <ul class="navbar-nav">
 
                 <li class="nav-item">
-                    <a class="nav-link text-white " href="{{ route('inicioAdmin') }}">
+                    <a class="nav-link text-white " href="{{ route('admin.index') }}">
 
                         <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="material-icons opacity-10">dashboard</i>
@@ -95,6 +95,8 @@
                     </a>
                 </li>
 
+
+                {{-- Foreach de las agrupaciones --}}
                 <li class="nav-item">
                     <a class="nav-link text-white " href="{{ route('vistaTeatroBarcos') }}">
 
@@ -106,16 +108,7 @@
                     </a>
                 </li>
 
-                <li class="nav-item">
-                    <a class="nav-link text-white " href="{{ route('inicioAdmin') }}">
-
-                        <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                            <i class="material-icons opacity-10">dashboard</i>
-                        </div>
-
-                        <span class="nav-link-text ms-1">Danza</span>
-                    </a>
-                </li>
+                
 
                 <li class="nav-item">
                     <a class="nav-link text-white " href="{{ route('vistaServicios') }}">

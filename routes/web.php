@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\AgrupacionController;
 use App\Http\Controllers\InicioController;
+use App\Http\Controllers\inicioSesionController;
 use App\Models\Inicio;
 use Illuminate\Support\Facades\Route;
 
@@ -29,18 +31,15 @@ Route::get('/', [InicioController::class, 'get_inicio'])->name('inicio');
 
 
 // Admin
-
 // Iniciar Sesion
-// Route::get('/iniciarsesion', function () {
-//     return view('/Publicitaria/Administrativa/inicioSesion');
-// })->name('iniciarsesion');
-Route::get('/iniciarsesion', [InicioController::class])->name('iniciarsesion');
+Route::get('/login',[inicioSesionController::class, 'index'])->name('login');
+Route::get('/iniciarsesion', [inicioSesionController::class, 'iniciarsesion'])->name('iniciarsesion');
+
+// Carga la pagina de Admin
+Route::resource('/admin', AgrupacionController::class);
+
 
 Route::put('/updateInicio', [InicioController::class, 'updateInicio'])->name('actualizarInicio');
-
-Route::get('/admin', function () {
-    return view('/Publicitaria/Administrativa/index');
-})->name('inicioAdmin');
 
 Route::get('/admin_teatroBarcos', function () {
     return view('/Publicitaria/Administrativa/teatroBarcos');

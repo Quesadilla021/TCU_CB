@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Agrupacion;
+use App\Models\Inicio;
 use Illuminate\Http\Request;
 
 class AgrupacionController extends Controller
@@ -12,7 +13,8 @@ class AgrupacionController extends Controller
      */
     public function index()
     {
-        //
+        $agrupaciones = Agrupacion::all();  
+        return view('Publicitaria.Administrativa.index', compact('agrupaciones','inicio'));
     }
 
     /**
@@ -30,6 +32,8 @@ class AgrupacionController extends Controller
     {
         $agrupacion = new Agrupacion();
         $agrupacion->nombre = $request->nombre;
+        $agrupacion->descripcion = $request->descripcion;
+        
         
     }
 

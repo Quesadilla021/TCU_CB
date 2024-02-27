@@ -37,7 +37,8 @@
 
                         <div id="formulario">
                             {{-- Agregar Agrupacion --}}
-                            <form action="" method="POST">
+                            <form action="{{route('admin.store')}}" method="POST">
+                                @csrf
                                 <label for="nombre">Nombre:</label>
                                 <input class="form-control" type="text" name="nombre" placeholder="Ingrese su nombre">
 
@@ -68,7 +69,7 @@
                                 </div>
 
                                 <div class="d-flex justify-content-center mt-4">
-                                    <button type="button" class="btn btn-success">Agregar</button>
+                                    <button class="btn btn-success">Agregar</button>
                                 </div>
                             </form>
                         </div>

@@ -13,14 +13,16 @@ class inicioSesionController extends Controller
      */
     public function index()
     {
-        
+        return view('Publicitaria.Administrativa.inicioSesion');
     }
 
     public function iniciarsesion(Request $request){
-        $usuario = InicioSesion::where('email', $request->correo)->where('contraseña', $request->contraseña);
+        
+        $usuario = InicioSesion::where('email', $request->correo)->where('contrasena', $request->contrasena)->first();
+
         if ($usuario) {
             // Auth::login($usuario);
-            return redirect()->route('iniciarsesion');
+            return redirect()->route('admin.index');
         }else {
             return back()->with('mensaje', 'Datos incorrectos');
         }

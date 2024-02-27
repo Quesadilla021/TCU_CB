@@ -20,7 +20,7 @@
                 </div>
                 <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
                     {{-- Pedir ayuda --}}
-                    <form action="{{ Route('iniciarsesion')}}" method="">
+                    <form action="{{route('iniciarsesion')}}" method="get">
                         @csrf
                         <div class="text-center">
                             <H3>Iniciar Sesion</H3>
@@ -32,13 +32,13 @@
 
                         <!-- Email input -->
                         <div class="form-outline mb-4">
-                            <label class="form-label" for="form3Example3">Correo Electronico:</label>
-                            <input type="email" name="correo" class="form-control form-control-lg"/>
+                            <label class="form-label" >Correo Electronico:</label>
+                            <input  name="correo" class="form-control form-control-lg"/>
                         </div>
 
                         <!-- Password input -->
                         <div class="form-outline mb-3">
-                            <label class="form-label" for="form3Example4">Contraseña:</label>
+                            <label class="form-label" >Contraseña:</label>
                             <input type="password" name="contrasena" class="form-control form-control-lg"/>
 
                         </div>
