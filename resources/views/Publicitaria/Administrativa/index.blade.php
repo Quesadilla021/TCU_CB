@@ -118,7 +118,7 @@
                                                     </td>
 
                                                     <td class="align-middle text-center text-sm">
-                                                        <span class="badge badge-sm bg-gradient-success">Online</span>
+                                                        <span><button type="button" class="btn btn-secondary btn-sm"><i class="fa-regular fa-eye"></i></button> <button type="button" class="btn btn-warning btn-sm"><i class="fa-regular fa-pen-to-square"></i></button> <button type="button" class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button></span>
                                                     </td>
                                                 </tr>
 
