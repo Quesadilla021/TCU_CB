@@ -44,7 +44,7 @@
 
                                 <div class="mt-3">
                                     <label for="apellido">Descripcion:</label>
-                                    <input class="form-control" type="text" name="apellido"
+                                    <input class="form-control" type="text" name="descripcion"
                                         placeholder="Ingrese una descripcion">
                                 </div>
 
@@ -123,14 +123,18 @@
                                                             </div>
                                                         </td>
 
-                                                        <td class="align-middle text-center text-sm">
+                                                        <td class="d-flex justify-content-center align-middle text-center text-sm">
 
-                                                            <button class="btn btn-outline-warning"><i class="fa-regular fa-pen-to-square"></i></button>
+                                                            <a href="{{route('admin.edit',$item->id_agrupacion)}}" class="btn btn-outline-warning"><i class="fa-regular fa-pen-to-square"></i></a>
 
-                                                            <button class="btn btn-outline-primary"><i class="fa-regular fa-eye"></i></button>
+                                                            {{-- Cargar en otra pagina la landing para mostrar la modal --}}
+                                                            <a  class="btn btn-outline-primary mx-1"><i class="fa-regular fa-eye"></i></a>
 
+                                                            <form action="{{ route('admin.destroy', $item->id_agrupacion) }}" method="POST">
+                                                                @csrf
+                                                                @method('delete')
                                                             <button class="btn btn-outline-danger"><i class="fa-regular fa-trash-can"></i></button>
-                                                            
+                                                            </form>
                                                         </td>
                                                     </tr>
                                                 @endforeach

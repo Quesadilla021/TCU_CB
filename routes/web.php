@@ -38,7 +38,6 @@ Route::get('/iniciarsesion', [inicioSesionController::class, 'iniciarsesion'])->
 // Carga la pagina de Admin
 Route::resource('/admin', AgrupacionController::class);
 
-
 Route::put('/updateInicio', [InicioController::class, 'updateInicio'])->name('actualizarInicio');
 
 Route::get('/admin_teatroBarcos', function () {

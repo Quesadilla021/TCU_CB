@@ -38,13 +38,13 @@ class AgrupacionController extends Controller
         if ($request->hasFile('imagenFondo')){
             $imgFondo = $request->fondo->store('imagenes', 'public');
             $urlF = Storage::url($imgFondo);
-            $agrupacion->fondo = $urlF;
+            $agrupacion->img_fondo = $urlF;
         }
 
         if ($request->hasFile('imagenLogo')){
             $imgLogo = $request->logo->store('imagenes', 'public');
             $urlL = Storage::url($imgLogo);
-            $agrupacion->logo = $urlL;
+            $agrupacion->img_logo = $urlL;
         }
 
         // $imgLogo = time() . '.' . $request->logo->extension();
@@ -73,7 +73,8 @@ class AgrupacionController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $agrupacion = Agrupacion::find($id);
+        return view('Publicitaria.Administrativa.editarAgrupacion', compact('agrupacion'));
     }
 
     /**
@@ -81,7 +82,25 @@ class AgrupacionController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $agrupacion = Agrupacion::find($id);
+        $agrupacion->nombre = $request->nombre;
+        $agrupacion->descripcion = $request->descripcion;
+    
+        if ($request->hasFile('imagenFondo')){
+            $imgFondo = $request->fondo->store('imagenes', 'public');
+            $urlF = Storage::url($imgFondo);
+            $agrupacion->fondo = $urlF;
+        }
+
+        if ($request->hasFile('imagenLogo')){
+            $imgLogo = $request->logo->store('imagenes', 'public');
+            $urlL = Storage::url($imgLogo);
+            $agrupacion->logo = $urlL;
+        }
+
+        $agrupacion->update();
+
+        return back();
     }
 
     /**
@@ -89,6 +108,7 @@ class AgrupacionController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $agrupacion = Agrupacion::find($id)->delete();
+        return redirect()->back();
     }
 }
