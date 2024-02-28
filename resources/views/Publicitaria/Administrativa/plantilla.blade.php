@@ -84,44 +84,55 @@
         <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
             <ul class="navbar-nav">
 
+                <!-- Split dropright button -->
                 <li class="nav-item">
-                    <a class="nav-link text-white " href="{{ route('inicioAdmin') }}">
-
-                        <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                            <i class="material-icons opacity-10">dashboard</i>
-                        </div>
-
-                        <span class="nav-link-text ms-1">Agrupaciones</span>
+                    <a class="nav-link text-white dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                       <b>Agrupaciones</b>
                     </a>
+                    <ul class="dropdown-menu dropdown-menu-dark">
+                      <li>
+                        <a class="nav-link text-white " href="{{ route('inicioAdmin') }}">
+
+                            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                                <i class="fa-solid fa-people-group"></i>
+                            </div>
+    
+                            <span class="nav-link-text ms-1">Ver todas</span>
+                        </a>
+                      </li>
+                      <li><hr class="dropdown-divider"></li>
+
+                      <li>
+                        <a class="nav-link text-white " href="{{ route('vistaTeatroBarcos') }}">
+
+                            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                                <i class="fa-solid fa-user-group"></i>
+                            </div>
+    
+                            <span class="nav-link-text ms-1">Teatro Barcos</span>
+                        </a>
+                      </li>
+
+                      <li class="nav-item">
+                        <a class="nav-link text-white " href="{{ route('inicioAdmin') }}">
+    
+                            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                                <i class="material-icons opacity-10">dashboard</i>
+                            </div>
+    
+                            <span class="nav-link-text ms-1">Danza</span>
+                        </a>
+                    </li>
+
+                    </ul>
                 </li>
 
-                <li class="nav-item">
-                    <a class="nav-link text-white " href="{{ route('vistaTeatroBarcos') }}">
-
-                        <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                            <i class="material-icons opacity-10">dashboard</i>
-                        </div>
-
-                        <span class="nav-link-text ms-1">Teatro Barcos</span>
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link text-white " href="{{ route('inicioAdmin') }}">
-
-                        <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                            <i class="material-icons opacity-10">dashboard</i>
-                        </div>
-
-                        <span class="nav-link-text ms-1">Danza</span>
-                    </a>
-                </li>
 
                 <li class="nav-item">
                     <a class="nav-link text-white " href="{{ route('vistaServicios') }}">
 
                         <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                            <i class="material-icons opacity-10">dashboard</i>
+                            <i class="fa-solid fa-money-check-dollar"></i>
                         </div>
 
                         <span class="nav-link-text ms-1">Servcios</span>
