@@ -3,7 +3,9 @@
 use App\Http\Controllers\AgrupacionController;
 use App\Http\Controllers\InicioController;
 use App\Http\Controllers\inicioSesionController;
+use App\Http\Controllers\PublicacionController;
 use App\Models\Inicio;
+use App\Models\Publicacion;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -36,13 +38,19 @@ Route::get('/login',[inicioSesionController::class, 'index'])->name('login');
 Route::get('/iniciarsesion', [inicioSesionController::class, 'iniciarsesion'])->name('iniciarsesion');
 
 // Carga la pagina de Admin
+// Rutas sobre las agrupaciones
 Route::resource('/admin', AgrupacionController::class);
+Route::get('/edit{id}', [AgrupacionController::class, 'edit'])->name('editarAgrupacion');
+
+// Rutas sobre las agrupaciones
+Route::get('/agrupacion{id}', [PublicacionController::class, 'index'])->name('vistaAgrupacion');
+Route::get('/crearPublicacion', [PublicacionController::class, 'create'])->name('crearPublicacion');
+
+
+
 
 Route::put('/updateInicio', [InicioController::class, 'updateInicio'])->name('actualizarInicio');
 
-Route::get('/admin_teatroBarcos', function () {
-    return view('/Publicitaria/Administrativa/teatroBarcos');
-})->name('vistaTeatroBarcos');
 
 Route::get('/admin_servicios', function () {
     return view('/Publicitaria/Administrativa/servicios');

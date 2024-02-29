@@ -125,7 +125,7 @@
 
                                                         <td class="d-flex justify-content-center align-middle text-center text-sm">
 
-                                                            <a href="{{route('admin.edit',$item->id_agrupacion)}}" class="btn btn-outline-warning"><i class="fa-regular fa-pen-to-square"></i></a>
+                                                            <a href="{{route('editarAgrupacion',$item->id_agrupacion)}}" class="btn btn-outline-warning"><i class="fa-regular fa-pen-to-square"></i></a>
 
                                                             {{-- Cargar en otra pagina la landing para mostrar la modal --}}
                                                             <a  class="btn btn-outline-primary mx-1"><i class="fa-regular fa-eye"></i></a>

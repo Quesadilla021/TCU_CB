@@ -71,16 +71,19 @@ class AgrupacionController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit($id)
     {
+        $agrupaciones = Agrupacion::all(); 
         $agrupacion = Agrupacion::find($id);
-        return view('Publicitaria.Administrativa.editarAgrupacion', compact('agrupacion'));
+        return view('Publicitaria.Administrativa.editarAgrupacion', compact('agrupacion','agrupaciones'));
     }
+
+
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, $id)
     {
         $agrupacion = Agrupacion::find($id);
         $agrupacion->nombre = $request->nombre;
@@ -106,7 +109,7 @@ class AgrupacionController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy($id)
     {
         $agrupacion = Agrupacion::find($id)->delete();
         return redirect()->back();

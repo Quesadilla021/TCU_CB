@@ -10,4 +10,9 @@ class Agrupacion extends Model
     protected $table = 'agrupaciones';
     protected $primaryKey = 'id_agrupacion';
     public $timestamps = false;
+
+    public function publicacion()
+    {
+        return $this->hasMany(Publicacion::class,'id_agrupacion');
+    }
 }

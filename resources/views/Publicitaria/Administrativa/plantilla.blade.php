@@ -40,7 +40,7 @@
 
     <!-- Font Awesome Icons -->
     <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
     <!-- Material Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
@@ -88,7 +88,7 @@
                     <a class="nav-link text-white " href="{{ route('admin.index') }}">
 
                         <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                            <i class="material-icons opacity-10">dashboard</i>
+                            <i class="fa-solid fa-layer-group"></i>
                         </div>
 
                         <span class="nav-link-text ms-1">Agrupaciones</span>
@@ -97,69 +97,32 @@
 
 
                 {{-- Foreach de las agrupaciones --}}
-                <li class="nav-item">
-                    <a class="nav-link text-white " href="{{ route('vistaTeatroBarcos') }}">
+                @foreach ($agrupaciones as $item)
+                    <li class="nav-item">
+                        <a class="nav-link text-white " href="{{ route('vistaAgrupacion', $item) }}"
+                            style="margin-left: 20%;">
 
-                        <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                            <i class="material-icons opacity-10">dashboard</i>
-                        </div>
+                            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </div>
 
-                        <span class="nav-link-text ms-1">Teatro Barcos</span>
-                    </a>
-                </li>
+                            <span class="nav-link-text ms-1">{{ $item->nombre }}</span>
+                        </a>
+                    </li>
+                @endforeach
 
-                
+
 
                 <li class="nav-item">
                     <a class="nav-link text-white " href="{{ route('vistaServicios') }}">
 
                         <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                            <i class="material-icons opacity-10">dashboard</i>
+                            <i class="fa-solid fa-hand-holding-dollar"></i>
                         </div>
 
                         <span class="nav-link-text ms-1">Servcios</span>
                     </a>
                 </li>
-
-                <li class="nav-item mt-3">
-                    <h6 class="ps-4 ms-2 text-uppercase text-xs text-white font-weight-bolder opacity-8">Account pages
-                    </h6>
-                </li>
-                {{--     
-                <li class="nav-item">
-                    <a class="nav-link text-white " href="./profile.html">
-
-                        <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                            <i class="material-icons opacity-10">person</i>
-                        </div>
-
-                        <span class="nav-link-text ms-1">Profile</span>
-                    </a>
-                </li>
-
-
-                <li class="nav-item">
-                    <a class="nav-link text-white " href="./sign-in.html">
-
-                        <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                            <i class="material-icons opacity-10">login</i>
-                        </div>
-
-                        <span class="nav-link-text ms-1">Sign In</span>
-                    </a>
-                </li>
-
-
-                <li class="nav-item">
-                    <a class="nav-link text-white " href="./sign-up.html">
-
-                        <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                            <i class="material-icons opacity-10">assignment</i>
-                        </div>
-
-                        <span class="nav-link-text ms-1">Sign Up</span>
-                    </a>
-                </li> --}}
 
             </ul>
         </div>
@@ -174,19 +137,13 @@
             data-scroll="true">
             <div class="container-fluid py-1 px-3">
                 <nav aria-label="breadcrumb">
-
-                    {{-- <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
-                        <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Pages</a>
-                        </li>
-                        <li class="breadcrumb-item text-sm text-dark active" aria-current="page">index</li>
-                    </ol> --}}
                     <h3 class="font-weight-bolder mb-0">Administración Pagina Web</h3>
 
                 </nav>
                 <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
                     <div class="ms-md-auto pe-md-3 d-flex align-items-center">
 
-                        
+
 
                     </div>
                     <ul class="navbar-nav  justify-content-end">
@@ -205,6 +162,7 @@
                                 Editar inicio
                             </button>
                         </li>
+
                         <!-- Modal -->
                         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                             aria-hidden="true">
@@ -219,7 +177,8 @@
                                         <div class="card-header p-3 pt-2">
 
                                             <div id="formulario">
-                                                <form action="{{route('actualizarInicio')}}" method="POST" enctype="multipart/form-data">
+                                                <form action="{{ route('actualizarInicio') }}" method="POST"
+                                                    enctype="multipart/form-data">
                                                     @csrf
                                                     @method('PUT')
                                                     <label for="nombre">Titulo:</label>
@@ -228,7 +187,7 @@
 
                                                     <label for="email">Imagen -Logo-</label>
                                                     <input class="form-control" type="file" name="imagenLogo"
-                                                       {{--  accept="image/*" --}} {{-- onchange="previewImage(event, 'preview-containerLogo', 'preview-imageLogo')"--}}>
+                                                        {{--  accept="image/*" --}} {{-- onchange="previewImage(event, 'preview-containerLogo', 'preview-imageLogo')" --}}>
 
                                                     <div id="preview-containerLogo">
                                                         <img id="preview-imageLogo" src="#"
@@ -237,7 +196,7 @@
 
                                                     <label for="email">Imagen -Fondo-</label>
                                                     <input class="form-control" type="file" name="imagenFondo"
-                                                       {{--  accept="image/*" --}} {{-- onchange="previewImage(event, 'preview-containerFondo', 'preview-imageFondo')"--}}>
+                                                        {{--  accept="image/*" --}} {{-- onchange="previewImage(event, 'preview-containerFondo', 'preview-imageFondo')" --}}>
 
                                                     <div id="preview-containerFondo">
                                                         <img id="preview-imageFondo" src="#"
@@ -251,7 +210,7 @@
                                         <button type="button" class="btn btn-secondary"
                                             data-bs-dismiss="modal">Close</button>
                                         <button type="submit" class="btn btn-success">Guardar cambios</button>
-                                            </form>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
