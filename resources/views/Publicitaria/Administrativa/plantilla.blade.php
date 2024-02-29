@@ -84,6 +84,7 @@
         <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
             <ul class="navbar-nav">
 
+                <!-- Split dropright button -->
                 <li class="nav-item">
                     <a class="nav-link text-white " href="{{ route('admin.index') }}">
 
@@ -93,6 +94,45 @@
 
                         <span class="nav-link-text ms-1">Agrupaciones</span>
                     </a>
+                    <ul class="dropdown-menu dropdown-menu-dark">
+                      <li>
+                        <a class="nav-link text-white " href="{{ route('inicioAdmin') }}">
+
+                            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                                <i class="fa-solid fa-people-group"></i>
+                            </div>
+    
+                            <span class="nav-link-text ms-1">Ver todas</span>
+                        </a>
+                      </li>
+                      <div class="container">
+                        <li><hr class="dropdown-divider"></li>
+
+                      </div>
+
+                      <li>
+                        <a class="nav-link text-white " href="{{ route('vistaTeatroBarcos') }}">
+
+                            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                                <i class="fa-solid fa-user-group"></i>
+                            </div>
+    
+                            <span class="nav-link-text ms-1">Teatro Barcos</span>
+                        </a>
+                      </li>
+
+                      <li class="nav-item">
+                        <a class="nav-link text-white " href="{{ route('inicioAdmin') }}">
+    
+                            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                                <i class="material-icons opacity-10">dashboard</i>
+                            </div>
+    
+                            <span class="nav-link-text ms-1">Danza</span>
+                        </a>
+                    </li>
+
+                    </ul>
                 </li>
 
 
