@@ -31,7 +31,6 @@ Route::get('/teatrobarcos', function () {
 Route::get('/', [InicioController::class, 'get_inicio'])->name('inicio');
 
 
-
 // Admin
 // Iniciar Sesion
 Route::get('/login',[inicioSesionController::class, 'index'])->name('login');
@@ -47,6 +46,7 @@ Route::get('/agrupacion{id}', [PublicacionController::class, 'index'])->name('vi
 Route::resource('/publicacion',PublicacionController::class);
 Route::get('/crearPublicacion{id}', [PublicacionController::class, 'show'])->name('crearPublicacion');
 Route::get('/editarPublicacion{id}', [PublicacionController::class, 'edit'])->name('editarPublicacion');
+
 
 
 
