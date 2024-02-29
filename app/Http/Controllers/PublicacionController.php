@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Agrupacion;
+use App\Models\Publicacion;
 use Illuminate\Http\Request;
 
 class PublicacionController extends Controller
@@ -14,7 +15,8 @@ class PublicacionController extends Controller
     {
         $agrupaciones = Agrupacion::all();  
         $agrupacion = Agrupacion::find($id);
-        return view('Publicitaria.Administrativa.administrarContenido', compact('agrupacion','agrupaciones'));
+        $publicaciones = Publicacion::all();
+        return view('Publicitaria.Administrativa.administrarPublicaciones', compact('agrupacion','agrupaciones','publicaciones'));
     
     }
 
@@ -23,8 +25,7 @@ class PublicacionController extends Controller
      */
     public function create()
     {
-        $agrupaciones = Agrupacion::all();
-        return view('Publicitaria.Administrativa.crearPublicacion', compact('agrupaciones'));
+        
     }
 
     /**
@@ -32,38 +33,60 @@ class PublicacionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $publicacion = new Publicacion();
+        $publicacion->id_agrupacion = $request->id_agrupacion;
+        $publicacion->titulo = $request->titulo;
+        $publicacion->descripcion = $request->descripcion;
+        $publicacion->fecha = $request->fecha;
+
+        // FALTAN LAS IMAGENES Y VIDEOS
+
+        $publicacion->save();
+
+        return back()->with('Creado','Se guardo la publicacion con exito');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show($id)
     {
-        //
+        $agrupaciones = Agrupacion::all();
+        $agrupacion = Agrupacion::find($id);
+        return view('Publicitaria.Administrativa.crearPublicacion', compact('agrupaciones','agrupacion'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit($id)
     {
-        //
+        $agrupaciones = Agrupacion::all();
+        $publicacion = Publicacion::find($id);
+        return view('Publicitaria.Administrativa.editarPublicacion',compact('publicacion','agrupaciones'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, $id)
     {
-        //
+        $publicacion = Publicacion::find($id);
+
+        $publicacion->titulo = $request->titulo; 
+        $publicacion->descripcion = $request->descripcion; 
+        $publicacion->fecha = $request->fecha; 
+
+        $publicacion->update();
+        return back();
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy($id)
     {
-        //
+        $publicacion = Publicacion::find($id)->delete();
+        return back();
     }
 }

@@ -10,8 +10,8 @@
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="d-flex justify-content-start">
-                                    <a href="{{route('admin.index')}}" style="margin-right: 2%; margin-top: 1%;"><i class="fa-solid fa-reply" style="
-                                        font-size: 25px;"></i></i></a>
+                                    <a href="{{route('admin.index')}}" style="margin-right: 2%; margin-top: 1%;"><i class="fa-solid fa-arrow-left" style="
+                                            font-size: 25px;"></i></i></a>
                                     
                                     <h3 class="font-weight-bolder mb-0">Editar Agrupación {{ $agrupacion->nombre }}</h3>
                                 </div>

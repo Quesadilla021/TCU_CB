@@ -40,11 +40,13 @@ Route::get('/iniciarsesion', [inicioSesionController::class, 'iniciarsesion'])->
 // Carga la pagina de Admin
 // Rutas sobre las agrupaciones
 Route::resource('/admin', AgrupacionController::class);
-Route::get('/edit{id}', [AgrupacionController::class, 'edit'])->name('editarAgrupacion');
+Route::get('/editarAgrupacion{id}', [AgrupacionController::class, 'edit'])->name('editarAgrupacion');
 
-// Rutas sobre las agrupaciones
+// Rutas sobre las publicaciones
 Route::get('/agrupacion{id}', [PublicacionController::class, 'index'])->name('vistaAgrupacion');
-Route::get('/crearPublicacion', [PublicacionController::class, 'create'])->name('crearPublicacion');
+Route::resource('/publicacion',PublicacionController::class);
+Route::get('/crearPublicacion{id}', [PublicacionController::class, 'show'])->name('crearPublicacion');
+Route::get('/editarPublicacion{id}', [PublicacionController::class, 'edit'])->name('editarPublicacion');
 
 
 

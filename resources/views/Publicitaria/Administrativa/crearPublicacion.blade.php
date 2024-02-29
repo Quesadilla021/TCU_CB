@@ -12,7 +12,7 @@
                                 <div class="d-flex justify-content-start">
                                     
                                         {{-- Id agrupacion --}}
-                                        <a href="" style="margin-right: 2%; margin-top: 1%;"><i class="fa-solid fa-reply" style="
+                                        <a href="{{route('vistaAgrupacion',$agrupacion->id_agrupacion)}}" style="margin-right: 2%; margin-top: 1%;"><i class="fa-solid fa-arrow-left" style="
                                             font-size: 25px;"></i></i></a>
                                     
 
@@ -42,19 +42,20 @@
                         <div id="formulario">
                             {{-- Editar Agrupacion --}}
 
-                            <form action="" method="POST">
+                            <form action="{{route('publicacion.store')}}" method="POST">
                                 @csrf
-                                <label for="nombre">Nombre:</label>
-                                <input class="form-control" type="text" name="nombre">
+                                <input type="text" name="id_agrupacion" value="{{$agrupacion->id_agrupacion}}" hidden>
+                                <label for="nombre">Titulo:</label>
+                                <input class="form-control" type="text" name="titulo" required>
 
                                 <div class="mt-3">
                                     <label for="apellido">Descripcion:</label>
-                                    <input class="form-control" type="text" name="descripcion">
+                                    <input class="form-control" type="text" name="descripcion" required>
                                 </div>
 
                                 <div class="mt-3">
                                     <label for="apellido">Fecha:</label>
-                                    <input class="form-control" type="time" name="fecha">
+                                    <input class="form-control" type="date" name="fecha" required>
                                 </div>
 
 
