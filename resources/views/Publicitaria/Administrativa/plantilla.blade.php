@@ -100,7 +100,10 @@
                             <span class="nav-link-text ms-1">Ver todas</span>
                         </a>
                       </li>
-                      <li><hr class="dropdown-divider"></li>
+                      <div class="container">
+                        <li><hr class="dropdown-divider"></li>
+
+                      </div>
 
                       <li>
                         <a class="nav-link text-white " href="{{ route('vistaTeatroBarcos') }}">
