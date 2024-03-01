@@ -32,4 +32,35 @@ class ServicioController extends Controller
         return back();
 
     }
+
+    public function edit($id)
+    {
+        $agrupaciones = Agrupacion::all(); 
+        $servicio = Servicio::find($id);
+        return view('Publicitaria.Administrativa.editarServicio', compact('servicio','agrupaciones'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $servicio = Servicio::find($id);
+        $servicio->titulo = $request->titulo;
+        $servicio->descripcion = $request->descripcion;
+    
+        if ($request->hasFile('imagen')){
+            $imgServicio = $request->imagen->store('imagenes', 'public');
+            $url = Storage::url($imgServicio);
+            $servicio->img = $url;
+        }
+
+        $servicio->update();
+
+        return back();
+    }
+
+    public function destroy($id)
+    {
+        $servicio = Servicio::find($id)->delete();
+        return back();
+    }
+
 }

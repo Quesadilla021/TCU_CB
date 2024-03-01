@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Inicio;
+use App\Models\Servicio;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -10,8 +11,9 @@ class InicioController extends Controller
 {
     public function get_inicio(){
         $inicio = Inicio::findOrFail(1);
+        $servicios = Servicio::all();
         
-        return view('Publicitaria.Landing.index', compact('inicio'));
+        return view('Publicitaria.Landing.index', compact('inicio', 'servicios'));
     }
 
     public function updateInicio(Request $request){

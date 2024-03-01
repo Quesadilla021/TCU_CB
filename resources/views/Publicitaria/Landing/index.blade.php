@@ -85,15 +85,17 @@
                         </div>
                         <div class="row text-center">
                             
+                            @foreach ($servicios as $item)                            
                             {{-- Foreach para los servicios --}}
                             <div class="col-md-4">
-                                <span class="fa-stack fa-4x">
-                                    <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                                    <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
+                                <span class="fa-stack fa-4x mb-4">
+                                    <img src="{{$item->img}}" alt="" width="100%" style="border-radius: 50%;">
                                 </span>
-                                <h4 class="my-3">E-Commerce</h4>
-                                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                                <h4 class="my-3">{{$item->titulo}}</h4>
+                                <p class="text-muted">{{$item->descripcion}}</p>
                             </div>
+                            @endforeach
+
                             {{-- Foreach para los servicios --}}
 
                         </div>

@@ -52,7 +52,7 @@
                                 </div>
 
                                 <div id="conateiner">
-                                    <img id="image" src="#" alt="Vista previa de la imagen">
+                                    <img id="image" src="#" alt="Vista previa de la imagen" width="100%">
                                 </div>
 
 
@@ -113,15 +113,15 @@
 
                                                         <td class="d-flex justify-content-center align-middle text-center text-sm">
 
-                                                            <a {{-- href="{{route('editarAgrupacion',$item->id_agrupacion)}}" --}} class="btn btn-outline-warning"><i class="fa-regular fa-pen-to-square"></i></a>
+                                                            <a href="{{route('editarServicio',$item->id_servicio)}}" class="btn btn-outline-warning"><i class="fa-regular fa-pen-to-square"></i></a>
 
                                                             {{-- Cargar en otra pagina la landing para mostrar la modal --}}
                                                             <a  class="btn btn-outline-primary mx-1"><i class="fa-regular fa-eye"></i></a>
 
-                                                            <form {{-- action="{{ route('admin.destroy', $item->id_agrupacion) }}" --}} method="POST">
+                                                            <form action="{{ route('servicio.destroy', $item->id_servicio) }}" method="POST">
                                                                 @csrf
                                                                 @method('delete')
-                                                            <button class="btn btn-outline-danger"><i class="fa-regular fa-trash-can"></i></button>
+                                                            <button type="submit" class="btn btn-outline-danger"><i class="fa-regular fa-trash-can"></i></button>
                                                             </form>
                                                         </td>
                                                     </tr>

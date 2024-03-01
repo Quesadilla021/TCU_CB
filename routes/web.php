@@ -56,5 +56,7 @@ Route::put('/updateInicio', [InicioController::class, 'updateInicio'])->name('ac
 //Vista admin servicios
 Route::get('/admin_servicios', [ServicioController::class, 'index'])->name('vistaServicios');
 Route::resource('/servicio',ServicioController::class);
+Route::get('/editarServicio{id}', [ServicioController::class, 'edit'])->name('editarServicio');
+
 
 
