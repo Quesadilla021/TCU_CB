@@ -133,7 +133,7 @@
 
 
                 {{-- Foreach de las agrupaciones --}}
-                {{-- @foreach ($agrupaciones as $item)
+                @foreach ($agrupaciones as $item)
                     <li class="nav-item">
                         <a class="nav-link text-white " href="{{ route('vistaAgrupacion', $item) }}"
                             style="margin-left: 20%;">
@@ -145,7 +145,7 @@
                             <span class="nav-link-text ms-1">{{ $item->nombre }}</span>
                         </a>
                     </li>
-                @endforeach --}}
+                @endforeach
 
 
 
