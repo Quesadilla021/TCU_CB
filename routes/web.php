@@ -4,6 +4,7 @@ use App\Http\Controllers\AgrupacionController;
 use App\Http\Controllers\InicioController;
 use App\Http\Controllers\inicioSesionController;
 use App\Http\Controllers\PublicacionController;
+use App\Http\Controllers\ServicioController;
 use App\Models\Inicio;
 use App\Models\Publicacion;
 use Illuminate\Support\Facades\Route;
@@ -30,7 +31,6 @@ Route::get('/teatrobarcos', function () {
 
 Route::get('/', [InicioController::class, 'get_inicio'])->name('inicio');
 
-
 // Admin
 // Iniciar Sesion
 Route::get('/login',[inicioSesionController::class, 'index'])->name('login');
@@ -50,10 +50,11 @@ Route::get('/editarPublicacion{id}', [PublicacionController::class, 'edit'])->na
 
 
 
-
+//actualiza vista Inicio Landing
 Route::put('/updateInicio', [InicioController::class, 'updateInicio'])->name('actualizarInicio');
 
+//Vista admin servicios
+Route::get('/admin_servicios', [ServicioController::class, 'index'])->name('vistaServicios');
+Route::resource('/servicio',ServicioController::class);
 
-Route::get('/admin_servicios', function () {
-    return view('/Publicitaria/Administrativa/servicios');
-})->name('vistaServicios');
+

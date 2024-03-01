@@ -34,20 +34,20 @@
                     <div class="card-header p-3 pt-2">
 
                         <div id="formulario">
-                            <form>
-
-                                <label for="nombre">Nombre:</label>
-                                <input class="form-control" type="text" name="nombre" placeholder="Ingrese su nombre">
+                            <form action="{{ route('servicio.store') }}" method="POST" enctype="multipart/form-data">
+                                @csrf
+                                <label for="nombre">Titulo:</label>
+                                <input class="form-control" type="text" name="titulo" placeholder="Ingrese un titulo para el servicio">
 
                                 <div class="mt-3">
                                     <label for="apellido">Descripcion:</label>
-                                    <input class="form-control" type="text" name="apellido"
+                                    <input class="form-control" type="text" name="descripcion"
                                         placeholder="Ingrese una descripcion">
                                 </div>
 
                                 <div class="mt-3 mb-2">
                                 <label for="email">Imagen</label>
-                                <input class="form-control" type="file" id="imageInput" accept="image/*"
+                                <input class="form-control" name="imagen" type="file" id="imageInput" accept="image/*"
                                     onchange="previewImage(event, 'image', 'conateiner')">
                                 </div>
 
@@ -57,7 +57,7 @@
 
 
                                 <div class="d-flex justify-content-center mt-4">
-                                    <button type="button" class="btn btn-success">Agregar</button>
+                                    <button type="submit" class="btn btn-success">Agregar</button>
                                 </div>
                             </form>
                         </div>
@@ -98,22 +98,34 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
-                                                    <td>
-                                                        <div class="align-middle text-center text-sm">
-                                                            <h6 class="mb-0 text-sm">#</h6>
-                                                        </div>
-                                                    </td>
-                                                    <td>
+                                                @foreach ($servicios as $item)
+                                                    <tr>
+                                                        <td>
                                                             <div class="align-middle text-center text-sm">
-                                                                <h6 class="mb-0 text-sm">Animaciones</h6>
+                                                                <h6 class="mb-0 text-sm">{{$item->id_servicio}}</h6>
                                                             </div>
-                                                    </td>
-                                                    
-                                                    <td class="align-middle text-center text-sm">
-                                                        <span class="badge badge-sm bg-gradient-success">Online</span>
-                                                    </td>
-                                                </tr>
+                                                        </td>
+                                                        <td>
+                                                            <div class="align-middle text-center text-sm">
+                                                                <h6 class="mb-0 text-sm">{{$item->titulo}}</h6>
+                                                            </div>
+                                                        </td>
+
+                                                        <td class="d-flex justify-content-center align-middle text-center text-sm">
+
+                                                            <a {{-- href="{{route('editarAgrupacion',$item->id_agrupacion)}}" --}} class="btn btn-outline-warning"><i class="fa-regular fa-pen-to-square"></i></a>
+
+                                                            {{-- Cargar en otra pagina la landing para mostrar la modal --}}
+                                                            <a  class="btn btn-outline-primary mx-1"><i class="fa-regular fa-eye"></i></a>
+
+                                                            <form {{-- action="{{ route('admin.destroy', $item->id_agrupacion) }}" --}} method="POST">
+                                                                @csrf
+                                                                @method('delete')
+                                                            <button class="btn btn-outline-danger"><i class="fa-regular fa-trash-can"></i></button>
+                                                            </form>
+                                                        </td>
+                                                    </tr>
+                                                @endforeach
 
                                             </tbody>
                                         </table>

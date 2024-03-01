@@ -96,7 +96,7 @@
                     </a>
                     <ul class="dropdown-menu dropdown-menu-dark">
                       <li>
-                        <a class="nav-link text-white " href="{{ route('inicioAdmin') }}">
+                        <a class="nav-link text-white " href="{{ route('admin.index') }}">
 
                             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                                 <i class="fa-solid fa-people-group"></i>
@@ -109,28 +109,6 @@
                         <li><hr class="dropdown-divider"></li>
 
                       </div>
-
-                      <li>
-                        <a class="nav-link text-white " href="{{ route('vistaTeatroBarcos') }}">
-
-                            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                                <i class="fa-solid fa-user-group"></i>
-                            </div>
-    
-                            <span class="nav-link-text ms-1">Teatro Barcos</span>
-                        </a>
-                      </li>
-
-                      <li class="nav-item">
-                        <a class="nav-link text-white " href="{{ route('inicioAdmin') }}">
-    
-                            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                                <i class="material-icons opacity-10">dashboard</i>
-                            </div>
-    
-                            <span class="nav-link-text ms-1">Danza</span>
-                        </a>
-                    </li>
 
                     </ul>
                 </li>
@@ -276,26 +254,6 @@
                             by Keithy Sánchez and Ian Mejía
                         </div>
                     </div>
-                    {{-- <div class="col-lg-6">
-                        <ul class="nav nav-footer justify-content-center justify-content-lg-end">
-                            <li class="nav-item">
-                                <a href="https://www.creative-tim.com" class="nav-link text-muted"
-                                    target="_blank">Creative Tim</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="https://www.creative-tim.com/presentation" class="nav-link text-muted"
-                                    target="_blank">About Us</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="https://www.creative-tim.com/blog" class="nav-link text-muted"
-                                    target="_blank">Blog</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="https://www.creative-tim.com/license" class="nav-link pe-0 text-muted"
-                                    target="_blank">License</a>
-                            </li>
-                        </ul>
-                    </div> --}}
                 </div>
             </div>
         </footer>
