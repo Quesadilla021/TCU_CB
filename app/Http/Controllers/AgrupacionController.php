@@ -36,24 +36,17 @@ class AgrupacionController extends Controller
         $agrupacion->descripcion = $request->descripcion;
 
         if ($request->hasFile('imagenFondo')){
-            $imgFondo = $request->fondo->store('imagenes', 'public');
+            $imgFondo = $request->imagenFondo->store('imagenes', 'public');
             $urlF = Storage::url($imgFondo);
             $agrupacion->img_fondo = $urlF;
         }
 
         if ($request->hasFile('imagenLogo')){
-            $imgLogo = $request->logo->store('imagenes', 'public');
+            $imgLogo = $request->imagenLogo->store('imagenes', 'public');
             $urlL = Storage::url($imgLogo);
             $agrupacion->img_logo = $urlL;
         }
 
-        // $imgLogo = time() . '.' . $request->logo->extension();
-        // $request->logo->move(public_path('images'), $imgLogo);
-        // $agrupacion->img_logo = $imgLogo;
-
-        // $imgFondo = time() . '.' . $request->fondo->extension();
-        // $request->fondo->move(public_path('images'), $imgFondo);
-        // $agrupacion->img_fondo = $imgFondo;
 
         $agrupacion->save();
 

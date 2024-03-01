@@ -50,7 +50,7 @@
 
                                 <div class="mt-3">
                                     <label for="email">Imagen -Logo-</label>
-                                    <input class="form-control" name="logo" type="file" id="imageInput"
+                                    <input class="form-control" name="imagenLogo" type="file" id="imageInput"
                                         accept="image/*" onchange="previewImage(event, 'image-Logo', 'conateiner-Logo')">
                                 </div>
 
@@ -60,8 +60,8 @@
 
                                 <div class="mt-3">
                                     <label for="email">Imagen -Fondo-</label>
-                                    <input class="form-control" name="fondo" type="file" id="imageInput"
-                                        accept="image/*" onchange="previewImage(event, 'image-Logo', 'conateiner-Logo')">
+                                    <input class="form-control" name="imagenFondo" type="file" id="imageInput"
+                                        accept="image/*" onchange="previewImage(event, 'image-Fondo', 'conateiner-Logo')">
                                 </div>
 
                                 <div id="conateiner-Fondo">
