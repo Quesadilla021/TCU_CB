@@ -9,7 +9,7 @@
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="d-flex justify-content-start">
-                                    <h3 class="font-weight-bolder mb-0">Agregar Multimedia a la Publicacion
+                                    <h3 class="font-weight-bolder mb-0">Agregar Imagenes a la Publicacion
                                         {{ $publicacion->titulo }}</h3>
                                 </div>
                             </div>
@@ -32,7 +32,7 @@
                         {{-- CARD IMAGENES --}}
                         <div class="card">
                             <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
-                                <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
+                                <div class="bg-gradient-success shadow-primary border-radius-lg pt-4 pb-3">
                                     <h5 class="text-white text-capitalize ps-3 text-center">Agregar Imagenes</h5>
                                 </div>
                             </div>
