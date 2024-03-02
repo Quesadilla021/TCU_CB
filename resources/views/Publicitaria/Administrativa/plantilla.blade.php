@@ -51,7 +51,8 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
 
-    <link rel="stylesheet" href="lightboxed/lightboxed.css">
+        @yield('link')
+    
 
 
     <!-- Nepcha Analytics (nepcha.com) -->
@@ -430,23 +431,22 @@
         </div>
     </div>
     
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="lightboxed/lightboxed.js"></script>
+    @yield('script')
+    
     
     <script>
         function previewImage(event, pImage, pContainer, editAgrup, idImgActual) {
+            var imagen_actual = document.getElementById(idImgActual);
+            var imagen = document.getElementById(pImage);
             console.log(pImage);
             console.log(pContainer);
-            // console.log(idImg)
             console.log(idImgActual);
-
+            
             if (editAgrup == true) {
-                //Preview imagen actual y la nueva logo
-                var imagen_actual = document.getElementById(idImgActual);
-                // Cambia el atributo src
+                
                 imagen_actual.hidden = true;
-                var imagen = document.getElementById(pImage);
-                // Cambia el atributo src
+                imagen.hidden = false;
+            } else{
                 imagen.hidden = false;
             }
 
@@ -473,7 +473,7 @@
     </script>
 
     <!--   Core JS Files   -->
-    <script src="./assets/js/core/popper.min.js"></>
+    <script src="./assets/js/core/popper.min.js"></script>
     <script src="./assets/js/core/bootstrap.min.js"></script>
     <script src="./assets/js/plugins/perfect-scrollbar.min.js"></script>
     <script src="./assets/js/plugins/smooth-scrollbar.min.js"></script>

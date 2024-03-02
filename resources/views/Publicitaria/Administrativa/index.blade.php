@@ -56,7 +56,7 @@
                                 </div>
 
                                 <div id="conatainer-Logo" class="d-flex justify-content-center">
-                                    <img id="image-Logo" src="#" alt="Vista previa de la imagen" style="width: 30%;">
+                                    <img id="image-Logo" src="#" alt="Vista previa de la imagen" style="width: 30%;" hidden>
                                 </div>
 
                                 <div class="mt-3">
@@ -66,7 +66,7 @@
                                 </div>
 
                                 <div id="conatainer-Fondo" class="d-flex justify-content-center">
-                                    <img id="image-Fondo" src="#" alt="Vista previa de la imagen" style="width: 30%;">
+                                    <img id="image-Fondo" src="#" alt="Vista previa de la imagen" style="width: 30%;" hidden>
                                 </div>
 
                                 <div class="d-flex justify-content-center mt-4">
