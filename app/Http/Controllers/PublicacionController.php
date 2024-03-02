@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Agrupacion;
+use App\Models\Imagen;
 use App\Models\Inicio;
 use App\Models\Publicacion;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class PublicacionController extends Controller
 {
@@ -15,11 +17,10 @@ class PublicacionController extends Controller
     public function index($id)
     {
         $inicio = Inicio::find(1);
-        $agrupaciones = Agrupacion::all();  
+        $agrupaciones = Agrupacion::all();
         $agrupacion = Agrupacion::find($id);
         $publicaciones = Publicacion::all();
-        return view('Publicitaria.Administrativa.administrarPublicaciones', compact('agrupacion','agrupaciones','publicaciones','inicio'));
-    
+        return view('Publicitaria.Administrativa.administrarPublicaciones', compact('agrupacion', 'agrupaciones', 'publicaciones', 'inicio'));
     }
 
     /**
@@ -27,7 +28,6 @@ class PublicacionController extends Controller
      */
     public function create()
     {
-        
     }
 
     /**
@@ -45,7 +45,51 @@ class PublicacionController extends Controller
 
         $publicacion->save();
 
-        return back()->with('Creado','Se guardo la publicacion con exito');
+        $inicio = Inicio::find(1);
+        $agrupaciones = Agrupacion::all();
+
+        return view('Publicitaria.Administrativa.agregarMultimedia', compact('publicacion', 'inicio', 'agrupaciones'));
+    }
+
+    function guardar_imgs(Request $request, $id)
+    {
+        $publicacion = Publicacion::find($id);
+        // return $publicacion;
+
+        if ($request->hasFile('imagenes')) {
+            $imagenes = $request->file('imagenes');
+            foreach ($imagenes as $imagen) {
+                $rutaImagen = $imagen->store('imagenes', 'public');
+                $urlImagen = Storage::url($rutaImagen);
+
+                // Guardar la ruta de la imagen en la base de datos
+                $imagen = new Imagen();
+                $imagen->imagen = $urlImagen;
+                $imagen->id_publicacion = $publicacion->id_publicacion;
+                $imagen->save();
+            }
+        }
+
+        $inicio = Inicio::find(1);
+        $agrupaciones = Agrupacion::all();
+
+        return view('Publicitaria.Administrativa.agregarMultimedia', compact('publicacion', 'inicio', 'agrupaciones'));
+    }
+
+    function vistaAgregarImg($id)
+    {
+        $publicacion = Publicacion::find($id);
+        $inicio = Inicio::find(1);
+        $agrupaciones = Agrupacion::all();
+        return view('Publicitaria.Administrativa.agregarMultimedia', compact('publicacion', 'inicio', 'agrupaciones'));
+    }
+
+    public function delete_img($id)
+    {
+        $imagen = Imagen::find($id);
+        $imagen->delete();
+
+        return redirect()->route('vistaAgreImg', $imagen->id_publicacion);
     }
 
     /**
@@ -53,9 +97,10 @@ class PublicacionController extends Controller
      */
     public function show($id)
     {
+        $inicio = Inicio::find(1);
         $agrupaciones = Agrupacion::all();
         $agrupacion = Agrupacion::find($id);
-        return view('Publicitaria.Administrativa.crearPublicacion', compact('agrupaciones','agrupacion'));
+        return view('Publicitaria.Administrativa.crearPublicacion', compact('agrupaciones', 'agrupacion', 'inicio'));
     }
 
     /**
@@ -63,9 +108,10 @@ class PublicacionController extends Controller
      */
     public function edit($id)
     {
+        $inicio = Inicio::find(1);
         $agrupaciones = Agrupacion::all();
         $publicacion = Publicacion::find($id);
-        return view('Publicitaria.Administrativa.editarPublicacion',compact('publicacion','agrupaciones'));
+        return view('Publicitaria.Administrativa.editarPublicacion', compact('publicacion', 'agrupaciones', 'inicio'));
     }
 
     /**
@@ -75,9 +121,9 @@ class PublicacionController extends Controller
     {
         $publicacion = Publicacion::find($id);
 
-        $publicacion->titulo = $request->titulo; 
-        $publicacion->descripcion = $request->descripcion; 
-        $publicacion->fecha = $request->fecha; 
+        $publicacion->titulo = $request->titulo;
+        $publicacion->descripcion = $request->descripcion;
+        $publicacion->fecha = $request->fecha;
 
         $publicacion->update();
         return back();

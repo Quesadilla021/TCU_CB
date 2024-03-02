@@ -446,27 +446,6 @@
                 imagen.hidden = false;
             }
 
-            // if (editAgrup == true && tipo == 1) {
-            //        //Preview imagen actual y la nueva logo
-            //     var imagen_actual = document.getElementById('image-Logo-actual');
-            //     // Cambia el atributo src
-            //     imagen_actual.hidden = true;
-            //     var imagen = document.getElementById('image-Logo');
-            //     // Cambia el atributo src
-            //     imagen.hidden = false; 
-            // }
-
-            // if (editAgrup == true && tipo == 2) {
-            //       //Preview imagen actual y la nueva Fondo
-            //       var imagen_actualFondo = document.getElementById('image-Fondo-actual');
-            //     // Cambia el atributo src
-            //     imagen_actualFondo.hidden = true;
-            //     var imagenFondo = document.getElementById('image-Fondo');
-            //     // Cambia el atributo src
-            //     imagenFondo.hidden = false; 
-            // }
-
-
             var input = event.target;
             var previewImage = document.getElementById(pImage);
             var previewContainer = document.getElementById(pContainer);

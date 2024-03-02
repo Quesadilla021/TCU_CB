@@ -11,9 +11,9 @@ class Publicacion extends Model
     protected $primaryKey = 'id_publicacion';
     public $timestamps = false;
 
-    public function multimedia()
+    public function imagenes()
     {
-        return $this->hasMany(Multimedia::class,'id_publicacion');
+        return $this->hasMany(Imagen::class,'id_publicacion');
     }
 
     public function agrupacion(){

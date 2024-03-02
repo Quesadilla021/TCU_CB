@@ -5,11 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Multimedia extends Model
+class Imagen extends Model
 {
-    protected $table = 'multimedias';
-    protected $primaryKey = 'id_multimedia';
+    protected $table = 'imagenes';
+    protected $primaryKey = 'id_imagen';
     public $timestamps = false;
-
-    
 }
