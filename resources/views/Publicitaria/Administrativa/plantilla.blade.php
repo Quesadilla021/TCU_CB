@@ -81,12 +81,14 @@
 
         <hr class="horizontal light mt-0 mb-2">
 
-        <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
+        <div class="collapse navbar-collapse w-auto" id="sidenav-collapse-main">
             <ul class="navbar-nav">
 
                 <!-- Split dropright button -->
                 <li class="nav-item">
-                    <a class="nav-link text-white " href="{{ route('admin.index') }}">
+                    <a {{--data-bs-toggle="collapse"--}} class="nav-link text-white collapsed @yield('activoAgrupaciones')"
+                        href="{{ route('admin.index') }}" aria-controls="dashboardsExamples" role="button"
+                        aria-expanded="false">
 
                         <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="fa-solid fa-layer-group"></i>
@@ -115,7 +117,7 @@
 
                         @foreach ($agrupaciones as $item)
                             <li>
-                                <a class="nav-link text-white " href="{{ route('vistaAgrupacion', $item) }}">
+                                <a class="nav-link text-white {{$activo}}" href="{{ route('vistaAgrupacion', $item) }}">
 
                                     <div
                                         class="text-white text-center me-2 d-flex align-items-center justify-content-center">
@@ -135,7 +137,7 @@
                 {{-- Foreach de las agrupaciones --}}
                 @foreach ($agrupaciones as $item)
                     <li class="nav-item">
-                        <a class="nav-link text-white " href="{{ route('vistaAgrupacion', $item) }}"
+                        <a class="nav-link text-white" href="{{ route('vistaAgrupacion', $item) }}"
                             style="margin-left: 20%;">
 
                             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
@@ -205,7 +207,7 @@
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Editar Inicio Pagina Web</h1>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal"
                                             aria-label="Close"></button>
                                     </div>
@@ -218,34 +220,49 @@
                                                     @csrf
                                                     @method('PUT')
                                                     <label for="nombre">Titulo:</label>
-                                                    <input class="form-control" type="text" name="titulo"
+                                                    <input class="form-control" value="{{ $inicio->titulo }}"
+                                                        type="text" name="titulo"
                                                         placeholder="Ingrese su nombre">
 
-                                                    <label for="email">Imagen -Logo-</label>
-                                                    <input class="form-control" type="file" name="imagenLogo"
-                                                        {{--  accept="image/*" --}} {{-- onchange="previewImage(event, 'preview-containerLogo', 'preview-imageLogo')" --}}>
+                                                    <div class="mt-4">
+                                                        <label for="email">Imagen -Logo-</label>
+                                                        <input class="form-control" type="file" name="imagenLogo"
+                                                            accept="image/*"
+                                                            onchange="previewImage(event, 'modal-image-Logo', 'preview-imageLogo', true, 'modal-image-Logo-actual')">
 
-                                                    <div id="preview-containerLogo">
-                                                        <img id="preview-imageLogo" src="#"
-                                                            alt="Vista previa de la imagen">
+                                                        <div id="preview-imageLogo"
+                                                            class="d-flex justify-content-center">
+                                                            <img id="modal-image-Logo" src="#"
+                                                                alt="Vista previa de la imagen" style="width: 40%;"
+                                                                hidden>
+                                                            <img id="modal-image-Logo-actual"
+                                                                src="{{ $inicio->logo }}"
+                                                                alt="Vista previa de la imagen" style="width: 40%;">
+                                                        </div>
                                                     </div>
 
                                                     <label for="email">Imagen -Fondo-</label>
                                                     <input class="form-control" type="file" name="imagenFondo"
-                                                        {{--  accept="image/*" --}} {{-- onchange="previewImage(event, 'preview-containerFondo', 'preview-imageFondo')" --}}>
+                                                        accept="image/*"
+                                                        onchange="previewImage(event,'modal-image-Fondo', 'preview-containerFondo', true,'modal-image-Fondo-actual')">
 
-                                                    <div id="preview-containerFondo">
-                                                        <img id="preview-imageFondo" src="#"
-                                                            alt="Vista previa de la imagen">
+                                                    <div id="preview-containerFondo"
+                                                        class="d-flex justify-content-center">
+                                                        <img id="modal-image-Fondo" src="#"
+                                                            alt="Vista previa de la imagen" style="width: 40%;"
+                                                            hidden>
+                                                        <img id="modal-image-Fondo-actual" src="{{ $inicio->fondo }}"
+                                                            alt="Vista previa de la imagen" style="width: 40%;">
                                                     </div>
                                             </div>
 
                                         </div>
                                     </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary"
-                                            data-bs-dismiss="modal">Close</button>
-                                        <button type="submit" class="btn btn-success">Guardar cambios</button>
+                                    <div class="modal-footer ">
+                                        <button type="submit" class="btn btn-outline-success">Guardar</button>
+                                        <a href="" class="btn btn-outline-primary">Ver</a>
+                                        <button type="button" class="btn btn-outline-danger"
+                                            data-bs-dismiss="modal">Cerrar</button>
                                         </form>
                                     </div>
                                 </div>
@@ -413,9 +430,43 @@
     </div>
 
     <script>
-        function previewImage(event, pImage, pContainer) {
+        function previewImage(event, pImage, pContainer, editAgrup, idImgActual) {
             console.log(pImage);
             console.log(pContainer);
+            // console.log(idImg)
+            console.log(idImgActual);
+
+            if (editAgrup == true) {
+                //Preview imagen actual y la nueva logo
+                var imagen_actual = document.getElementById(idImgActual);
+                // Cambia el atributo src
+                imagen_actual.hidden = true;
+                var imagen = document.getElementById(pImage);
+                // Cambia el atributo src
+                imagen.hidden = false;
+            }
+
+            // if (editAgrup == true && tipo == 1) {
+            //        //Preview imagen actual y la nueva logo
+            //     var imagen_actual = document.getElementById('image-Logo-actual');
+            //     // Cambia el atributo src
+            //     imagen_actual.hidden = true;
+            //     var imagen = document.getElementById('image-Logo');
+            //     // Cambia el atributo src
+            //     imagen.hidden = false; 
+            // }
+
+            // if (editAgrup == true && tipo == 2) {
+            //       //Preview imagen actual y la nueva Fondo
+            //       var imagen_actualFondo = document.getElementById('image-Fondo-actual');
+            //     // Cambia el atributo src
+            //     imagen_actualFondo.hidden = true;
+            //     var imagenFondo = document.getElementById('image-Fondo');
+            //     // Cambia el atributo src
+            //     imagenFondo.hidden = false; 
+            // }
+
+
             var input = event.target;
             var previewImage = document.getElementById(pImage);
             var previewContainer = document.getElementById(pContainer);

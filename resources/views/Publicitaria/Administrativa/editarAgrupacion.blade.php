@@ -1,5 +1,5 @@
 @extends('Publicitaria.Administrativa.plantilla')
-
+@section('activoAgrupaciones', 'active')
 @section('contenido')
     <div class="container-fluid py-4">
 
@@ -39,7 +39,7 @@
                         <div id="formulario">
                             {{-- Editar Agrupacion --}}
 
-                            <form action="{{ route('admin.update', $agrupacion->id_agrupacion) }}" method="POST">
+                            <form action="{{ route('admin.update', $agrupacion->id_agrupacion) }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 @method('put')
                                 <label for="nombre">Nombre:</label>
@@ -53,24 +53,27 @@
 
                                 <div class="mt-3">
                                     <label for="email">Imagen -Logo-</label>
-                                    <input value="{{ $agrupacion->img_logo }}" class="form-control" name="logo"
+                                    <input value="{{ $agrupacion->img_logo }}" class="form-control" name="imagenLogo"
                                         type="file" id="imageInput" accept="image/*"
-                                        onchange="previewImage(event, 'image-Logo', 'conateiner-Logo')">
+                                        onchange="previewImage(event, 'image-Logo', 'container-Logo', true, 'image-Logo-actual')">
                                 </div>
 
-                                <div id="conateiner-Logo">
-                                    <img id="image-Logo" src="#" alt="Vista previa de la imagen">
+                                <div id="container-Logo" class="d-flex justify-content-center">
+                                    <img id="image-Logo" src="#" alt="Vista previa de la imagen" style="width: 30%;" hidden>
+                                    <img id="image-Logo-actual" src="{{ $agrupacion->img_logo }}" alt="Vista previa de la imagen" style="width: 30%;">
                                 </div>
 
                                 <div class="mt-3">
                                     <label for="email">Imagen -Fondo-</label>
-                                    <input value="{{ $agrupacion->img_fondo }}" class="form-control" name="fondo"
+                                    <input value="{{ $agrupacion->img_fondo }}" class="form-control" name="imagenFondo"
                                         type="file" id="imageInput" accept="image/*"
-                                        onchange="previewImage(event, 'image-Logo', 'conateiner-Logo')">
+                                        onchange="previewImage(event, 'image-Fondo', 'container-Fondo', true, 'image-Fondo-actual')">
                                 </div>
 
-                                <div id="conateiner-Fondo">
-                                    <img id="image-Fondo" src="#" alt="Vista previa de la imagen">
+                                <div id="container-Fondo" class="d-flex justify-content-center">
+                                    <img id="image-Fondo" src="#" alt="Vista previa de la imagen" style="width: 30%;" hidden>
+                                    <img id="image-Fondo-actual" src="{{ $agrupacion->img_fondo }}" alt="Vista previa de la imagen" style="width: 30%;">
+                                
                                 </div>
 
                                 <div class="d-flex justify-content-center mt-4">

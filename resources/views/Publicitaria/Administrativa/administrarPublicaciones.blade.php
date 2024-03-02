@@ -1,5 +1,5 @@
 @extends('Publicitaria.Administrativa.plantilla')
-
+{{-- @section('activoAgrupacion', 'active') --}}
 @section('contenido')
     <div class="container-fluid py-4">
 
@@ -11,7 +11,7 @@
                         <div class="col-lg-6">
                             <div class="d-flex justify-content-center h-100">
                                 <h2 class="font-weight-bolder mb-0">Agrupacion {{ $agrupacion->nombre }} <img
-                                        src="assets/img/logos/LEGO_logo.png" width="15%" alt=""></h2>
+                                        src="{{ $agrupacion->img_logo }}" width="15%" alt="" style="border-radius: 50%;"></h2>
 
                             </div>
                         </div>
@@ -29,8 +29,9 @@
                             <div
                                 class="d-flex justify-content-between bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
                                 <h4 class="text-white text-capitalize ps-3" style="order: 1;">Publicaciones Creadas</h4>
-                                <a href="{{ route('crearPublicacion', $agrupacion->id_agrupacion) }}" class="btn btn-success"
-                                    style="margin-right: 3%; order: 1;"><i class="fa-solid fa-plus"></i></a>
+                                <a href="{{ route('crearPublicacion', $agrupacion->id_agrupacion) }}"
+                                    class="btn btn-success" style="margin-right: 3%; order: 1;"><i
+                                        class="fa-solid fa-plus"></i></a>
                             </div>
                         </div>
 

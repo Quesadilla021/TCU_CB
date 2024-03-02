@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Agrupacion;
+use App\Models\Inicio;
 use App\Models\Publicacion;
 use Illuminate\Http\Request;
 
@@ -13,10 +14,11 @@ class PublicacionController extends Controller
      */
     public function index($id)
     {
+        $inicio = Inicio::find(1);
         $agrupaciones = Agrupacion::all();  
         $agrupacion = Agrupacion::find($id);
         $publicaciones = Publicacion::all();
-        return view('Publicitaria.Administrativa.administrarPublicaciones', compact('agrupacion','agrupaciones','publicaciones'));
+        return view('Publicitaria.Administrativa.administrarPublicaciones', compact('agrupacion','agrupaciones','publicaciones','inicio'));
     
     }
 

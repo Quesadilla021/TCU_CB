@@ -14,8 +14,9 @@ class AgrupacionController extends Controller
      */
     public function index()
     {
-        $agrupaciones = Agrupacion::all();  
-        return view('Publicitaria.Administrativa.index', compact('agrupaciones'));
+        $inicio = Inicio::find(1);
+        $agrupaciones = Agrupacion::all();
+        return view('Publicitaria.Administrativa.index', compact('agrupaciones', 'inicio'));
     }
 
     /**
@@ -23,7 +24,6 @@ class AgrupacionController extends Controller
      */
     public function create()
     {
-
     }
 
     /**
@@ -35,18 +35,18 @@ class AgrupacionController extends Controller
         $agrupacion->nombre = $request->nombre;
         $agrupacion->descripcion = $request->descripcion;
 
-        if ($request->hasFile('imagenFondo')){
+
+        if ($request->hasFile('imagenFondo')) {
             $imgFondo = $request->imagenFondo->store('imagenes', 'public');
             $urlF = Storage::url($imgFondo);
             $agrupacion->img_fondo = $urlF;
         }
 
-        if ($request->hasFile('imagenLogo')){
+        if ($request->hasFile('imagenLogo')) {
             $imgLogo = $request->imagenLogo->store('imagenes', 'public');
             $urlL = Storage::url($imgLogo);
             $agrupacion->img_logo = $urlL;
         }
-
 
         $agrupacion->save();
 
@@ -66,9 +66,11 @@ class AgrupacionController extends Controller
      */
     public function edit($id)
     {
-        $agrupaciones = Agrupacion::all(); 
+        $inicio = Inicio::find(1);
+        $agrupaciones = Agrupacion::all();
         $agrupacion = Agrupacion::find($id);
-        return view('Publicitaria.Administrativa.editarAgrupacion', compact('agrupacion','agrupaciones'));
+
+        return view('Publicitaria.Administrativa.editarAgrupacion', compact('agrupacion', 'agrupaciones', 'inicio'));
     }
 
 
@@ -81,17 +83,17 @@ class AgrupacionController extends Controller
         $agrupacion = Agrupacion::find($id);
         $agrupacion->nombre = $request->nombre;
         $agrupacion->descripcion = $request->descripcion;
-    
-        if ($request->hasFile('imagenFondo')){
-            $imgFondo = $request->fondo->store('imagenes', 'public');
+
+        if ($request->hasFile('imagenFondo')) {
+            $imgFondo = $request->imagenFondo->store('imagenes', 'public');
             $urlF = Storage::url($imgFondo);
-            $agrupacion->fondo = $urlF;
+            $agrupacion->img_fondo = $urlF;
         }
 
-        if ($request->hasFile('imagenLogo')){
-            $imgLogo = $request->logo->store('imagenes', 'public');
+        if ($request->hasFile('imagenLogo')) {
+            $imgLogo = $request->imagenLogo->store('imagenes', 'public');
             $urlL = Storage::url($imgLogo);
-            $agrupacion->logo = $urlL;
+            $agrupacion->img_logo = $urlL;
         }
 
         $agrupacion->update();

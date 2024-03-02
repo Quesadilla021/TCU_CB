@@ -1,5 +1,5 @@
 @extends('Publicitaria.Administrativa.plantilla')
-
+@section('activoAgrupaciones', 'active')
 @section('contenido')
     <!-- End Navbar -->
 
@@ -37,8 +37,9 @@
 
                         <div id="formulario">
                             {{-- Agregar Agrupacion --}}
-                            <form action="{{ route('admin.store') }}" method="POST">
+                            <form action="{{ route('admin.store') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
+
                                 <label for="nombre">Nombre:</label>
                                 <input class="form-control" type="text" name="nombre" placeholder="Ingrese su nombre">
 
@@ -50,22 +51,22 @@
 
                                 <div class="mt-3">
                                     <label for="email">Imagen -Logo-</label>
-                                    <input class="form-control" name="imagenLogo" type="file" id="imageInput"
-                                        accept="image/*" onchange="previewImage(event, 'image-Logo', 'conateiner-Logo')">
+                                    <input class="form-control" type="file" name="imagenLogo"
+                                        accept="image/*" onchange="previewImage(event, 'image-Logo', 'conatainer-Logo', false)" > 
                                 </div>
 
-                                <div id="conateiner-Logo">
-                                    <img id="image-Logo" src="#" alt="Vista previa de la imagen">
+                                <div id="conatainer-Logo" class="d-flex justify-content-center">
+                                    <img id="image-Logo" src="#" alt="Vista previa de la imagen" style="width: 30%;">
                                 </div>
 
                                 <div class="mt-3">
                                     <label for="email">Imagen -Fondo-</label>
-                                    <input class="form-control" name="imagenFondo" type="file" id="imageInput"
-                                        accept="image/*" onchange="previewImage(event, 'image-Fondo', 'conateiner-Logo')">
+                                    <input class="form-control" name="imagenFondo" type="file"
+                                        accept="image/*" onchange="previewImage(event, 'image-Fondo', 'conatainer-Fondo', false)">
                                 </div>
 
-                                <div id="conateiner-Fondo">
-                                    <img id="image-Fondo" src="#" alt="Vista previa de la imagen">
+                                <div id="conatainer-Fondo" class="d-flex justify-content-center">
+                                    <img id="image-Fondo" src="#" alt="Vista previa de la imagen" style="width: 30%;">
                                 </div>
 
                                 <div class="d-flex justify-content-center mt-4">
