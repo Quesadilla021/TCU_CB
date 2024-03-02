@@ -6,6 +6,7 @@ use App\Models\Agrupacion;
 use App\Models\Imagen;
 use App\Models\Inicio;
 use App\Models\Publicacion;
+use App\Models\Video;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -76,7 +77,7 @@ class PublicacionController extends Controller
         return view('Publicitaria.Administrativa.agregarMultimedia', compact('publicacion', 'inicio', 'agrupaciones'));
     }
 
-    function vistaAgregarImg($id)
+    function vistaAgregarMulti($id)
     {
         $publicacion = Publicacion::find($id);
         $inicio = Inicio::find(1);
@@ -89,9 +90,40 @@ class PublicacionController extends Controller
         $imagen = Imagen::find($id);
         $imagen->delete();
 
-        return redirect()->route('vistaAgreImg', $imagen->id_publicacion);
+        return redirect()->route('vistaAgreMulti', $imagen->id_publicacion);
     }
 
+    function guardar_Video(Request $request, $id){
+
+        $publicacion = Publicacion::find($id);
+        $video = new Video();
+        $video->id_publicacion = $id;
+        if ($request->hasFile('imagenMiniatura')) {
+            $imgMiniatura = $request->imagenMiniatura->store('imagenes', 'public');
+            $urlM = Storage::url($imgMiniatura);
+            $video->miniatura = $urlM;
+        }
+
+        if ($request->hasFile('video')) {
+            $videoPath = $request->video->store('videos', 'public');
+            $urlV = Storage::url($videoPath);
+            $video->video = $urlV;
+            
+        }
+        $video->save();
+        $inicio = Inicio::find(1);
+        $agrupaciones = Agrupacion::all();
+        return view('Publicitaria.Administrativa.agregarMultimedia', compact('publicacion', 'inicio', 'agrupaciones'));
+    
+    }
+     
+    public function delete_video($id)
+    {
+        $video = Video::find($id);
+        $video->delete();
+
+        return redirect()->route('vistaAgreMulti', $video->id_publicacion);
+    }
     /**
      * Display the specified resource.
      */

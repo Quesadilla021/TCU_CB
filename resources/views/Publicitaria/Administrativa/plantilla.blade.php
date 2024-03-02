@@ -51,7 +51,7 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
 
-
+    <link rel="stylesheet" href="lightboxed/lightboxed.css">
 
 
     <!-- Nepcha Analytics (nepcha.com) -->
@@ -86,7 +86,7 @@
 
                 <!-- Split dropright button -->
                 <li class="nav-item">
-                    <a {{--data-bs-toggle="collapse"--}} class="nav-link text-white collapsed @yield('activoAgrupaciones')"
+                    <a {{-- data-bs-toggle="collapse" --}} class="nav-link text-white collapsed @yield('activoAgrupaciones')"
                         href="{{ route('admin.index') }}" aria-controls="dashboardsExamples" role="button"
                         aria-expanded="false">
 
@@ -207,7 +207,8 @@
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Editar Inicio Pagina Web</h1>
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Editar Inicio Pagina Web
+                                        </h1>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal"
                                             aria-label="Close"></button>
                                     </div>
@@ -428,7 +429,10 @@
             </div>
         </div>
     </div>
-
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="lightboxed/lightboxed.js"></script>
+    
     <script>
         function previewImage(event, pImage, pContainer, editAgrup, idImgActual) {
             console.log(pImage);
@@ -469,7 +473,7 @@
     </script>
 
     <!--   Core JS Files   -->
-    <script src="./assets/js/core/popper.min.js"></script>
+    <script src="./assets/js/core/popper.min.js"></>
     <script src="./assets/js/core/bootstrap.min.js"></script>
     <script src="./assets/js/plugins/perfect-scrollbar.min.js"></script>
     <script src="./assets/js/plugins/smooth-scrollbar.min.js"></script>

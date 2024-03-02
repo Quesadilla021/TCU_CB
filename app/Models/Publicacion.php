@@ -16,6 +16,11 @@ class Publicacion extends Model
         return $this->hasMany(Imagen::class,'id_publicacion');
     }
 
+    public function videos()
+    {
+        return $this->hasMany(Video::class,'id_publicacion');
+    }
+
     public function agrupacion(){
         return $this->belongsTo(Agrupacion::class,'id_marca');
     }

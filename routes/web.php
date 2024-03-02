@@ -53,9 +53,11 @@ Route::get('/editarPublicacion{id}', [PublicacionController::class, 'edit'])->na
 
 // Imagenes de las publicaciones
 Route::post('/agregarImgs{id}', [PublicacionController::class, 'guardar_imgs'])->name('guardarImg');
-Route::get('/vistaImg{id}', [PublicacionController::class, 'vistaAgregarImg'])->name('vistaAgreImg');
+Route::get('/vistaImg{id}', [PublicacionController::class, 'vistaAgregarMulti'])->name('vistaAgreMulti');
 Route::get('/eliminarImg{id}', [PublicacionController::class, 'delete_img'])->name('eliminarImg');
-
+// Video de las publicaciones
+Route::post('/agregarVideo{id}',[PublicacionController::class, 'guardar_Video'])->name('guardarVideo');
+Route::get('/eliminarVide{id}', [PublicacionController::class, 'delete_video'])->name('eliminarVide');
 
 
 // Route::get('/multimedia', function () {
