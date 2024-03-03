@@ -59,18 +59,9 @@ Route::get('/eliminarImg{id}', [PublicacionController::class, 'delete_img'])->na
 // Video de las publicaciones
 Route::post('/agregarVideo{id}',[PublicacionController::class, 'guardar_Video'])->name('guardarVideo');
 Route::get('/eliminarVide{id}', [PublicacionController::class, 'delete_video'])->name('eliminarVide');
-
 Route::get('/vistaEditImg{id}', [PublicacionController::class, 'vistaEditarMultimedia'])->name('vistaEditMulti');
 Route::get('/eliImgE{id}', [PublicacionController::class, 'delete_img_edit'])->name('eliminarImgE');
 Route::get('/eliVideE{id}', [PublicacionController::class, 'delete_video_edit'])->name('eliminarVideEditado');
-
-// Route::get('/multimedia', function () {
-//     $agrupaciones = Agrupacion::all();
-//     $inicio = Inicio::find(1);
-//     return view('/Publicitaria/Administrativa/agregarMultimedia', compact('agrupaciones', 'inicio'));
-// })->name('multimedia');
-
-
 
 
 //actualiza vista Inicio Landing

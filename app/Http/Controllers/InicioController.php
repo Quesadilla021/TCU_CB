@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Agrupacion;
 use App\Models\Inicio;
 use App\Models\Servicio;
 use Illuminate\Http\Request;
@@ -12,8 +13,9 @@ class InicioController extends Controller
     public function get_inicio(){
         $inicio = Inicio::findOrFail(1);
         $servicios = Servicio::all();
+        $agrupaciones = Agrupacion::all();
         
-        return view('Publicitaria.Landing.index', compact('inicio', 'servicios'));
+        return view('Publicitaria.Landing.index', compact('inicio', 'servicios','agrupaciones'));
     }
 
     public function updateInicio(Request $request){

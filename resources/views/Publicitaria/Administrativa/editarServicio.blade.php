@@ -10,9 +10,11 @@
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="d-flex justify-content-start">
-                                    <a href="{{route('vistaServicios')}}" style="margin-right: 2%; margin-top: 1%;"><i class="fa-solid fa-arrow-left" style="
+                                    <a href="{{ route('vistaServicios') }}" style="margin-right: 2%; margin-top: 1%;"><i
+                                            class="fa-solid fa-arrow-left"
+                                            style="
                                             font-size: 25px;"></i></i></a>
-                                    
+
                                     <h3 class="font-weight-bolder mb-0">Editar Servicio {{ $servicio->nombre }}</h3>
                                 </div>
                             </div>
@@ -39,7 +41,8 @@
                         <div id="formulario">
                             {{-- Editar Agrupacion --}}
 
-                            <form action="{{ route('servicio.update', $servicio->id_servicio) }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ route('servicio.update', $servicio->id_servicio) }}" method="POST"
+                                enctype="multipart/form-data">
                                 @csrf
                                 @method('put')
                                 <label for="nombre">Nombre:</label>
@@ -53,13 +56,17 @@
 
                                 <div class="mt-3">
                                     <label for="email">Imagen</label>
-                                    <input value="{{ $servicio->img }}" class="form-control" name="imagen"
-                                        type="file" id="imageInput" accept="image/*"
-                                        onchange="previewImage(event, 'image-Logo', 'conateiner-Logo')">
+                                    <input value="{{ $servicio->img }}" class="form-control" name="imagen" type="file"
+                                        id="imageInput" accept="image/*"
+                                        onchange="previewImage(event, 'image-Logo', 'conateiner-Logo',true, 'image-Logo-actual')">
                                 </div>
 
-                                <div id="conateiner-Logo">
-                                    <img id="image-Logo" src="{{ $servicio->img }}" alt="Vista previa de la imagen" width="100%">
+                                
+                                <div id="conateiner-Logo" class="d-flex justify-content-center">
+                                    <img id="image-Logo" src="#" alt="Vista previa de la imagen"
+                                        style="width: 40%;" hidden>
+                                    <img id="image-Logo-actual" src="{{ $servicio->img }}"
+                                        alt="Vista previa de la imagen" style="width: 40%;">
                                 </div>
 
                                 <div class="d-flex justify-content-center mt-4">

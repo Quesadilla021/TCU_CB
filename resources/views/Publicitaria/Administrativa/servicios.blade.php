@@ -46,13 +46,13 @@
                                 </div>
 
                                 <div class="mt-3 mb-2">
-                                <label for="email">Imagen</label>
+                                <label for="email">Imagen -Icono-</label>
                                 <input class="form-control" name="imagen" type="file" id="imageInput" accept="image/*"
                                     onchange="previewImage(event, 'image', 'conateiner')">
                                 </div>
 
-                                <div id="conateiner">
-                                    <img id="image" src="#" alt="Vista previa de la imagen" width="100%" hidden>
+                                <div id="conateiner" class="d-flex justify-content-center">
+                                    <img id="image" src="#" alt="Vista previa de la imagen" style="width: 30%;" hidden>
                                 </div>
 
 
