@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Agrupacion;
+use App\Models\Inicio;
 use App\Models\Servicio;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -10,9 +11,10 @@ use Illuminate\Support\Facades\Storage;
 class ServicioController extends Controller
 {
     public function index(){
+        $inicio = Inicio::find(1);
         $agrupaciones = Agrupacion::all();  
         $servicios = Servicio::all();  
-        return view('Publicitaria.Administrativa.servicios', compact('agrupaciones','servicios'));
+        return view('Publicitaria.Administrativa.servicios', compact('agrupaciones','servicios','inicio'));
     
     }
 
@@ -35,9 +37,10 @@ class ServicioController extends Controller
 
     public function edit($id)
     {
+        $inicio = Inicio::find(1);
         $agrupaciones = Agrupacion::all(); 
         $servicio = Servicio::find($id);
-        return view('Publicitaria.Administrativa.editarServicio', compact('servicio','agrupaciones'));
+        return view('Publicitaria.Administrativa.editarServicio', compact('servicio','agrupaciones','inicio'));
     }
 
     public function update(Request $request, $id)

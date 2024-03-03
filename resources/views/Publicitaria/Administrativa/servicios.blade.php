@@ -52,7 +52,7 @@
                                 </div>
 
                                 <div id="conateiner">
-                                    <img id="image" src="#" alt="Vista previa de la imagen" width="100%">
+                                    <img id="image" src="#" alt="Vista previa de la imagen" width="100%" hidden>
                                 </div>
 
 
