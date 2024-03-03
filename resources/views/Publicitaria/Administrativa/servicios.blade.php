@@ -111,11 +111,10 @@
                                                             </div>
                                                         </td>
 
-                                                        <td class="d-flex justify-content-center align-middle text-center text-sm">
+                                                        {{-- <td class="d-flex justify-content-center align-middle text-center text-sm">
 
                                                             <a href="{{route('editarServicio',$item->id_servicio)}}" class="btn btn-outline-warning"><i class="fa-regular fa-pen-to-square"></i></a>
 
-                                                            {{-- Cargar en otra pagina la landing para mostrar la modal --}}
                                                             <a  class="btn btn-outline-primary mx-1"><i class="fa-regular fa-eye"></i></a>
 
                                                             <form action="{{ route('servicio.destroy', $item->id_servicio) }}" method="POST">
@@ -123,7 +122,28 @@
                                                                 @method('delete')
                                                             <button type="submit" class="btn btn-outline-danger"><i class="fa-regular fa-trash-can"></i></button>
                                                             </form>
-                                                        </td>
+                                                        </td> --}}
+                                                        
+                                                        <td
+                                                        class="d-flex justify-content-center align-middle text-center text-sm mt-2">
+
+                                                        <a href="{{route('editarServicio',$item->id_servicio)}}"
+                                                            class="btn btn-outline-warning"><i
+                                                                class="fa-regular fa-pen-to-square"></i></a>
+
+                                                        {{-- Cargar en otra pagina la landing para mostrar la modal --}}
+                                                        <a class="btn btn-outline-primary mx-1"><i
+                                                                class="fa-regular fa-eye"></i></a>
+
+                                                        <form
+                                                            action="{{ route('servicio.destroy', $item->id_servicio) }}"
+                                                            method="POST">
+                                                            @csrf
+                                                            @method('delete')
+                                                            <button class="btn btn-outline-danger"><i
+                                                                    class="fa-regular fa-trash-can"></i></button>
+                                                        </form>
+                                                    </td>
                                                     </tr>
                                                 @endforeach
 

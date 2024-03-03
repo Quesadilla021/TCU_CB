@@ -38,10 +38,10 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                    <li class="nav-item"><a class="nav-link btn btn-outline-dark" href="#portfolio">Agrupaciones</a>
+                    </li>
                     <li class="nav-item"><a class="nav-link btn btn-outline-dark" href="#services">Servicios</a>
                     </li>
-                    <li class="nav-item"><a class="nav-link btn btn-outline-dark"
-                            href="#portfolio">Agrupaciones</a></li>
                     <li class="nav-item"><a class="nav-link btn btn-outline-dark" href="#about">Historia</a></li>
                     <li class="nav-item"><a class="nav-link btn btn-outline-dark" href="#team">Equipo</a></li>
                     <li class="nav-item"><a class="nav-link btn btn-outline-dark" href="#contact">Contactenos</a>
@@ -84,13 +84,36 @@
                     <div class="portfolio-item">
                         <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
                             <div class="portfolio-hover">
-                                <div class="portfolio-hover-content">Logo</div>
                             </div>
-                            <img class="img-fluid" src="assets/img/portfolio/1.jpg" alt="..." />
+                            <img class="img-fluid"
+                                style="
+                            height: 300px;
+                            width: 365px;"
+                                src="/imgPruebas/img3.jpg" alt="..." />
                         </a>
                         <div class="portfolio-caption">
                             <div class="portfolio-caption-heading"><a href="{{ route('agrupaciones') }}">Teatro
                                     Barcos</a></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Fin Agrupacion Foreach-->
+
+                <!-- Agrupacion Roreach-->
+                <div class="col-lg-4 col-sm-6 mb-4">
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
+                            <div class="portfolio-hover">
+                            </div>
+                            <img class="img-fluid"
+                                style="
+                            height: 300px;
+                            width: 365px;"
+                                src="/imgPruebas/img4.jpg" alt="..." />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading"><a href="{{ route('agrupaciones') }}">Danza
+                                    Contemporanea</a></div>
                         </div>
                     </div>
                 </div>
@@ -106,7 +129,7 @@
     <section class="page-section bg-light" id="services">
         <div class="container">
             <div class="text-center">
-                <h2 class="section-heading text-uppercase">Services</h2>
+                <h2 class="section-heading text-uppercase">Servicios</h2>
                 <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
             </div>
             <div class="row text-center">
@@ -115,7 +138,8 @@
                     {{-- Foreach para los servicios --}}
                     <div class="col-md-4">
                         <span class="fa-stack fa-4x mb-4">
-                            <img src="{{ $item->img }}" alt=""  style="border-radius: 50%; width: 100%; height: 120%;">
+                            <img src="{{ $item->img }}" alt=""
+                                style="border-radius: 50%; width: 100%; height: 120%;">
                         </span>
                         <h4 class="my-3">{{ $item->titulo }}</h4>
                         <p class="text-muted">{{ $item->descripcion }}</p>
@@ -300,7 +324,8 @@
                             <!-- Phone number input-->
                             <input class="form-control" id="phone" type="tel" placeholder="Your Phone *"
                                 data-sb-validations="required" />
-                            <div class="invalid-feedback" data-sb-feedback="phone:required">Ingrese su numero de telefono.</div>
+                            <div class="invalid-feedback" data-sb-feedback="phone:required">Ingrese su numero de
+                                telefono.</div>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -364,7 +389,8 @@
                             <div class="modal-body">
                                 <!-- Project details-->
                                 <h2 class="text-uppercase">Teatro Barcos</h2>
-                                <img class="imagenesModales mt-4" src="assets/img/portfolio/1.jpg" alt="..." />
+                                <img class="imagenesModales mt-4" src="/imgPruebas/img3.jpg" alt="..." style="
+                                border-radius: 15%;"/>
                                 <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur
                                     adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt
                                     repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae,
