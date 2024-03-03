@@ -11,7 +11,7 @@ class Agrupacion extends Model
     protected $primaryKey = 'id_agrupacion';
     public $timestamps = false;
 
-    public function publicacion()
+    public function publicaciones()
     {
         return $this->hasMany(Publicacion::class,'id_agrupacion');
     }

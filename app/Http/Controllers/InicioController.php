@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Agrupacion;
+use App\Models\Imagen;
 use App\Models\Inicio;
 use App\Models\Servicio;
 use Illuminate\Http\Request;
@@ -42,4 +43,14 @@ class InicioController extends Controller
 
         return back();
     }
+
+    // Agrupaciones
+    // function cargar_agrupacion($id){
+    //     $agrupacion = Agrupacion::find($id);
+
+    //     $imagenes = Imagen::where('id_publicacion', $agrupacion->id_agrupacion);
+
+    //     return view('Publicitaria.Landing.agrupaciones', compact('agrupacion'));
+    // }
+
 }

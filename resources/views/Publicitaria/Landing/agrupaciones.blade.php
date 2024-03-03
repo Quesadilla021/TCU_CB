@@ -28,7 +28,12 @@
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
-            <a class="navbar-brand" href="#page-top"><img src="assets/img/navbar-logo.svg" alt="..." /></a>
+            <a class="navbar-brand" href="#page-top"><img src="/imgPruebas/logo.jpg"
+                style="
+                width: 5%;
+                height: 40%;
+                border-radius: 50%;"
+                alt="..." /></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
                 aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 Menu
@@ -36,29 +41,31 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="{{ route('admin.index') }}">Regresar</a></li>
+                    <li class="nav-item"><a class="nav-link btn btn-outline-dark" href="{{ route('inicio') }}">Regresar</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
     <!-- Masthead-->
-    <header class="masthead">
+    <header class="masthead" style="background-image: url('/imgPruebas/logo 2.jpg');">
     </header>
 
     <section class="page-section" id="tituloAgrupacion">
         <div class="container">
-            <div class="row d-flex justify-content-center">
-                <div class="col-3">
+            <div class="row">
+                <div class="col-1"></div>
+                <div class="col-2 text-center">
                     <img id="img" src="/imgPruebas/H1.png" class="img-fluid" alt="...">
                 </div>
-                <div class="col-9">
-                    <h1 class="text-center mb-4">Nombre</h1>
-                    <h4 style="margin-left: 5%">Descripcion: Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                <div class="col-8 text-center">
+                    <h2 class="text-center mb-4">Nombre Agrupación</h2>
+                    <p style="margin-left: 5%; text-align: justify;">Descripcion: Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                         Assumenda nemo voluptate adipisci recusandae fugit facere omnis enim aliquid?
                         Expedita officia quas suscipit quod odit reiciendis ex nobis consequatur?
-                        Explicabo, porro!</h4>
+                        Explicabo, porro!</p>
                 </div>
+                <div class="col-1"></div>
             </div>
         </div>
     </section>
@@ -66,8 +73,139 @@
 
 
     <section class="bg-light">
-        {{-- Foreach por cada publicacion --}}
+
         <div class="container">
+            <div class="row">
+                <h2 class="section-heading text-uppercase text-center mb-5">PRESENTACIONES</h2>
+            </div>
+        </div>
+        <!-- Presentacion de estructura de publicacion con 4 imagenes max y un video max -->
+        <div class="container" style="margin-bottom: 100px">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body bg-gray">
+                            <div class="row" style="padding: 5%">
+                                <div class="col-6">
+                                    <div class="container-fluid" style="padding-right: 3%">
+                                        <h3 class="mt-3">Titulo ------ August 21,2023</h3>
+                                        <p class="mt-5" style="text-align: justify">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                                            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                    </div>
+                                </div>
+                                <div class="col-6" id="columnasImagenesYvideos" style="display: flex;justify-content: center;align-items: center;">
+                                    <div class="row" style="padding-left: 3%">
+                                        <div class="col-6" id="columnasImagenes" style="display: flex;justify-content: center;align-items: center;">
+                                            <div class="contenedor_imagenes_publicacion">
+                                                <img class="lightboxed imagenes" rel="group1" src="/imgPruebas/H1.png"
+                                                data-link="/imgPruebas/H1.png" alt="Image Alt 2" style="width: 45%;border-radius: 15px;"/>
+                                                
+                                                <img class="lightboxed imagenes" rel="group1" src="/imgPruebas/H1.png"
+                                                data-link="/imgPruebas/H1.png" alt="Image Alt 2" style="width: 45%;border-radius: 15px;"/>
+                                                
+                                                <img class="lightboxed imagenes" rel="group1" src="/imgPruebas/H1.png"
+                                                data-link="/imgPruebas/H1.png" alt="Image Alt 2" style="width: 45%;border-radius: 15px;"/>
+                                                
+                                                <img class="lightboxed imagenes" rel="group1" src="/imgPruebas/H1.png"
+                                                data-link="/imgPruebas/H1.png" alt="Image Alt 2" style="width: 45%;border-radius: 15px;"/>
+                                            </div>
+                                        </div>
+                                        <div class="col-6" id="columnasVideos">
+                                            {{-- Colcoar video --}}
+                                            <img class="lightboxed" rel="group1" src="/imgPruebas/iconoTB.jpg"
+                                            data-link="/imgPruebas/Historia de instagram.mp4"
+                                            style="border: solid 7px;border-radius: 15px;width: 100%;"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Presentacion de estructura de publicacion con 8 imagenes max y 3 videos max -->
+        <div class="container" style="margin-bottom: 100px">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body bg-gray">
+                            <div class="row" style="padding: 5%">
+                                <div class="col-6">
+                                    <div class="container-fluid" style="padding-right: 3%">
+                                        <h3 class="mt-3">Titulo ------ August 21,2023</h3>
+                                        <p class="mt-5" style="text-align: justify">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                                            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                    </div>
+                                </div>
+                                <div class="col-6" id="columnaVideos" style="display: flex;justify-content: center;align-items: center;">
+                                    <div class="row" style="padding-left: 3%">
+                                        <div class="col-12" id="columnasImagenes" style="display: flex;justify-content: center;align-items: center;">
+                                            <div class="contenedor_videos_publicacion" style="display: flex;justify-content: center;align-items: center;">
+                                                {{-- Colcoar video --}}
+                                                <img class="lightboxed" rel="group1" src="/imgPruebas/iconoTB.jpg"
+                                                data-link="/imgPruebas/Historia de instagram.mp4"
+                                                style="border: solid 7px;border-radius: 15px;width: 30%;"/>
+
+                                                {{-- Colcoar video --}}
+                                                <img class="lightboxed" rel="group1" src="/imgPruebas/iconoTB.jpg"
+                                                data-link="/imgPruebas/Historia de instagram.mp4"
+                                                style="border: solid 7px;border-radius: 15px;width: 30%;margin: 0 2% 0 2% "/>
+
+                                                {{-- Colcoar video --}}
+                                                <img class="lightboxed" rel="group1" src="/imgPruebas/iconoTB.jpg"
+                                                data-link="/imgPruebas/Historia de instagram.mp4"
+                                                style="border: solid 7px;border-radius: 15px;width: 30%;"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" id="contenedorImagenes" style="padding: 0 5% 5% 5%">
+                                <div class="col-12">
+                                    <div class="contenedor_imagenes_publicacion text-center">
+                                        <img class="lightboxed imagenes" rel="group1" src="/imgPruebas/H1.png"
+                                        data-link="/imgPruebas/H1.png" alt="Image Alt 2" style="width: 11%;border-radius: 15px;"/>
+                                        
+                                        <img class="lightboxed imagenes" rel="group1" src="/imgPruebas/H1.png"
+                                        data-link="/imgPruebas/H1.png" alt="Image Alt 2" style="width: 11%;border-radius: 15px;"/>
+                                        
+                                        <img class="lightboxed imagenes" rel="group1" src="/imgPruebas/H1.png"
+                                        data-link="/imgPruebas/H1.png" alt="Image Alt 2" style="width: 11%;border-radius: 15px;"/>
+                                        
+                                        <img class="lightboxed imagenes" rel="group1" src="/imgPruebas/H1.png"
+                                        data-link="/imgPruebas/H1.png" alt="Image Alt 2" style="width: 11%;border-radius: 15px;"/>
+
+                                        <img class="lightboxed imagenes" rel="group1" src="/imgPruebas/H1.png"
+                                        data-link="/imgPruebas/H1.png" alt="Image Alt 2" style="width: 11%;border-radius: 15px;"/>
+                                        
+                                        <img class="lightboxed imagenes" rel="group1" src="/imgPruebas/H1.png"
+                                        data-link="/imgPruebas/H1.png" alt="Image Alt 2" style="width: 11%;border-radius: 15px;"/>
+                                        
+                                        <img class="lightboxed imagenes" rel="group1" src="/imgPruebas/H1.png"
+                                        data-link="/imgPruebas/H1.png" alt="Image Alt 2" style="width: 11%;border-radius: 15px;"/>
+                                        
+                                        <img class="lightboxed imagenes" rel="group1" src="/imgPruebas/H1.png"
+                                        data-link="/imgPruebas/H1.png" alt="Image Alt 2" style="width: 11%;border-radius: 15px;"/>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        {{-- Foreach por cada publicacion --}}
+        {{-- <div class="container">
             <div class="row">
                 <div class="col-12">
                     <div class="card">
@@ -84,19 +222,12 @@
                                 <hr>
                                 <div class="row">
                                     <div class="col-12">
-                                        {{-- Foreach imagenes de esa publicacion --}}
                                         <img class="lightboxed imagenes" rel="group1" src="/imgPruebas/H1.png"
                                             data-link="/imgPruebas/H1.png" alt="Image Alt 2" />
-                                        <img class="lightboxed imagenes" rel="group1" src="/imgPruebas/2.png"
-                                            data-link="/imgPruebas/2.png" alt="Image Alt 2" />
-                                        {{-- Colcoar video --}}
-                                        {{-- <video class="lightboxed" src="/imgPruebas/Historia de instagram.mp4"
-                                            data-link="/imgPruebas/Historia de instagram.mp4" data-width="560"
-                                            data-height="315"></video> --}}
+                                       
                                         <img class="lightboxed" rel="group1" src="/imgPruebas/iconoTB.jpg"
                                             data-link="/imgPruebas/Historia de instagram.mp4"
                                             style="width: 15%;"/>
-                                        {{-- Fin del foreach imagenes de esa publicacion --}}
 
                                     </div>
                                 </div>
@@ -108,8 +239,10 @@
                 </div>
             </div>
 
-        </div>
+        </div> --}}
         {{-- Final de foreach por cada publicacion --}}
+
+
 
     </section>
     <!-- Footer-->
