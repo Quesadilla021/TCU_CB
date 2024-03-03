@@ -3,8 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Agrupacion;
+use App\Models\Imagen;
+use App\Models\Inicio;
 use App\Models\Publicacion;
+use App\Models\Video;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class PublicacionController extends Controller
 {
@@ -13,11 +17,11 @@ class PublicacionController extends Controller
      */
     public function index($id)
     {
-        $agrupaciones = Agrupacion::all();  
+        $inicio = Inicio::find(1);
+        $agrupaciones = Agrupacion::all();
         $agrupacion = Agrupacion::find($id);
         $publicaciones = Publicacion::all();
-        return view('Publicitaria.Administrativa.administrarPublicaciones', compact('agrupacion','agrupaciones','publicaciones'));
-    
+        return view('Publicitaria.Administrativa.administrarPublicaciones', compact('agrupacion', 'agrupaciones', 'publicaciones', 'inicio'));
     }
 
     /**
@@ -25,7 +29,6 @@ class PublicacionController extends Controller
      */
     public function create()
     {
-        
     }
 
     /**
@@ -43,7 +46,125 @@ class PublicacionController extends Controller
 
         $publicacion->save();
 
-        return back()->with('Creado','Se guardo la publicacion con exito');
+        $inicio = Inicio::find(1);
+        $agrupaciones = Agrupacion::all();
+
+        return view('Publicitaria.Administrativa.agregarMultimedia', compact('publicacion', 'inicio', 'agrupaciones'));
+    }
+
+    // GUARDAR IMAGENES Y VIDEOS
+    function guardar_imgs(Request $request, $id)
+    {
+        $publicacion = Publicacion::find($id);
+        // return $publicacion;
+
+        if ($request->hasFile('imagenes')) {
+            $imagenes = $request->file('imagenes');
+            foreach ($imagenes as $imagen) {
+                $rutaImagen = $imagen->store('imagenes', 'public');
+                $urlImagen = Storage::url($rutaImagen);
+
+                // Guardar la ruta de la imagen en la base de datos
+                $imagen = new Imagen();
+                $imagen->imagen = $urlImagen;
+                $imagen->id_publicacion = $publicacion->id_publicacion;
+                $imagen->save();
+            }
+        }
+        $inicio = Inicio::find(1);
+        $agrupaciones = Agrupacion::all();
+        $tipo = $request->tipo;
+
+        if ($tipo == 0) {
+            // Devuelve vista de agregar
+            return view('Publicitaria.Administrativa.agregarMultimedia', compact('publicacion', 'inicio', 'agrupaciones'));
+        } else if ($tipo == 1) {
+            // Devuelve vista de editar
+            return view('Publicitaria.Administrativa.editarPublicacion', compact('publicacion', 'inicio', 'agrupaciones'));
+        }
+    }
+
+    function vistaAgregarMulti($id)
+    {
+        $publicacion = Publicacion::find($id);
+        $inicio = Inicio::find(1);
+        $agrupaciones = Agrupacion::all();
+        return view('Publicitaria.Administrativa.agregarMultimedia', compact('publicacion', 'inicio', 'agrupaciones'));
+    }
+
+    public function delete_img($id)
+    {
+        $imagen = Imagen::find($id);
+        $imagen->delete();
+
+        return redirect()->route('vistaAgreMulti', $imagen->id_publicacion);
+    }
+
+    function guardar_Video(Request $request, $id)
+    {
+
+        $publicacion = Publicacion::find($id);
+        $video = new Video();
+        $video->id_publicacion = $id;
+        if ($request->hasFile('imagenMiniatura')) {
+            $imgMiniatura = $request->imagenMiniatura->store('imagenes', 'public');
+            $urlM = Storage::url($imgMiniatura);
+            $video->miniatura = $urlM;
+        }
+
+        if ($request->hasFile('video')) {
+            $videoPath = $request->video->store('videos', 'public');
+            $urlV = Storage::url($videoPath);
+            $video->video = $urlV;
+        }
+        $video->save();
+        $inicio = Inicio::find(1);
+        $agrupaciones = Agrupacion::all();
+
+        $tipo = $request->tipo;
+
+        if ($tipo == 0) {
+            // Devuelve vista de agregar
+            return view('Publicitaria.Administrativa.agregarMultimedia', compact('publicacion', 'inicio', 'agrupaciones'));
+        } else if ($tipo == 1) {
+            // Devuelve vista de editar
+            return view('Publicitaria.Administrativa.editarPublicacion', compact('publicacion', 'inicio', 'agrupaciones'));
+        }
+        // return view('Publicitaria.Administrativa.agregarMultimedia', compact('publicacion', 'inicio', 'agrupaciones'));
+    }
+
+    public function delete_video($id)
+    {
+        $video = Video::find($id);
+        $video->delete();
+
+        return redirect()->route('vistaAgreMulti', $video->id_publicacion);
+    }
+    // FINAL GUARDAR IMAGENES Y VIDEOS
+
+    function vistaEditarMultimedia($id)
+    {
+        $publicacion = Publicacion::find($id);
+        $inicio = Inicio::find(1);
+        $agrupaciones = Agrupacion::all();
+        return view('Publicitaria.Administrativa.editarPublicacion', compact('publicacion', 'inicio', 'agrupaciones'));
+    }
+
+    public function delete_img_edit($id)
+    {
+        $imagen = Imagen::find($id);
+        $imagen->delete();
+
+        return redirect()->route('vistaEditMulti', $imagen->id_publicacion);
+    }
+
+    public function delete_video_edit($id)
+    {
+        // return $id;
+        $video = Video::find($id);
+        $video->delete();
+
+        return redirect()->route('vistaEditMulti', $video->id_publicacion);
     }
 
     /**
@@ -51,9 +172,10 @@ class PublicacionController extends Controller
      */
     public function show($id)
     {
+        $inicio = Inicio::find(1);
         $agrupaciones = Agrupacion::all();
         $agrupacion = Agrupacion::find($id);
-        return view('Publicitaria.Administrativa.crearPublicacion', compact('agrupaciones','agrupacion'));
+        return view('Publicitaria.Administrativa.crearPublicacion', compact('agrupaciones', 'agrupacion', 'inicio'));
     }
 
     /**
@@ -61,9 +183,10 @@ class PublicacionController extends Controller
      */
     public function edit($id)
     {
+        $inicio = Inicio::find(1);
         $agrupaciones = Agrupacion::all();
         $publicacion = Publicacion::find($id);
-        return view('Publicitaria.Administrativa.editarPublicacion',compact('publicacion','agrupaciones'));
+        return view('Publicitaria.Administrativa.editarPublicacion', compact('publicacion', 'agrupaciones', 'inicio'));
     }
 
     /**
@@ -73,12 +196,16 @@ class PublicacionController extends Controller
     {
         $publicacion = Publicacion::find($id);
 
-        $publicacion->titulo = $request->titulo; 
-        $publicacion->descripcion = $request->descripcion; 
-        $publicacion->fecha = $request->fecha; 
+        $publicacion->titulo = $request->titulo;
+        $publicacion->descripcion = $request->descripcion;
+        $publicacion->fecha = $request->fecha;
 
         $publicacion->update();
-        return back();
+        // $inicio = Inicio::find(1);
+        // $agrupaciones = Agrupacion::all();
+
+        return redirect()->route('editarPublicacion', $publicacion->id_publicacion);
+        // return view('Publicitaria.Administrativa.editarPublicacion', compact('publicacion', 'agrupaciones', 'inicio'));
     }
 
     /**

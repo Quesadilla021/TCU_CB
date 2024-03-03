@@ -50,7 +50,7 @@
 
                                 <div class="mt-3">
                                     <label for="apellido">Descripcion:</label>
-                                    <input class="form-control" type="text" name="descripcion" required>
+                                    <textarea class="form-control" name="descripcion" id="" cols="30" rows="5" required></textarea>
                                 </div>
 
                                 <div class="mt-3">

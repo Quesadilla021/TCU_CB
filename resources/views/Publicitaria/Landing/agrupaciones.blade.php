@@ -87,19 +87,15 @@
                                         {{-- Foreach imagenes de esa publicacion --}}
                                         <img class="lightboxed imagenes" rel="group1" src="/imgPruebas/H1.png"
                                             data-link="/imgPruebas/H1.png" alt="Image Alt 2" />
-                                        <img class="lightboxed imagenes" rel="group1" src="/imgPruebas/iconoTB.jpg"
-                                            data-link="/imgPruebas/iconoTB.jpg" alt="Image Alt 2" />
-                                        <img class="lightboxed imagenes" rel="group1" src="/imgPruebas/2.png"
-                                            data-link="/imgPruebas/2.png" alt="Image Alt 2" />
-                                        <img class="lightboxed imagenes" rel="group1" src="/imgPruebas/H1.png"
-                                            data-link="/imgPruebas/H1.png" alt="Image Alt 2" />
-                                        <img class="lightboxed imagenes" rel="group1" src="/imgPruebas/iconoTB.jpg"
-                                            data-link="/imgPruebas/iconoTB.jpg" alt="Image Alt 2" />
                                         <img class="lightboxed imagenes" rel="group1" src="/imgPruebas/2.png"
                                             data-link="/imgPruebas/2.png" alt="Image Alt 2" />
                                         {{-- Colcoar video --}}
                                         {{-- <video class="lightboxed" src="/imgPruebas/Historia de instagram.mp4"
-                                            data-link="/imgPruebas/Historia de instagram.mp4" data-width="560" data-height="315"></video> --}}
+                                            data-link="/imgPruebas/Historia de instagram.mp4" data-width="560"
+                                            data-height="315"></video> --}}
+                                        <img class="lightboxed" rel="group1" src="/imgPruebas/iconoTB.jpg"
+                                            data-link="/imgPruebas/Historia de instagram.mp4"
+                                            style="width: 15%;"/>
                                         {{-- Fin del foreach imagenes de esa publicacion --}}
 
                                     </div>

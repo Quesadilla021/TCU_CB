@@ -5,6 +5,7 @@ use App\Http\Controllers\InicioController;
 use App\Http\Controllers\inicioSesionController;
 use App\Http\Controllers\PublicacionController;
 use App\Http\Controllers\ServicioController;
+use App\Models\Agrupacion;
 use App\Models\Inicio;
 use App\Models\Publicacion;
 use Illuminate\Support\Facades\Route;
@@ -36,6 +37,9 @@ Route::get('/', [InicioController::class, 'get_inicio'])->name('inicio');
 Route::get('/login',[inicioSesionController::class, 'index'])->name('login');
 Route::get('/iniciarsesion', [inicioSesionController::class, 'iniciarsesion'])->name('iniciarsesion');
 
+// Ruta actualizar el inicio
+Route::put('/updateInicio', [InicioController::class, 'updateInicio'])->name('actualizarInicio');
+
 // Carga la pagina de Admin
 // Rutas sobre las agrupaciones
 Route::resource('/admin', AgrupacionController::class);
@@ -46,6 +50,25 @@ Route::get('/agrupacion{id}', [PublicacionController::class, 'index'])->name('vi
 Route::resource('/publicacion',PublicacionController::class);
 Route::get('/crearPublicacion{id}', [PublicacionController::class, 'show'])->name('crearPublicacion');
 Route::get('/editarPublicacion{id}', [PublicacionController::class, 'edit'])->name('editarPublicacion');
+// Route::get('/editarPublicacion/{id}', [PublicacionController::class, 'update'])->name('editarPublicacion');
+
+// Imagenes de las publicaciones
+Route::post('/agregarImgs{id}', [PublicacionController::class, 'guardar_imgs'])->name('guardarImg');
+Route::get('/vistaImg{id}', [PublicacionController::class, 'vistaAgregarMulti'])->name('vistaAgreMulti');
+Route::get('/eliminarImg{id}', [PublicacionController::class, 'delete_img'])->name('eliminarImg');
+// Video de las publicaciones
+Route::post('/agregarVideo{id}',[PublicacionController::class, 'guardar_Video'])->name('guardarVideo');
+Route::get('/eliminarVide{id}', [PublicacionController::class, 'delete_video'])->name('eliminarVide');
+
+Route::get('/vistaEditImg{id}', [PublicacionController::class, 'vistaEditarMultimedia'])->name('vistaEditMulti');
+Route::get('/eliImgE{id}', [PublicacionController::class, 'delete_img_edit'])->name('eliminarImgE');
+Route::get('/eliVideE{id}', [PublicacionController::class, 'delete_video_edit'])->name('eliminarVideEditado');
+
+// Route::get('/multimedia', function () {
+//     $agrupaciones = Agrupacion::all();
+//     $inicio = Inicio::find(1);
+//     return view('/Publicitaria/Administrativa/agregarMultimedia', compact('agrupaciones', 'inicio'));
+// })->name('multimedia');
 
 
 
