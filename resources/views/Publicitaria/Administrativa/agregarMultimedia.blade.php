@@ -1,9 +1,9 @@
 @extends('Publicitaria.Administrativa.plantilla')
 @section('link')
-<link rel="stylesheet" href="lightboxed/lightboxed.css">
+    <link rel="stylesheet" href="lightboxed/lightboxed.css">
 @endsection
 @section('script')
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="lightboxed/lightboxed.js"></script>
 @endsection
 @section('contenido')
@@ -52,6 +52,7 @@
                                         @csrf
 
                                         <div class="mt-3">
+                                            <input type="text" name="tipo" value="0" hidden>
                                             <label for="email">Imagenes -Publicación-</label>
                                             <div class="custom-file">
                                                 <input type="file" name="imagenes[]" multiple id="inputImage"
@@ -103,6 +104,7 @@
                                         @csrf
 
                                         <div class="mt-3">
+                                            <input type="text" name="tipo" value="0" hidden>
                                             <label for="email">Imagen -Miniatura-</label>
                                             <div class="custom-file">
                                                 <input class="form-control" type="file" name="imagenMiniatura"
@@ -114,7 +116,7 @@
 
                                         <div id="conatainer-Miniatura" class="d-flex justify-content-center">
                                             <img id="image-Miniatura" src="#" alt="Vista previa de la imagen"
-                                                style="width: 30%;">
+                                                style="width: 30%;" hidden>
                                         </div>
 
                                         <div class="mt-3">

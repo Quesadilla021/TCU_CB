@@ -50,6 +50,7 @@ Route::get('/agrupacion{id}', [PublicacionController::class, 'index'])->name('vi
 Route::resource('/publicacion',PublicacionController::class);
 Route::get('/crearPublicacion{id}', [PublicacionController::class, 'show'])->name('crearPublicacion');
 Route::get('/editarPublicacion{id}', [PublicacionController::class, 'edit'])->name('editarPublicacion');
+// Route::get('/editarPublicacion/{id}', [PublicacionController::class, 'update'])->name('editarPublicacion');
 
 // Imagenes de las publicaciones
 Route::post('/agregarImgs{id}', [PublicacionController::class, 'guardar_imgs'])->name('guardarImg');
@@ -59,6 +60,9 @@ Route::get('/eliminarImg{id}', [PublicacionController::class, 'delete_img'])->na
 Route::post('/agregarVideo{id}',[PublicacionController::class, 'guardar_Video'])->name('guardarVideo');
 Route::get('/eliminarVide{id}', [PublicacionController::class, 'delete_video'])->name('eliminarVide');
 
+Route::get('/vistaEditImg{id}', [PublicacionController::class, 'vistaEditarMultimedia'])->name('vistaEditMulti');
+Route::get('/eliImgE{id}', [PublicacionController::class, 'delete_img_edit'])->name('eliminarImgE');
+Route::get('/eliVideE{id}', [PublicacionController::class, 'delete_video_edit'])->name('eliminarVideEditado');
 
 // Route::get('/multimedia', function () {
 //     $agrupaciones = Agrupacion::all();

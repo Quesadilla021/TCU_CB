@@ -52,6 +52,7 @@ class PublicacionController extends Controller
         return view('Publicitaria.Administrativa.agregarMultimedia', compact('publicacion', 'inicio', 'agrupaciones'));
     }
 
+    // GUARDAR IMAGENES Y VIDEOS
     function guardar_imgs(Request $request, $id)
     {
         $publicacion = Publicacion::find($id);
@@ -70,11 +71,17 @@ class PublicacionController extends Controller
                 $imagen->save();
             }
         }
-
         $inicio = Inicio::find(1);
         $agrupaciones = Agrupacion::all();
+        $tipo = $request->tipo;
 
-        return view('Publicitaria.Administrativa.agregarMultimedia', compact('publicacion', 'inicio', 'agrupaciones'));
+        if ($tipo == 0) {
+            // Devuelve vista de agregar
+            return view('Publicitaria.Administrativa.agregarMultimedia', compact('publicacion', 'inicio', 'agrupaciones'));
+        } else if ($tipo == 1) {
+            // Devuelve vista de editar
+            return view('Publicitaria.Administrativa.editarPublicacion', compact('publicacion', 'inicio', 'agrupaciones'));
+        }
     }
 
     function vistaAgregarMulti($id)
@@ -93,7 +100,8 @@ class PublicacionController extends Controller
         return redirect()->route('vistaAgreMulti', $imagen->id_publicacion);
     }
 
-    function guardar_Video(Request $request, $id){
+    function guardar_Video(Request $request, $id)
+    {
 
         $publicacion = Publicacion::find($id);
         $video = new Video();
@@ -108,15 +116,23 @@ class PublicacionController extends Controller
             $videoPath = $request->video->store('videos', 'public');
             $urlV = Storage::url($videoPath);
             $video->video = $urlV;
-            
         }
         $video->save();
         $inicio = Inicio::find(1);
         $agrupaciones = Agrupacion::all();
-        return view('Publicitaria.Administrativa.agregarMultimedia', compact('publicacion', 'inicio', 'agrupaciones'));
-    
+
+        $tipo = $request->tipo;
+
+        if ($tipo == 0) {
+            // Devuelve vista de agregar
+            return view('Publicitaria.Administrativa.agregarMultimedia', compact('publicacion', 'inicio', 'agrupaciones'));
+        } else if ($tipo == 1) {
+            // Devuelve vista de editar
+            return view('Publicitaria.Administrativa.editarPublicacion', compact('publicacion', 'inicio', 'agrupaciones'));
+        }
+        // return view('Publicitaria.Administrativa.agregarMultimedia', compact('publicacion', 'inicio', 'agrupaciones'));
     }
-     
+
     public function delete_video($id)
     {
         $video = Video::find($id);
@@ -124,6 +140,33 @@ class PublicacionController extends Controller
 
         return redirect()->route('vistaAgreMulti', $video->id_publicacion);
     }
+    // FINAL GUARDAR IMAGENES Y VIDEOS
+
+    function vistaEditarMultimedia($id)
+    {
+        $publicacion = Publicacion::find($id);
+        $inicio = Inicio::find(1);
+        $agrupaciones = Agrupacion::all();
+        return view('Publicitaria.Administrativa.editarPublicacion', compact('publicacion', 'inicio', 'agrupaciones'));
+    }
+
+    public function delete_img_edit($id)
+    {
+        $imagen = Imagen::find($id);
+        $imagen->delete();
+
+        return redirect()->route('vistaEditMulti', $imagen->id_publicacion);
+    }
+
+    public function delete_video_edit($id)
+    {
+        // return $id;
+        $video = Video::find($id);
+        $video->delete();
+
+        return redirect()->route('vistaEditMulti', $video->id_publicacion);
+    }
+
     /**
      * Display the specified resource.
      */
@@ -158,7 +201,11 @@ class PublicacionController extends Controller
         $publicacion->fecha = $request->fecha;
 
         $publicacion->update();
-        return back();
+        // $inicio = Inicio::find(1);
+        // $agrupaciones = Agrupacion::all();
+
+        return redirect()->route('editarPublicacion', $publicacion->id_publicacion);
+        // return view('Publicitaria.Administrativa.editarPublicacion', compact('publicacion', 'agrupaciones', 'inicio'));
     }
 
     /**
