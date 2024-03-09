@@ -26,11 +26,12 @@ use Illuminate\Support\Facades\Route;
 // })->name('index');
 
 // Pagina Web
-Route::get('/teatrobarcos', function () {
-    return view('/Publicitaria/Landing/agrupaciones');
-})->name('agrupaciones');
+// Route::get('/teatrobarcos', function () {
+//     return view('/Publicitaria/Landing/agrupaciones');
+// })->name('agrupaciones');
 
 Route::get('/agrupac{id}', [InicioController::class, 'cargar_agrupacion'])->name('agrupacion');
+Route::get('/modal{id}', [InicioController::class, 'agrup_modal'])->name('modal');
 
 Route::get('/', [InicioController::class, 'get_inicio'])->name('inicio');
 
@@ -48,7 +49,7 @@ Route::resource('/admin', AgrupacionController::class);
 Route::get('/editarAgrupacion{id}', [AgrupacionController::class, 'edit'])->name('editarAgrupacion');
 
 // Rutas sobre las publicaciones
-Route::get('/agrupacion{id}', [PublicacionController::class, 'index'])->name('vistaAgrupacion');
+Route::get('/publicacionesAgrup{id}', [PublicacionController::class, 'index'])->name('vistaAgrupacion');
 Route::resource('/publicacion',PublicacionController::class);
 Route::get('/crearPublicacion{id}', [PublicacionController::class, 'show'])->name('crearPublicacion');
 Route::get('/editarPublicacion{id}', [PublicacionController::class, 'edit'])->name('editarPublicacion');

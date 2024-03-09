@@ -61,15 +61,22 @@
                                                 name="titulo" required>
 
                                             <div class="mt-3">
+                                                <label for="nombre">Link:</label>
+                                                <input class="form-control" type="text" value="{{ $publicacion->link }}"
+                                                    name="link" required>
+                                            </div>
+
+                                            <div class="mt-3">
                                                 <label for="apellido">Fecha:</label>
                                                 <input class="form-control" type="date" value="{{ $publicacion->fecha }}"
                                                     name="fecha" required>
                                             </div>
+
                                         </div>
                                         <div class="col-7">
                                             <div class="">
                                                 <label for="apellido">Descripcion:</label>
-                                                <textarea class="form-control" name="descripcion" id="" cols="30" rows="5" required>{{ $publicacion->descripcion }}</textarea>
+                                                <textarea class="form-control" name="descripcion" id="" cols="30" rows="8" required>{{ $publicacion->descripcion }}</textarea>
                                             </div>
                                         </div>
                                     </div>

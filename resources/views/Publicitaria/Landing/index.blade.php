@@ -83,7 +83,7 @@
                 @foreach ($agrupaciones as $item)
                 <div class="col-lg-4 col-sm-6 mb-4">
                     <div class="portfolio-item">
-                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
+                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1" onclick="mostrarModalAgrupacion(@json($item->id_agrupacion))">
                             <div class="portfolio-hover">
                             </div>
                             <img class="img-fluid"
@@ -93,7 +93,9 @@
                                 src="{{$item->img_logo}}" alt="..." />
                         </a>
                         <div class="portfolio-caption">
-                            <div class="portfolio-caption-heading"><a href="{{ route('agrupacion', $item) }}">{{$item->nombre}}</a></div>
+                            <div class="portfolio-caption-heading">
+                                <a href="{{ route('agrupacion', $item) }}">{{$item->nombre}}</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -104,6 +106,40 @@
         </div>
     </section>
     <!-- FIN Agrupaciones---------------------------------------------------------------------->
+
+    <!-- Modal Agrupacion -->
+    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg"
+                        alt="Close modal" /></div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="modal-body">
+                                <!-- Project details-->
+                                <h2 class="text-uppercase" id="nombre"></h2>
+                                <img id="logo" class="imagenesModales mt-4" alt="..." style="
+                                border-radius: 15%;
+                                height: 20%;
+                                width: 40%;"/>
+                                <p id="descripcion"></p>
+                                <ul class="list-inline">
+                                    <li>
+                                        <strong>¿Quieres saber mas sobre nosotros?</strong>
+                                    </li>
+                                </ul>
+                                <a id="verMas" href="" class="btn btn-primary btn-xl">
+                                    Saber mas
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{-- Fin Modal Agrupaciones --}}
 
     <!-- Servicios---------------------------------------------------------------------->
     <section class="page-section bg-light" id="services">
@@ -357,39 +393,6 @@
         </div>
     </footer>
 
-    <!-- Agrupaciones Modals-->
-    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg"
-                        alt="Close modal" /></div>
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-8">
-                            <div class="modal-body">
-                                <!-- Project details-->
-                                <h2 class="text-uppercase">Teatro Barcos</h2>
-                                <img class="imagenesModales mt-4" src="/imgPruebas/img3.jpg" alt="..." style="
-                                border-radius: 15%;"/>
-                                <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur
-                                    adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt
-                                    repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae,
-                                    nostrum, reiciendis facere nemo!</p>
-                                <ul class="list-inline">
-                                    <li>
-                                        <strong>¿Quieres saber mas sobre nosotros?</strong>
-                                    </li>
-                                </ul>
-                                <a href="{{ route('agrupaciones') }}" class="btn btn-primary btn-xl">
-                                    Saber mas
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -400,6 +403,7 @@
     <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
     <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
     <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    @include('Publicitaria.Landing.ajax_modal')
 </body>
 
 </html>

@@ -40,6 +40,7 @@ class PublicacionController extends Controller
         $publicacion->id_agrupacion = $request->id_agrupacion;
         $publicacion->titulo = $request->titulo;
         $publicacion->descripcion = $request->descripcion;
+        $publicacion->link = $request->link;
         $publicacion->fecha = $request->fecha;
 
         // FALTAN LAS IMAGENES Y VIDEOS
@@ -198,6 +199,7 @@ class PublicacionController extends Controller
 
         $publicacion->titulo = $request->titulo;
         $publicacion->descripcion = $request->descripcion;
+        $publicacion->link = $request->link;
         $publicacion->fecha = $request->fecha;
 
         $publicacion->update();

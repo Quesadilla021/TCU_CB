@@ -53,4 +53,17 @@ class InicioController extends Controller
         return view('Publicitaria.Landing.agrupaciones', compact('agrupacion','inicio'));
     }
 
+    function agrup_modal($id){
+        $agrupacion = Agrupacion::find($id);
+        $agrupacionFinal = [
+            'id_agrupacion' => $agrupacion->id_agrupacion,
+            'nombre' => $agrupacion->nombre,
+            'descripcion' => $agrupacion->descripcion,
+            'img_logo' => $agrupacion->img_logo,
+            'img_fondo' => $agrupacion->img_fondo
+        ];
+        
+        return $agrupacionFinal;
+    }
+
 }
