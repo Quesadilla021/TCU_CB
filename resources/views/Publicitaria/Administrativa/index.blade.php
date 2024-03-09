@@ -45,28 +45,31 @@
 
                                 <div class="mt-3">
                                     <label for="apellido">Descripcion:</label>
-                                    <input class="form-control" type="text" name="descripcion"
-                                        placeholder="Ingrese una descripcion">
+                                    <textarea class="form-control" name="descripcion" id="" cols="30" rows="6"
+                                        placeholder="Ingrese una descripcion"></textarea>
+
                                 </div>
 
                                 <div class="mt-3">
                                     <label for="email">Imagen -Logo-</label>
-                                    <input class="form-control" type="file" name="imagenLogo"
-                                        accept="image/*" onchange="previewImage(event, 'image-Logo', 'conatainer-Logo', false)" > 
+                                    <input class="form-control" type="file" name="imagenLogo" accept="image/*"
+                                        onchange="previewImage(event, 'image-Logo', 'conatainer-Logo', false)">
                                 </div>
 
                                 <div id="conatainer-Logo" class="d-flex justify-content-center">
-                                    <img id="image-Logo" src="#" alt="Vista previa de la imagen" style="width: 30%;" hidden>
+                                    <img id="image-Logo" src="#" alt="Vista previa de la imagen" style="width: 30%;"
+                                        hidden>
                                 </div>
 
                                 <div class="mt-3">
                                     <label for="email">Imagen -Fondo-</label>
-                                    <input class="form-control" name="imagenFondo" type="file"
-                                        accept="image/*" onchange="previewImage(event, 'image-Fondo', 'conatainer-Fondo', false)">
+                                    <input class="form-control" name="imagenFondo" type="file" accept="image/*"
+                                        onchange="previewImage(event, 'image-Fondo', 'conatainer-Fondo', false)">
                                 </div>
 
                                 <div id="conatainer-Fondo" class="d-flex justify-content-center">
-                                    <img id="image-Fondo" src="#" alt="Vista previa de la imagen" style="width: 30%;" hidden>
+                                    <img id="image-Fondo" src="#" alt="Vista previa de la imagen" style="width: 30%;"
+                                        hidden>
                                 </div>
 
                                 <div class="d-flex justify-content-center mt-4">
@@ -115,26 +118,33 @@
                                                     <tr>
                                                         <td>
                                                             <div class="align-middle text-center text-sm">
-                                                                <h6 class="mb-0 text-sm">{{$item->id_agrupacion}}</h6>
+                                                                <h6 class="mb-0 text-sm">{{ $item->id_agrupacion }}</h6>
                                                             </div>
                                                         </td>
                                                         <td>
                                                             <div class="align-middle text-center text-sm">
-                                                                <h6 class="mb-0 text-sm">{{$item->nombre}}</h6>
+                                                                <h6 class="mb-0 text-sm">{{ $item->nombre }}</h6>
                                                             </div>
                                                         </td>
 
-                                                        <td class="d-flex justify-content-center align-middle text-center text-sm">
+                                                        <td
+                                                            class="d-flex justify-content-center align-middle text-center text-sm">
 
-                                                            <a href="{{route('editarAgrupacion',$item->id_agrupacion)}}" class="btn btn-outline-warning"><i class="fa-regular fa-pen-to-square"></i></a>
+                                                            <a href="{{ route('editarAgrupacion', $item->id_agrupacion) }}"
+                                                                class="btn btn-outline-warning"><i
+                                                                    class="fa-regular fa-pen-to-square"></i></a>
 
                                                             {{-- Cargar en otra pagina la landing para mostrar la modal --}}
-                                                            <a  class="btn btn-outline-primary mx-1"><i class="fa-regular fa-eye"></i></a>
+                                                            <a class="btn btn-outline-primary mx-1"><i
+                                                                    class="fa-regular fa-eye"></i></a>
 
-                                                            <form action="{{ route('admin.destroy', $item->id_agrupacion) }}" method="POST">
+                                                            <form
+                                                                action="{{ route('admin.destroy', $item->id_agrupacion) }}"
+                                                                method="POST">
                                                                 @csrf
                                                                 @method('delete')
-                                                            <button class="btn btn-outline-danger"><i class="fa-regular fa-trash-can"></i></button>
+                                                                <button class="btn btn-outline-danger"><i
+                                                                        class="fa-regular fa-trash-can"></i></button>
                                                             </form>
                                                         </td>
                                                     </tr>

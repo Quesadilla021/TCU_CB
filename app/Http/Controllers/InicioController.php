@@ -45,12 +45,12 @@ class InicioController extends Controller
     }
 
     // Agrupaciones
-    // function cargar_agrupacion($id){
-    //     $agrupacion = Agrupacion::find($id);
+    function cargar_agrupacion($id){
+        $agrupacion = Agrupacion::find($id);
+        $inicio = Inicio::findOrFail(1);
+        // $imagenes = Imagen::where('id_publicacion', $agrupacion->id_agrupacion);
 
-    //     $imagenes = Imagen::where('id_publicacion', $agrupacion->id_agrupacion);
-
-    //     return view('Publicitaria.Landing.agrupaciones', compact('agrupacion'));
-    // }
+        return view('Publicitaria.Landing.agrupaciones', compact('agrupacion','inicio'));
+    }
 
 }

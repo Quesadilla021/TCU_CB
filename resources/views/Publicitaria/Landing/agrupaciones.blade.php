@@ -28,7 +28,7 @@
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
-            <a class="navbar-brand" href="#page-top"><img src="/imgPruebas/logo.jpg"
+            <a class="navbar-brand" href="{{ route('inicio') }}"><img src="{{ $inicio->logo }}"
                 style="
                 width: 5%;
                 height: 40%;
@@ -41,14 +41,14 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                    <li class="nav-item"><a class="nav-link btn btn-outline-dark" href="{{ route('inicio') }}">Regresar</a></li>
+                    <li class="nav-item"><a class="nav-link btn btn-outline-dark" href="{{ route('inicio') }}">Inicio</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
     <!-- Masthead-->
-    <header class="masthead" style="background-image: url('/imgPruebas/logo 2.jpg');">
+    <header class="masthead" style="background-image: url('{{$agrupacion->img_fondo}}');">
     </header>
 
     <section class="page-section" id="tituloAgrupacion">
@@ -56,14 +56,11 @@
             <div class="row">
                 <div class="col-1"></div>
                 <div class="col-2 text-center">
-                    <img id="img" src="/imgPruebas/H1.png" class="img-fluid" alt="...">
+                    <img id="img" src="{{$agrupacion->img_logo}}" class="img-fluid" alt="...">
                 </div>
                 <div class="col-8 text-center">
-                    <h2 class="text-center mb-4">Nombre Agrupación</h2>
-                    <p style="margin-left: 5%; text-align: justify;">Descripcion: Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        Assumenda nemo voluptate adipisci recusandae fugit facere omnis enim aliquid?
-                        Expedita officia quas suscipit quod odit reiciendis ex nobis consequatur?
-                        Explicabo, porro!</p>
+                    <h2 class="text-center mb-4">{{$agrupacion->nombre}}</h2>
+                    <p style="margin-left: 5%; text-align: justify;">{{$agrupacion->descripcion}}</p>
                 </div>
                 <div class="col-1"></div>
             </div>

@@ -30,6 +30,8 @@ Route::get('/teatrobarcos', function () {
     return view('/Publicitaria/Landing/agrupaciones');
 })->name('agrupaciones');
 
+Route::get('/agrupac{id}', [InicioController::class, 'cargar_agrupacion'])->name('agrupacion');
+
 Route::get('/', [InicioController::class, 'get_inicio'])->name('inicio');
 
 // Admin

@@ -10,9 +10,11 @@
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="d-flex justify-content-start">
-                                    <a href="{{route('admin.index')}}" style="margin-right: 2%; margin-top: 1%;"><i class="fa-solid fa-arrow-left" style="
+                                    <a href="{{ route('admin.index') }}" style="margin-right: 2%; margin-top: 1%;"><i
+                                            class="fa-solid fa-arrow-left"
+                                            style="
                                             font-size: 25px;"></i></i></a>
-                                    
+
                                     <h3 class="font-weight-bolder mb-0">Editar Agrupación {{ $agrupacion->nombre }}</h3>
                                 </div>
                             </div>
@@ -39,7 +41,8 @@
                         <div id="formulario">
                             {{-- Editar Agrupacion --}}
 
-                            <form action="{{ route('admin.update', $agrupacion->id_agrupacion) }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ route('admin.update', $agrupacion->id_agrupacion) }}" method="POST"
+                                enctype="multipart/form-data">
                                 @csrf
                                 @method('put')
                                 <label for="nombre">Nombre:</label>
@@ -47,8 +50,11 @@
 
                                 <div class="mt-3">
                                     <label for="apellido">Descripcion:</label>
-                                    <input class="form-control" type="text" name="descripcion"
-                                        value="{{ $agrupacion->descripcion }}">
+                                    {{-- <input class="form-control" type="text" name="descripcion"
+                                        value="{{ $agrupacion->descripcion }}"> --}}
+                                    <textarea class="form-control" name="descripcion" id="" cols="30" rows="6"
+                                        placeholder="Ingrese una descripcion">{{ $agrupacion->descripcion }}</textarea>
+
                                 </div>
 
                                 <div class="mt-3">
@@ -59,8 +65,10 @@
                                 </div>
 
                                 <div id="container-Logo" class="d-flex justify-content-center">
-                                    <img id="image-Logo" src="#" alt="Vista previa de la imagen" style="width: 30%;" hidden>
-                                    <img id="image-Logo-actual" src="{{ $agrupacion->img_logo }}" alt="Vista previa de la imagen" style="width: 30%;">
+                                    <img id="image-Logo" src="#" alt="Vista previa de la imagen" style="width: 30%;"
+                                        hidden>
+                                    <img id="image-Logo-actual" src="{{ $agrupacion->img_logo }}"
+                                        alt="Vista previa de la imagen" style="width: 30%;">
                                 </div>
 
                                 <div class="mt-3">
@@ -71,9 +79,11 @@
                                 </div>
 
                                 <div id="container-Fondo" class="d-flex justify-content-center">
-                                    <img id="image-Fondo" src="#" alt="Vista previa de la imagen" style="width: 30%;" hidden>
-                                    <img id="image-Fondo-actual" src="{{ $agrupacion->img_fondo }}" alt="Vista previa de la imagen" style="width: 30%;">
-                                
+                                    <img id="image-Fondo" src="#" alt="Vista previa de la imagen" style="width: 30%;"
+                                        hidden>
+                                    <img id="image-Fondo-actual" src="{{ $agrupacion->img_fondo }}"
+                                        alt="Vista previa de la imagen" style="width: 30%;">
+
                                 </div>
 
                                 <div class="d-flex justify-content-center mt-4">

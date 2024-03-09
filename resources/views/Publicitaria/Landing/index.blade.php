@@ -77,9 +77,10 @@
                 <h2 class="section-heading text-uppercase">Agrupaciones</h2>
                 <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
             </div>
-            <div class="row">
+            <div class="row text-center d-flex justify-content-center">
 
                 <!-- Agrupacion Roreach-->
+                @foreach ($agrupaciones as $item)
                 <div class="col-lg-4 col-sm-6 mb-4">
                     <div class="portfolio-item">
                         <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
@@ -89,36 +90,15 @@
                                 style="
                             height: 300px;
                             width: 365px;"
-                                src="/imgPruebas/img3.jpg" alt="..." />
+                                src="{{$item->img_logo}}" alt="..." />
                         </a>
                         <div class="portfolio-caption">
-                            <div class="portfolio-caption-heading"><a href="{{ route('agrupaciones') }}">Teatro
-                                    Barcos</a></div>
+                            <div class="portfolio-caption-heading"><a href="{{ route('agrupacion', $item) }}">{{$item->nombre}}</a></div>
                         </div>
                     </div>
                 </div>
+                @endforeach
                 <!-- Fin Agrupacion Foreach-->
-
-                <!-- Agrupacion Roreach-->
-                <div class="col-lg-4 col-sm-6 mb-4">
-                    <div class="portfolio-item">
-                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
-                            <div class="portfolio-hover">
-                            </div>
-                            <img class="img-fluid"
-                                style="
-                            height: 300px;
-                            width: 365px;"
-                                src="/imgPruebas/img4.jpg" alt="..." />
-                        </a>
-                        <div class="portfolio-caption">
-                            <div class="portfolio-caption-heading"><a href="{{ route('agrupaciones') }}">Danza
-                                    Contemporanea</a></div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Fin Agrupacion Foreach-->
-
 
             </div>
         </div>
@@ -132,11 +112,11 @@
                 <h2 class="section-heading text-uppercase">Servicios</h2>
                 <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
             </div>
-            <div class="row text-center">
+            <div class="row text-center d-flex justify-content-center">
 
                 @foreach ($servicios as $item)
                     {{-- Foreach para los servicios --}}
-                    <div class="col-md-4">
+                    <div class="col-md-4 mt-5">
                         <span class="fa-stack fa-4x mb-4">
                             <img src="{{ $item->img }}" alt=""
                                 style="border-radius: 50%; width: 100%; height: 120%;">
