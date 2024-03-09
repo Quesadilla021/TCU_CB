@@ -23,7 +23,7 @@
 
         <div class="row">
 
-            <div class="col-6">
+            <div class="col-5">
 
 
                 @csrf
@@ -84,7 +84,7 @@
 
 
             {{-- Tabla Cargar Datos --}}
-            <div class="col-6">
+            <div class="col-7">
 
                 <div class="container-fluid">
                     <div class="row">
@@ -98,17 +98,17 @@
 
                                 <div class="card-body px-0 pb-2">
                                     <div class="table-responsive p-0">
-                                        <table class="table align-items-center mb-0">
+                                        <table class="align-items-center mb-0" id="datatablesSimple">
                                             <thead>
                                                 <tr>
                                                     <th
-                                                        class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                                        class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 tabla">
                                                         ID</th>
                                                     <th
-                                                        class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                                        class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 tabla">
                                                         Nombre</th>
                                                     <th
-                                                        class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                                        class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 tabla">
                                                         Acciones</th>
 
                                                 </tr>
@@ -117,35 +117,34 @@
                                                 @foreach ($agrupaciones as $item)
                                                     <tr>
                                                         <td>
-                                                            <div class="align-middle text-center text-sm">
-                                                                <h6 class="mb-0 text-sm">{{ $item->id_agrupacion }}</h6>
-                                                            </div>
+
+                                                            <h6 class="mb-0 text-sm">{{ $item->id_agrupacion }}</h6>
+
                                                         </td>
                                                         <td>
-                                                            <div class="align-middle text-center text-sm">
-                                                                <h6 class="mb-0 text-sm">{{ $item->nombre }}</h6>
-                                                            </div>
+                                                            <h6 class="mb-0 text-sm">{{ $item->nombre }}</h6>
                                                         </td>
 
-                                                        <td
-                                                            class="d-flex justify-content-center align-middle text-center text-sm">
+                                                        <td>
 
-                                                            <a href="{{ route('editarAgrupacion', $item->id_agrupacion) }}"
-                                                                class="btn btn-outline-warning"><i
-                                                                    class="fa-regular fa-pen-to-square"></i></a>
+                                                            <div class="d-flex justify-content-center">
+                                                                <a href="{{ route('editarAgrupacion', $item->id_agrupacion) }}"
+                                                                    class="btn btn-outline-warning"><i
+                                                                        class="fa-regular fa-pen-to-square"></i></a>
 
-                                                            {{-- Cargar en otra pagina la landing para mostrar la modal --}}
-                                                            <a class="btn btn-outline-primary mx-1"><i
-                                                                    class="fa-regular fa-eye"></i></a>
+                                                                {{-- Cargar en otra pagina la landing para mostrar la modal --}}
+                                                                <a class="btn btn-outline-primary mx-1"><i
+                                                                        class="fa-regular fa-eye"></i></a>
 
-                                                            <form
-                                                                action="{{ route('admin.destroy', $item->id_agrupacion) }}"
-                                                                method="POST">
-                                                                @csrf
-                                                                @method('delete')
-                                                                <button class="btn btn-outline-danger"><i
-                                                                        class="fa-regular fa-trash-can"></i></button>
-                                                            </form>
+                                                                <form
+                                                                    action="{{ route('admin.destroy', $item->id_agrupacion) }}"
+                                                                    method="POST">
+                                                                    @csrf
+                                                                    @method('delete')
+                                                                    <button class="btn btn-outline-danger"><i
+                                                                            class="fa-regular fa-trash-can"></i></button>
+                                                                </form>
+                                                            </div>
                                                         </td>
                                                     </tr>
                                                 @endforeach

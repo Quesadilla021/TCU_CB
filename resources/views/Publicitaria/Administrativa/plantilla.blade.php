@@ -33,10 +33,11 @@
     <link id="pagestyle" href="./assets/css/material-dashboard.css?v=3.1.0" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="/css/styleK.css">
 
+    @yield('link')
 
-        @yield('link')
-    
 
 
     <!-- Nepcha Analytics (nepcha.com) -->
@@ -394,10 +395,15 @@
             </div>
         </div>
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js"></script>
+    <script src="/js/datatables-simple-demo.js"></script>
     
+
     @yield('script')
-    
-    
+
+
     <script>
         function previewImage(event, pImage, pContainer, editAgrup, idImgActual) {
             var imagen_actual = document.getElementById(idImgActual);
@@ -405,12 +411,12 @@
             console.log(pImage);
             console.log(pContainer);
             console.log(idImgActual);
-            
+
             if (editAgrup == true) {
-                
+
                 imagen_actual.hidden = true;
                 imagen.hidden = false;
-            } else{
+            } else {
                 imagen.hidden = false;
             }
 
@@ -441,6 +447,7 @@
     <script src="./assets/js/core/bootstrap.min.js"></script>
     <script src="./assets/js/plugins/perfect-scrollbar.min.js"></script>
     <script src="./assets/js/plugins/smooth-scrollbar.min.js"></script>
+    
 
     <script>
         var win = navigator.platform.indexOf('Win') > -1;
