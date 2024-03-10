@@ -134,7 +134,7 @@
                                                                         class="fa-regular fa-pen-to-square"></i></a>
 
                                                                 {{-- Cargar en otra pagina la landing para mostrar la modal --}}
-                                                                <a class="btn btn-outline-primary mx-1"><i
+                                                                <a class="btn btn-outline-primary mx-1" target="_blank" href="{{ route('inicio') }}"><i
                                                                         class="fa-regular fa-eye"></i></a>
 
                                                                 <form

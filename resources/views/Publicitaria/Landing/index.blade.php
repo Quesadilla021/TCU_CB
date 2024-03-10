@@ -81,24 +81,25 @@
 
                 <!-- Agrupacion Roreach-->
                 @foreach ($agrupaciones as $item)
-                <div class="col-lg-4 col-sm-6 mb-4">
-                    <div class="portfolio-item">
-                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1" onclick="mostrarModalAgrupacion(@json($item->id_agrupacion))">
-                            <div class="portfolio-hover">
-                            </div>
-                            <img class="img-fluid"
-                                style="
-                            height: 300px;
-                            width: 365px;"
-                                src="{{$item->img_logo}}" alt="..." />
-                        </a>
-                        <div class="portfolio-caption">
-                            <div class="portfolio-caption-heading">
-                                <a href="{{ route('agrupacion', $item) }}">{{$item->nombre}}</a>
+                    <div class="col-lg-4 col-sm-6 mb-4">
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1"
+                                onclick="mostrarModalAgrupacion(@json($item->id_agrupacion))">
+                                <div class="portfolio-hover">
+                                </div>
+                                <img class="img-fluid"
+                                    style="
+                            height: 280px;
+                            width: 330px;"
+                                    src="{{ $item->img_logo }}" alt="..." />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">
+                                    <a href="{{ route('agrupacion', $item) }}">{{ $item->nombre }}</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
                 @endforeach
                 <!-- Fin Agrupacion Foreach-->
 
@@ -119,10 +120,11 @@
                             <div class="modal-body">
                                 <!-- Project details-->
                                 <h2 class="text-uppercase" id="nombre"></h2>
-                                <img id="logo" class="imagenesModales mt-4" alt="..." style="
+                                <img id="logo" class="imagenesModales mt-4" alt="..."
+                                    style="
                                 border-radius: 15%;
                                 height: 20%;
-                                width: 40%;"/>
+                                width: 40%;" />
                                 <p id="descripcion"></p>
                                 <ul class="list-inline">
                                     <li>
@@ -312,86 +314,149 @@
     </section>
 
     <!-- Contact-->
-    <section class="page-section" id="contact">
+    <section class="page-section" id="contacto">
         <div class="container">
             <div class="text-center">
-                <h2 class="section-heading text-uppercase">Contact Us</h2>
+                <h2 class="section-heading text-uppercase">Contactenos</h2>
                 <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
             </div>
 
-            <form id="contactForm" data-sb-form-api-token="API_TOKEN">
-                <div class="row align-items-stretch mb-5">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <!-- Name input-->
-                            <input class="form-control" id="name" type="text" placeholder="Your Name *"
-                                data-sb-validations="required" />
-                            <div class="invalid-feedback" data-sb-feedback="name:required">Ingrese su nombre.</div>
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-5">
+                        <div class="text-center mt-3 text-muted">
+                            <h5><i class="fa-brands fa-whatsapp"></i> Whatsapp</h5>
                         </div>
-                        <div class="form-group">
-                            <!-- Email address input-->
-                            <input class="form-control" id="email" type="email" placeholder="Your Email *"
-                                data-sb-validations="required,email" />
-                            <div class="invalid-feedback" data-sb-feedback="email:required">Ingrese su email.
+                        <h6 class="mt-4">Ingrese su nombre y apellidos:</h6>
+                        <input type="text" class="form-control" name="">
+                        <h6 class="mt-4">Escriba un mensaje:</h6>
+                        <input type="text" class="form-control" name="">
+                        <div class="d-flex justify-content-center mt-4">
+                            <button class="btn btn-primary">
+                                Enviar Mensaje
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div
+                            style="
+                            border-left: 1px solid gray;
+                            height: 100%;
+                            margin-left: 50%;">
+                        </div>
+                    </div>
+                    <div class="col-5">
+                        <div class="row">
+                            <div class="text-center mt-3 text-muted">
+                                <h5><i class="fa-regular fa-envelope"></i> Correo</h5>
                             </div>
-                            <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
-                        </div>
-                        <div class="form-group mb-md-0">
-                            <!-- Phone number input-->
-                            <input class="form-control" id="phone" type="tel" placeholder="Your Phone *"
-                                data-sb-validations="required" />
-                            <div class="invalid-feedback" data-sb-feedback="phone:required">Ingrese su numero de
-                                telefono.</div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group form-group-textarea mb-md-0">
-                            <!-- Message input-->
-                            <textarea class="form-control" id="message" placeholder="Your Message *" data-sb-validations="required"></textarea>
-                            <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.
+
+                            <div class="col-6 mt-3">
+                                <h6>Ingrese su nombre y apellido:</h6>
+                                <input type="text" class="form-control" name="">
                             </div>
+                            <div class="col-6 mt-3">
+                                <h6>Ingrese su correo electronico:</h6>
+                                <input type="text" class="form-control" name="">
+                            </div>
+
+
+                        </div>
+                        <h6 class="mt-4">Escriba un mensaje:</h6>
+                        <input type="text" class="form-control" name="">
+                        <div class="d-flex justify-content-center mt-4">
+                            <button class="btn btn-primary">
+                                Enviar Correo
+                            </button>
                         </div>
                     </div>
                 </div>
-                <!-- Submit success message-->
-                <!---->
-                <!-- This is what your users will see when the form-->
-                <!-- has successfully submitted-->
-                <div class="d-none" id="submitSuccessMessage">
-                    <div class="text-center text-white mb-3">
-                        <div class="fw-bolder">Form submission successful!</div>
-                        To activate this form, sign up at
-                        <br />
-                        <a
-                            href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
-                    </div>
-                </div>
-                <!-- Submit error message-->
-                <!---->
-                <!-- This is what your users will see when there is-->
-                <!-- an error submitting the form-->
-                <div class="d-none" id="submitErrorMessage">
-                    <div class="text-center text-danger mb-3">Error sending message!</div>
-                </div>
-                <!-- Submit Button-->
-                <div class="text-center"><button class="btn btn-primary btn-xl text-uppercase disabled"
-                        id="submitButton" type="submit">Send Message</button></div>
-            </form>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-6">
+
+            </div>
+            <div class="col-3"></div>
+        </div>
+        </div>
+
         </div>
     </section>
 
     <!-- Footer-->
-    <footer class="footer py-4">
+    <section class="footer py-5 bg-light">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-4 text-lg-start"><b>Siganos en:</b></div>
-                <div class="col-lg-4 my-3 my-lg-0">
-                    <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fa-brands fa-instagram"></i></a>
+            <div class="row mb-5">
+                <div class="col-3">
+                    <img src="{{ $inicio->logo }}" alt=""
+                        style="
+                    height: 50%;
+                    width: 50%;
+                    border-radius: 50%;
+                ">
+                    <p class="mt-2">¡Somos Una Compañía Conformada por Agrupaciones Artistica!</p>
+                    <div class="row">
+                        <div class="col-6" style="
+                        margin-left: -42px;
+                    ">
+                            <div class="badge bg-warning text-dark pt-2">
+                                <h6
+                                    style="
+                                font-size: small; 
+                            ">
+                                    <i class="fa-solid fa-phone"></i> 8791-3227</h6>
+                            </div>
+                        </div>
+                        <div class="col-6"
+                            style="
+                        margin-left: inherit;
+                    ">
+                            <div class="badge bg-warning text-dark pt-2">
+                                <h6
+                                    style="
+                                font-size: small;
+                            ">
+                                    <i class="fa-solid fa-envelope"></i>
+                                    teatrobarkos@gmail.com</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3"></div>
+                <div class="col-3 mt-5">
+                    <h4>Compañía</h4>
+                    <div>
+                        <a class="nav-link" href="#portfolio">Agrupaciones</a>
+                        <a class="nav-link" href="#services">Servicios</a>
+                        <a class="nav-link" href="#about">Historia</a>
+                        <a class="nav-link" href="#team">Equipo</a>
+                        <a class="nav-link" href="#contact">Contactenos</a>
+                    </div>
+
+                </div>
+                <div class="col-3 mt-5">
+                    <h4>Siguenos</h4>
+
+                    <a href="https://www.facebook.com/teatro.barcos"><i class="fa-brands fa-facebook"
+                            style="font-size: 210%"></i></a>
+                    <a href="https://www.instagram.com/compania_barcos/"><i class="fa-brands fa-instagram"
+                            style="font-size: 210%"></i></a>
                 </div>
             </div>
+            <hr>
+            <div class="row mt-5">
+                <div class="col-4"></div>
+                <div class="col-4">
+                    <p class="text-gray">Reservados todos los derechos © 2024</p>
+                </div>
+                <div class="col-4"></div>
+            </div>
         </div>
-    </footer>
+    </section>
 
 
     <!-- Bootstrap core JS-->
