@@ -50,8 +50,9 @@
 
                                 <div class="mt-3">
                                     <label for="apellido">Descripcion:</label>
-                                    <input class="form-control" type="text" name="descripcion"
-                                        value="{{ $servicio->descripcion }}">
+
+                                    <textarea name="descripcion" class="form-control" id="" cols="30" rows="8"
+                                        placeholder="Ingrese una descripcion">{{ $servicio->descripcion }}</textarea>
                                 </div>
 
                                 <div class="mt-3">
@@ -61,12 +62,12 @@
                                         onchange="previewImage(event, 'image-Logo', 'conateiner-Logo',true, 'image-Logo-actual')">
                                 </div>
 
-                                
+
                                 <div id="conateiner-Logo" class="d-flex justify-content-center">
-                                    <img id="image-Logo" src="#" alt="Vista previa de la imagen"
-                                        style="width: 40%;" hidden>
-                                    <img id="image-Logo-actual" src="{{ $servicio->img }}"
-                                        alt="Vista previa de la imagen" style="width: 40%;">
+                                    <img id="image-Logo" src="#" alt="Vista previa de la imagen" style="width: 40%;"
+                                        hidden>
+                                    <img id="image-Logo-actual" src="{{ $servicio->img }}" alt="Vista previa de la imagen"
+                                        style="width: 40%;">
                                 </div>
 
                                 <div class="d-flex justify-content-center mt-4">

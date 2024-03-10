@@ -98,7 +98,8 @@
 
                                 <div class="card-body px-0 pb-2">
                                     <div class="table-responsive p-0">
-                                        <table class="align-items-center mb-0" id="datatablesSimple">
+                                        <table class="table table-light table-striped align-items-center mb-0"
+                                            id="datatablesSimple">
                                             <thead>
                                                 <tr>
                                                     <th
@@ -126,8 +127,8 @@
                                                         </td>
 
                                                         <td>
-
-                                                            <div class="d-flex justify-content-center">
+                                                            <div
+                                                                class="d-flex justify-content-center align-middle text-center text-sm mt-2">
                                                                 <a href="{{ route('editarAgrupacion', $item->id_agrupacion) }}"
                                                                     class="btn btn-outline-warning"><i
                                                                         class="fa-regular fa-pen-to-square"></i></a>

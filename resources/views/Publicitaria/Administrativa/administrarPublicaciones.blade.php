@@ -11,7 +11,8 @@
                         <div class="col-lg-6">
                             <div class="d-flex justify-content-center h-100">
                                 <h2 class="font-weight-bolder mb-0">Agrupacion {{ $agrupacion->nombre }} <img
-                                        src="{{ $agrupacion->img_logo }}" width="15%" alt="" style="border-radius: 50%;"></h2>
+                                        src="{{ $agrupacion->img_logo }}" width="15%" alt=""
+                                        style="border-radius: 50%;"></h2>
 
                             </div>
                         </div>
@@ -38,7 +39,8 @@
 
                         <div class="card-body px-0 pb-2">
                             <div class="table-responsive p-0">
-                                <table class="table align-items-center mb-0">
+                                <table class="table table-light table-striped align-items-center mb-0"
+                                    id="datatablesSimple">
                                     <thead>
                                         <tr>
                                             <th
@@ -62,38 +64,36 @@
                                             @if ($item->id_agrupacion == $agrupacion->id_agrupacion)
                                                 <tr>
                                                     <td>
-                                                        <div class="align-middle text-center text-sm">
-                                                            <h6 class="mb-0 text-sm">{{ $item->titulo }}</h6>
-                                                        </div>
+                                                        <h6 class="mb-0 text-sm">{{ $item->titulo }}</h6>
                                                     </td>
                                                     <td>
-                                                        <div class="align-middle text-center text-sm">
-                                                            <h6 class="mb-0 text-sm">{{ $item->descripcion }}</h6>
-                                                        </div>
+                                                        <h6 class="mb-0 text-sm">{{ $item->descripcion }}</h6>
+
                                                     </td>
 
-                                                    <td class="align-middle text-center text-sm">
+                                                    <td>
                                                         <h6 class="mb-0 text-sm">{{ $item->fecha }}</h6>
                                                     </td>
-                                                    <td
-                                                        class="d-flex justify-content-center align-middle text-center text-sm mt-2">
+                                                    <td>
 
-                                                        <a href="{{ route('editarPublicacion', $item->id_publicacion) }}"
-                                                            class="btn btn-outline-warning"><i
-                                                                class="fa-regular fa-pen-to-square"></i></a>
+                                                        <div class="d-flex justify-content-center align-middle text-center text-sm mt-2">
+                                                            <a href="{{ route('editarPublicacion', $item->id_publicacion) }}"
+                                                                class="btn btn-outline-warning"><i
+                                                                    class="fa-regular fa-pen-to-square"></i></a>
 
-                                                        {{-- Cargar en otra pagina la landing para mostrar la modal --}}
-                                                        <a class="btn btn-outline-primary mx-1"><i
-                                                                class="fa-regular fa-eye"></i></a>
+                                                            {{-- Cargar en otra pagina la landing para mostrar la modal --}}
+                                                            <a class="btn btn-outline-primary mx-1"><i
+                                                                    class="fa-regular fa-eye"></i></a>
 
-                                                        <form
-                                                            action="{{ route('publicacion.destroy', $item->id_publicacion) }}"
-                                                            method="POST">
-                                                            @csrf
-                                                            @method('delete')
-                                                            <button class="btn btn-outline-danger"><i
-                                                                    class="fa-regular fa-trash-can"></i></button>
-                                                        </form>
+                                                            <form
+                                                                action="{{ route('publicacion.destroy', $item->id_publicacion) }}"
+                                                                method="POST">
+                                                                @csrf
+                                                                @method('delete')
+                                                                <button class="btn btn-outline-danger"><i
+                                                                        class="fa-regular fa-trash-can"></i></button>
+                                                            </form>
+                                                        </div>
                                                     </td>
                                                 </tr>
                                             @endif

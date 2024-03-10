@@ -23,7 +23,7 @@
 
         <div class="row">
 
-            <div class="col-6">
+            <div class="col-5">
 
                 <div class="card">
                     <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
@@ -37,22 +37,25 @@
                             <form action="{{ route('servicio.store') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <label for="nombre">Titulo:</label>
-                                <input class="form-control" type="text" name="titulo" placeholder="Ingrese un titulo para el servicio">
+                                <input class="form-control" type="text" name="titulo"
+                                    placeholder="Ingrese un titulo para el servicio">
 
                                 <div class="mt-3">
                                     <label for="apellido">Descripcion:</label>
-                                    <input class="form-control" type="text" name="descripcion"
-                                        placeholder="Ingrese una descripcion">
+                                    <textarea name="descripcion" class="form-control" id="" cols="30" rows="8"
+                                        placeholder="Ingrese una descripcion"></textarea>
+                                    {{-- <input class="form-control" type="text" name="descripcion"> --}}
                                 </div>
 
                                 <div class="mt-3 mb-2">
-                                <label for="email">Imagen -Icono-</label>
-                                <input class="form-control" name="imagen" type="file" id="imageInput" accept="image/*"
-                                    onchange="previewImage(event, 'image', 'conateiner')">
+                                    <label for="email">Imagen -Icono-</label>
+                                    <input class="form-control" name="imagen" type="file" id="imageInput"
+                                        accept="image/*" onchange="previewImage(event, 'image', 'conateiner')">
                                 </div>
 
                                 <div id="conateiner" class="d-flex justify-content-center">
-                                    <img id="image" src="#" alt="Vista previa de la imagen" style="width: 30%;" hidden>
+                                    <img id="image" src="#" alt="Vista previa de la imagen" style="width: 30%;"
+                                        hidden>
                                 </div>
 
 
@@ -68,7 +71,7 @@
 
 
             {{-- Tabla --}}
-            <div class="col-6">
+            <div class="col-7">
 
                 <div class="container-fluid">
                     <div class="row">
@@ -82,7 +85,8 @@
 
                                 <div class="card-body px-0 pb-2">
                                     <div class="table-responsive p-0">
-                                        <table class="table align-items-center mb-0">
+                                        <table class="table table-light table-striped align-items-center mb-0"
+                                            id="datatablesSimple">
                                             <thead>
                                                 <tr>
                                                     <th
@@ -94,56 +98,42 @@
                                                     <th
                                                         class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                                         Acciones</th>
-                                                    
+
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 @foreach ($servicios as $item)
                                                     <tr>
                                                         <td>
-                                                            <div class="align-middle text-center text-sm">
-                                                                <h6 class="mb-0 text-sm">{{$item->id_servicio}}</h6>
-                                                            </div>
+                                                            <h6 class="mb-0 text-sm">{{ $item->id_servicio }}</h6>
                                                         </td>
                                                         <td>
-                                                            <div class="align-middle text-center text-sm">
-                                                                <h6 class="mb-0 text-sm">{{$item->titulo}}</h6>
-                                                            </div>
+                                                            <h6 class="mb-0 text-sm">{{ $item->titulo }}</h6>
                                                         </td>
 
-                                                        {{-- <td class="d-flex justify-content-center align-middle text-center text-sm">
+                                                        <td>
+                                                            <div
+                                                                class="d-flex justify-content-center align-middle text-sm mt-2">
+                                                                <a href="{{ route('editarServicio', $item->id_servicio) }}"
+                                                                    class="btn btn-outline-warning" style="
+                                                                    height: 21%;"><i
+                                                                        class="fa-regular fa-pen-to-square"></i></a>
 
-                                                            <a href="{{route('editarServicio',$item->id_servicio)}}" class="btn btn-outline-warning"><i class="fa-regular fa-pen-to-square"></i></a>
+                                                                {{-- Cargar en otra pagina la landing para mostrar la modal --}}
+                                                                <a class="btn btn-outline-primary mx-1" style="
+                                                                height: 21%;"><i
+                                                                        class="fa-regular fa-eye"></i></a>
 
-                                                            <a  class="btn btn-outline-primary mx-1"><i class="fa-regular fa-eye"></i></a>
-
-                                                            <form action="{{ route('servicio.destroy', $item->id_servicio) }}" method="POST">
-                                                                @csrf
-                                                                @method('delete')
-                                                            <button type="submit" class="btn btn-outline-danger"><i class="fa-regular fa-trash-can"></i></button>
-                                                            </form>
-                                                        </td> --}}
-                                                        
-                                                        <td
-                                                        class="d-flex justify-content-center align-middle text-center text-sm mt-2">
-
-                                                        <a href="{{route('editarServicio',$item->id_servicio)}}"
-                                                            class="btn btn-outline-warning"><i
-                                                                class="fa-regular fa-pen-to-square"></i></a>
-
-                                                        {{-- Cargar en otra pagina la landing para mostrar la modal --}}
-                                                        <a class="btn btn-outline-primary mx-1"><i
-                                                                class="fa-regular fa-eye"></i></a>
-
-                                                        <form
-                                                            action="{{ route('servicio.destroy', $item->id_servicio) }}"
-                                                            method="POST">
-                                                            @csrf
-                                                            @method('delete')
-                                                            <button class="btn btn-outline-danger"><i
-                                                                    class="fa-regular fa-trash-can"></i></button>
-                                                        </form>
-                                                    </td>
+                                                                <form
+                                                                    action="{{ route('servicio.destroy', $item->id_servicio) }}"
+                                                                    method="POST">
+                                                                    @csrf
+                                                                    @method('delete')
+                                                                    <button class="btn btn-outline-danger"><i
+                                                                            class="fa-regular fa-trash-can"></i></button>
+                                                                </form>
+                                                            </div>
+                                                        </td>
                                                     </tr>
                                                 @endforeach
 
