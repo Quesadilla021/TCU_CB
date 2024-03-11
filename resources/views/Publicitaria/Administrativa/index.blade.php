@@ -21,6 +21,20 @@
             </div>
         </div>
 
+        <div class="row mb-5">
+            @if (session('mensaje'))
+            <div class="alert alert-success alert-dismissible text-white" role="alert">
+                <span class="">{{ session('mensaje') }}</span>
+                <button type="button" class="btn-close text-lg py-3 opacity-10" data-bs-dismiss="alert" aria-label="Close">
+                    <i class="fa-regular fa-circle-xmark text-white"
+                        style="
+                    font-size: x-large;
+                "></i>
+                </button>
+            </div>
+            @endif
+        </div>
+
         <div class="row">
 
             <div class="col-5">
@@ -134,7 +148,8 @@
                                                                         class="fa-regular fa-pen-to-square"></i></a>
 
                                                                 {{-- Cargar en otra pagina la landing para mostrar la modal --}}
-                                                                <a class="btn btn-outline-primary mx-1" target="_blank" href="{{ route('inicio') }}"><i
+                                                                <a class="btn btn-outline-primary mx-1" target="_blank"
+                                                                    href="{{ route('inicio') }}"><i
                                                                         class="fa-regular fa-eye"></i></a>
 
                                                                 <form

@@ -50,7 +50,7 @@ class AgrupacionController extends Controller
 
         $agrupacion->save();
 
-        return back();
+        return back()->with('mensaje', '¡Se creo la agrupación correctamente!');
     }
 
     /**
@@ -98,7 +98,7 @@ class AgrupacionController extends Controller
 
         $agrupacion->update();
 
-        return back();
+        return back()->with('mensaje', '¡Se edito la agrupación correctamente!');;
     }
 
     /**

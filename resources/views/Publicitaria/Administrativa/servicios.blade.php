@@ -22,13 +22,26 @@
         </div>
 
         <div class="row">
-
+            <div class="row mb-5">
+                @if (session('mensaje'))
+                    <div class="alert alert-success alert-dismissible text-white" role="alert">
+                        <span class="">{{ session('mensaje') }}</span>
+                        <button type="button" class="btn-close text-lg py-3 opacity-10" data-bs-dismiss="alert"
+                            aria-label="Close">
+                            <i class="fa-regular fa-circle-xmark text-white"
+                                style="
+                        font-size: x-large;
+                    "></i>
+                        </button>
+                    </div>
+                @endif
+            </div>
             <div class="col-5">
 
                 <div class="card">
                     <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
                         <div class="bg-gradient-success shadow-primary border-radius-lg pt-4 pb-3">
-                            <h6 class="text-white text-capitalize ps-3">Agregar nueva</h6>
+                            <h6 class="text-white text-capitalize ps-3">Agregar nuevo</h6>
                         </div>
                     </div>
                     <div class="card-header p-3 pt-2">

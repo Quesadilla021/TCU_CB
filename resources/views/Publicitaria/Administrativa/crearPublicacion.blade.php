@@ -67,8 +67,8 @@
 
 
 
-                                <div class="d-flex justify-content-center mt-4">
-                                    <button class="btn btn-success">Agregar</button>
+                                <div class="d-flex justify-content-center mt-5">
+                                    <button class="btn btn-success">Agregar Multimedia</button>
                                 </div>
                             </form>
                         </div>

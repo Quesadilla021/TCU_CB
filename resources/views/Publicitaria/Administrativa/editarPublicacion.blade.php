@@ -218,10 +218,16 @@
                     </div>
                     <hr>
                     <div class="d-flex justify-content-center mt-4">
+                        {{-- <form action="{{ route('vistaAgrupacionMensaje', $publicacion->id_agrupacion) }}" method="POST">
+                            @csrf
+                            @method('put')
+
+                            <input type="text" name="tipo" value="2" id="" hidden>
+                            <button class="btn btn-success">Editar</button>
+                        </form> --}}
                         <a href="{{ route('vistaAgrupacion', $publicacion->id_agrupacion) }}"
                             class="btn btn-success">Editar</a>
                     </div>
-                    <hr>
                 </div>
             </div>
 

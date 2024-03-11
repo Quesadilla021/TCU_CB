@@ -31,7 +31,7 @@ class ServicioController extends Controller
 
         $servicio->save();
 
-        return back();
+        return back()->with('mensaje', '¡Se creó el servicio correctamente!');
 
     }
 
@@ -57,7 +57,7 @@ class ServicioController extends Controller
 
         $servicio->update();
 
-        return back();
+        return back()->with('mensaje', '¡Se editó el servicio correctamente!');
     }
 
     public function destroy($id)

@@ -10,7 +10,7 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="d-flex justify-content-center h-100">
-                                <h2 class="font-weight-bolder mb-0">Agrupacion {{ $agrupacion->nombre }} <img
+                                <h2 class="font-weight-bolder mb-0">Agrupación {{ $agrupacion->nombre }} <img
                                         src="{{ $agrupacion->img_logo }}" width="15%" alt=""
                                         style="border-radius: 50%;"></h2>
 
@@ -22,7 +22,21 @@
         </div>
 
 
-        <div class="container-fluid ">
+        {{-- <div class="container-fluid ">
+            <div class="row mb-2 mt-4">
+                @if ($mensaje)
+                    <div class="alert alert-success alert-dismissible text-white" role="alert">
+                        <span class="">{{ $mensaje }}</span>
+                        <button type="button" class="btn-close text-lg py-3 opacity-10" data-bs-dismiss="alert"
+                            aria-label="Close">
+                            <i class="fa-regular fa-circle-xmark text-white"
+                                style="
+                        font-size: x-large;
+                    "></i>
+                        </button>
+                    </div>
+                @endif
+            </div> --}}
             <div class="row">
                 <div class="col-12">
                     <div class="card mt-3">

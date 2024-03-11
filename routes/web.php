@@ -50,6 +50,7 @@ Route::get('/editarAgrupacion{id}', [AgrupacionController::class, 'edit'])->name
 
 // Rutas sobre las publicaciones
 Route::get('/publicacionesAgrup{id}', [PublicacionController::class, 'index'])->name('vistaAgrupacion');
+Route::post('/publicaciones_Agrup{id}', [PublicacionController::class, 'index_dos'])->name('vistaAgrupacionMensaje');
 Route::resource('/publicacion',PublicacionController::class);
 Route::get('/crearPublicacion{id}', [PublicacionController::class, 'show'])->name('crearPublicacion');
 Route::get('/editarPublicacion{id}', [PublicacionController::class, 'edit'])->name('editarPublicacion');

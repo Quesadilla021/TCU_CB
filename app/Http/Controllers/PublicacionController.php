@@ -24,6 +24,36 @@ class PublicacionController extends Controller
         return view('Publicitaria.Administrativa.administrarPublicaciones', compact('agrupacion', 'agrupaciones', 'publicaciones', 'inicio'));
     }
 
+    // public function index_dos($id)
+    // {
+    //     $inicio = Inicio::find(1);
+    //     $agrupaciones = Agrupacion::all();
+    //     $agrupacion = Agrupacion::find($id);
+    //     $publicaciones = Publicacion::all();
+    //     $mensaje = '¡Se realizó creó la publicación correctamente!';
+    //     return view('Publicitaria.Administrativa.administrarPublicaciones', compact('agrupacion', 'agrupaciones', 'publicaciones', 'inicio'))->with('mensaje',$mensaje);
+    // }
+
+    // public function index_dos(Request $request, $id)
+    // {
+    //     $inicio = Inicio::find(1);
+    //     $agrupaciones = Agrupacion::all();
+    //     $agrupacion = Agrupacion::find($id);
+    //     $publicaciones = Publicacion::all();
+
+    //     $tipo = $request->tipo;
+
+    //     if ($tipo == 1) {
+    //         // creó == 1 
+    //         $mensaje = '¡Se creó la publicación correctamente!';
+    //         return view('Publicitaria.Administrativa.administrarPublicaciones', compact('agrupacion', 'agrupaciones', 'publicaciones', 'inicio'))->with('mensaje', $mensaje);
+    //     } elseif ($tipo == 2) {
+    //         // editó == 1 
+    //         $mensaje = '¡Se editó la publicación correctamente!';
+    //         return view('Publicitaria.Administrativa.administrarPublicaciones', compact('agrupacion', 'agrupaciones', 'publicaciones', 'inicio'))->with('mensaje', $mensaje);
+    //     }
+    // }
+
     /**
      * Show the form for creating a new resource.
      */
