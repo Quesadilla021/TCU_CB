@@ -31,7 +31,7 @@ use Illuminate\Support\Facades\Route;
 // })->name('agrupaciones');
 
 Route::get('/agrupac{id}', [InicioController::class, 'cargar_agrupacion'])->name('agrupacion');
-Route::get('/modal{id}', [InicioController::class, 'agrup_modal'])->name('modal');
+Route::get('/modalAgrup{id}', [InicioController::class, 'agrup_modal'])->name('modal');
 
 Route::get('/', [InicioController::class, 'get_inicio'])->name('inicio');
 
@@ -47,6 +47,8 @@ Route::put('/updateInicio', [InicioController::class, 'updateInicio'])->name('ac
 // Rutas sobre las agrupaciones
 Route::resource('/admin', AgrupacionController::class);
 Route::get('/editarAgrupacion{id}', [AgrupacionController::class, 'edit'])->name('editarAgrupacion');
+Route::get('/modalEliAgrup{id}', [AgrupacionController::class, 'modal_eliminar'])->name('modalEliAgrup');
+Route::get('/eliminarAgrup{id}', [AgrupacionController::class, 'destroy'])->name('eliminarAgrup');
 
 // Rutas sobre las publicaciones
 Route::get('/publicacionesAgrup{id}', [PublicacionController::class, 'index'])->name('vistaAgrupacion');

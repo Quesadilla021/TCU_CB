@@ -23,15 +23,16 @@
 
         <div class="row mb-5">
             @if (session('mensaje'))
-            <div class="alert alert-success alert-dismissible text-white" role="alert">
-                <span class="">{{ session('mensaje') }}</span>
-                <button type="button" class="btn-close text-lg py-3 opacity-10" data-bs-dismiss="alert" aria-label="Close">
-                    <i class="fa-regular fa-circle-xmark text-white"
-                        style="
+                <div class="alert alert-success alert-dismissible text-white" role="alert">
+                    <span class="">{{ session('mensaje') }}</span>
+                    <button type="button" class="btn-close text-lg py-3 opacity-10" data-bs-dismiss="alert"
+                        aria-label="Close">
+                        <i class="fa-regular fa-circle-xmark text-white"
+                            style="
                     font-size: x-large;
                 "></i>
-                </button>
-            </div>
+                    </button>
+                </div>
             @endif
         </div>
 
@@ -152,14 +153,16 @@
                                                                     href="{{ route('inicio') }}"><i
                                                                         class="fa-regular fa-eye"></i></a>
 
-                                                                <form
+                                                                {{-- <form
                                                                     action="{{ route('admin.destroy', $item->id_agrupacion) }}"
                                                                     method="POST">
                                                                     @csrf
-                                                                    @method('delete')
-                                                                    <button class="btn btn-outline-danger"><i
-                                                                            class="fa-regular fa-trash-can"></i></button>
-                                                                </form>
+                                                                    @method('delete') --}}
+                                                                <button class="btn btn-outline-danger"
+                                                                    data-bs-toggle="modal" data-bs-target="#staticBackdrop"
+                                                                    onclick="mostrarModalEliminarAgrupacion(@json($item->id_agrupacion))">
+                                                                    <i class="fa-regular fa-trash-can"></i></button>
+                                                                {{-- </form> --}}
                                                             </div>
                                                         </td>
                                                     </tr>
@@ -171,6 +174,52 @@
                                 </div>
 
                             </div>
+
+                            <!-- Modal Eliminar-->
+                            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static"
+                                data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="staticBackdropLabel">Eliminar Agrupación
+                                                <h1 class="modal-title fs-5" id="nombre"></h1>
+                                            </h1>
+
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="row">
+                                                <div class="col-1"></div>
+                                                <div class="col-10 my-3">
+                                                    <h5>¿Esta seguro de querer eliminar esta agrupación?</h5>
+
+                                                    Recuerde que todas las pubicaciones de esta agrupación se eliminaran
+                                                    tambien.
+                                                </div>
+                                                <div class="col-1"></div>
+                                            </div>
+
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn-outline-success"
+                                                data-bs-dismiss="modal">Regresar</button>
+
+                                            <form action=""
+                                                method="POST">
+                                                @csrf
+                                                @method('delete')
+                                                <button id="eliminar" class="btn-outline-danger"><i
+                                                        class="fa-regular fa-trash-can"></i> Eliminar</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
                         </div>
                     </div>
                 </div>

@@ -104,6 +104,20 @@ class AgrupacionController extends Controller
     /**
      * Remove the specified resource from storage.
      */
+
+     function modal_eliminar($id){
+        $agrupacion = Agrupacion::find($id);
+        $agrupacionEliminar = [
+            'id_agrupacion' => $agrupacion->id_agrupacion,
+            'nombre' => $agrupacion->nombre,
+            'descripcion' => $agrupacion->descripcion,
+            'img_logo' => $agrupacion->img_logo,
+            'img_fondo' => $agrupacion->img_fondo
+        ];
+        
+        return $agrupacionEliminar;
+    }
+
     public function destroy($id)
     {
         $agrupacion = Agrupacion::find($id)->delete();
