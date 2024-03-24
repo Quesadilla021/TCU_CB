@@ -129,12 +129,12 @@
                                                                 class="d-flex justify-content-center align-middle text-sm mt-2">
                                                                 <a href="{{ route('editarServicio', $item->id_servicio) }}"
                                                                     class="btn btn-outline-warning" style="
-                                                                    height: 21%;"><i
+                                                                    height: 21%;" title="Editar"><i
                                                                         class="fa-regular fa-pen-to-square"></i></a>
 
                                                                 {{-- Cargar en otra pagina la landing para mostrar la modal --}}
                                                                 <a class="btn btn-outline-primary mx-1" target="_blank" style="
-                                                                height: 21%;" href="{{ route('inicio') }}"><i
+                                                                height: 21%;" href="{{ route('inicio') }}" title="Ver"><i
                                                                         class="fa-regular fa-eye"></i></a>
 
                                                                 <form
@@ -142,7 +142,7 @@
                                                                     method="POST">
                                                                     @csrf
                                                                     @method('delete')
-                                                                    <button class="btn btn-outline-danger"><i
+                                                                    <button title="Eliminar" class="btn btn-outline-danger"><i
                                                                             class="fa-regular fa-trash-can"></i></button>
                                                                 </form>
                                                             </div>

@@ -44,7 +44,7 @@
                             <div
                                 class="d-flex justify-content-between bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
                                 <h4 class="text-white text-capitalize ps-3" style="order: 1;">Publicaciones Creadas</h4>
-                                <a href="{{ route('crearPublicacion', $agrupacion->id_agrupacion) }}"
+                                <a title="Crear Nueva" href="{{ route('crearPublicacion', $agrupacion->id_agrupacion) }}"
                                     class="btn btn-success" style="margin-right: 3%; order: 1;"><i
                                         class="fa-solid fa-plus"></i></a>
                             </div>
@@ -91,12 +91,12 @@
                                                     <td>
 
                                                         <div class="d-flex justify-content-center align-middle text-center text-sm mt-2">
-                                                            <a href="{{ route('editarPublicacion', $item->id_publicacion) }}"
+                                                            <a title="Editar" href="{{ route('editarPublicacion', $item->id_publicacion) }}"
                                                                 class="btn btn-outline-warning"><i
                                                                     class="fa-regular fa-pen-to-square"></i></a>
 
                                                             {{-- Cargar en otra pagina la landing para mostrar la modal --}}
-                                                            <a class="btn btn-outline-primary mx-1" target="_blank" href="{{ route('agrupacion', $item->id_agrupacion) }}"><i
+                                                            <a title="Ver" class="btn btn-outline-primary mx-1" target="_blank" href="{{ route('agrupacion', $item->id_agrupacion) }}"><i
                                                                     class="fa-regular fa-eye"></i></a>
 
                                                             <form
@@ -104,7 +104,7 @@
                                                                 method="POST">
                                                                 @csrf
                                                                 @method('delete')
-                                                                <button class="btn btn-outline-danger"><i
+                                                                <button title="Eliminar" class="btn btn-outline-danger"><i
                                                                         class="fa-regular fa-trash-can"></i></button>
                                                             </form>
                                                         </div>

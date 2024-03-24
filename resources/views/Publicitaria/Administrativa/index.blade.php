@@ -145,12 +145,12 @@
                                                             <div
                                                                 class="d-flex justify-content-center align-middle text-center text-sm mt-2">
                                                                 <a href="{{ route('editarAgrupacion', $item->id_agrupacion) }}"
-                                                                    class="btn btn-outline-warning"><i
+                                                                    class="btn btn-outline-warning" title="Editar"><i
                                                                         class="fa-regular fa-pen-to-square"></i></a>
 
                                                                 {{-- Cargar en otra pagina la landing para mostrar la modal --}}
                                                                 <a class="btn btn-outline-primary mx-1" target="_blank"
-                                                                    href="{{ route('inicio') }}"><i
+                                                                    href="{{ route('inicio') }}" title="Ver"><i
                                                                         class="fa-regular fa-eye"></i></a>
 
                                                                 {{-- <form
@@ -158,7 +158,7 @@
                                                                     method="POST">
                                                                     @csrf
                                                                     @method('delete') --}}
-                                                                <button class="btn btn-outline-danger"
+                                                                <button title="Eliminar" class="btn btn-outline-danger"
                                                                     data-bs-toggle="modal" data-bs-target="#staticBackdrop"
                                                                     onclick="mostrarModalEliminarAgrupacion(@json($item->id_agrupacion))">
                                                                     <i class="fa-regular fa-trash-can"></i></button>
